@@ -821,14 +821,15 @@ section { padding: 120px 0; }
 .doctor-row:nth-child(even) .doctor-portrait-wrap { grid-column: 2; grid-row: 1; }
 .doctor-row:nth-child(even) .doctor-text          { grid-column: 1; grid-row: 1; }
 
-.doctor-portrait {
-  position: relative;
+.doctor-portrait-wrap {
   width: 100%;
   max-width: 460px;
   margin: 0 auto;
-  overflow: hidden;
-  isolation: isolate;
-  box-shadow: 0 40px 80px -30px rgba(13, 43, 53, 0.45);
+}
+
+.doctor-portrait {
+  width: 100%;
+  box-shadow: 0 30px 60px -25px rgba(13, 43, 53, 0.3);
 }
 
 .doctor-portrait img {
@@ -836,51 +837,7 @@ section { padding: 120px 0; }
   aspect-ratio: 4 / 5;
   object-fit: cover;
   display: block;
-  filter: grayscale(1) contrast(1.08);
-  transition: filter 800ms ease, transform 1000ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-/* Duotone copper-teal wash that lifts on hover */
-.doctor-portrait::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(150deg, rgba(13, 43, 53, 0.55) 0%, rgba(201, 136, 107, 0.4) 100%);
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  transition: opacity 700ms ease;
-  z-index: 2;
-}
-
-.doctor-row:nth-child(even) .doctor-portrait::after {
-  background: linear-gradient(210deg, rgba(13, 43, 53, 0.55) 0%, rgba(201, 136, 107, 0.4) 100%);
-}
-
-.doctor-row:hover .doctor-portrait::after { opacity: 0; }
-.doctor-row:hover .doctor-portrait img {
-  filter: grayscale(0) contrast(1.04);
-  transform: scale(1.03);
-}
-
-/* Thin copper rule alongside the portrait */
-.doctor-portrait-wrap {
-  position: relative;
-  padding: 0 36px;
-  max-width: 540px;
-  margin: 0 auto;
-}
-
-.doctor-portrait-wrap::before {
-  content: '';
-  position: absolute;
-  top: 36px;
-  bottom: 36px;
-  width: 1px;
-  background: var(--copper);
-}
-
-.doctor-row .doctor-portrait-wrap::before { left: 0; }
-.doctor-row:nth-child(even) .doctor-portrait-wrap::before { left: auto; right: 0; }
 
 .doctor-text { padding: 4px 0; }
 .doctor-text .eyebrow { margin-bottom: 18px; }
