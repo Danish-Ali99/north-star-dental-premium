@@ -1,23 +1,23 @@
 <svg viewBox="-15 -5 230 230" xmlns="http://www.w3.org/2000/svg">
   <!--
-    Molar tooth — two big rounded cusps at top, deep V-channel between roots at bottom
-    Cusps: left (35,18) right (165,18), center dip (100,55)
-    Root V: left tip (46,210), channel up (100,182), right tip (154,210)
+    TOOTH OUTLINE
+    Left cusp peak (38,18) — Right cusp peak (162,18) — Center dip (100,52)
+    Left root (52,216) — V-channel up to (100,188) — Right root (148,216)
   -->
   <path
-    d="M35,18
-       C20,10 8,30 10,58
-       C12,84 16,108 22,130
-       C28,150 34,166 40,180
-       C44,192 46,204 46,210
-       C64,200 82,186 100,182
-       C118,186 136,200 154,210
-       C154,204 156,192 160,180
-       C166,166 172,150 178,130
-       C184,108 188,84 190,58
-       C192,30 180,10 165,18
-       C148,26 126,52 100,55
-       C74,52 52,26 35,18
+    d="M38,18
+       C22,12 12,35 14,65
+       C15,90 18,112 24,134
+       C30,154 36,172 43,188
+       C47,198 50,208 52,216
+       C66,206 82,192 100,188
+       C118,192 134,206 148,216
+       C150,208 153,198 157,188
+       C164,172 170,154 176,134
+       C182,112 185,90 186,65
+       C188,35 178,12 162,18
+       C144,24 124,50 100,52
+       C76,50 56,24 38,18
        Z"
     fill="none"
     stroke="#F3E9E2"
@@ -26,19 +26,19 @@
     stroke-linecap="round"
   />
   <!--
-    8-pointed compass star
-    Center (100,105) — N/S/E/W long, diagonals shorter
-    E and W tips extend well outside the tooth (~x=210 and x=-10)
+    STAR — center (100,100)
+    N/S/E/W long cardinal rays, E+W punch well past tooth sides
+    NE/NW/SE/SW shorter diagonal rays
   -->
   <path
-    d="M100,0
-       L103,96  L130,72  L107,99
-       L212,105
-       L107,111 L130,138 L103,114
-       L100,170
-       L97,114  L70,138  L93,111
-       L-12,105
-       L93,99   L70,72   L97,96
+    d="M100,-3
+       L103,93  L132,70  L107,96
+       L212,100
+       L107,104 L132,130 L103,107
+       L100,168
+       L97,107  L68,130  L93,104
+       L-12,100
+       L93,96   L68,70   L97,93
        Z"
     fill="#F3E9E2"
   />
