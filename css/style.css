@@ -135,7 +135,7 @@ p { margin-bottom: 1rem; color: var(--muted); }
 
 /* Cream-themed nav when overlapping dark sections */
 .nav.is-light {
-  background: var(--cream);
+  background-color: var(--cream) !important;
   border-top-color: rgba(13, 43, 53, 0.12);
   border-bottom-color: rgba(13, 43, 53, 0.12);
   box-shadow: 0 14px 40px -20px rgba(13, 43, 53, 0.25);
