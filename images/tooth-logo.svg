@@ -1,36 +1,44 @@
-<svg viewBox="0 0 200 222" xmlns="http://www.w3.org/2000/svg">
-  <!-- Molar: two big cusps top, V-channel roots bottom -->
+<svg viewBox="-15 -5 230 230" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Molar tooth — two big rounded cusps at top, deep V-channel between roots at bottom
+    Cusps: left (35,18) right (165,18), center dip (100,55)
+    Root V: left tip (46,210), channel up (100,182), right tip (154,210)
+  -->
   <path
-    d="M45,18
-       C18,18 8,45 10,75
-       C12,100 18,126 26,148
-       C32,165 38,180 44,194
-       C48,204 50,212 52,218
-       C68,208 84,192 100,188
-       C116,192 132,208 148,218
-       C150,212 152,204 156,194
-       C162,180 168,165 174,148
-       C182,126 188,100 190,75
-       C192,45 182,18 155,18
-       C140,18 122,46 100,50
-       C78,46 60,18 45,18
+    d="M35,18
+       C20,10 8,30 10,58
+       C12,84 16,108 22,130
+       C28,150 34,166 40,180
+       C44,192 46,204 46,210
+       C64,200 82,186 100,182
+       C118,186 136,200 154,210
+       C154,204 156,192 160,180
+       C166,166 172,150 178,130
+       C184,108 188,84 190,58
+       C192,30 180,10 165,18
+       C148,26 126,52 100,55
+       C74,52 52,26 35,18
        Z"
     fill="none"
     stroke="#F3E9E2"
-    stroke-width="5.5"
+    stroke-width="6"
     stroke-linejoin="round"
     stroke-linecap="round"
   />
-  <!-- 8-pointed compass star — N/S/E/W long, diagonals short, E/W past tooth edges -->
+  <!--
+    8-pointed compass star
+    Center (100,105) — N/S/E/W long, diagonals shorter
+    E and W tips extend well outside the tooth (~x=210 and x=-10)
+  -->
   <path
-    d="M100,2
-       L102,89 L127,68 L106,93
-       L190,95
-       L106,97 L127,122 L102,101
-       L100,162
-       L98,101 L73,122 L94,97
-       L10,95
-       L94,93 L73,68 L98,89
+    d="M100,0
+       L103,96  L130,72  L107,99
+       L212,105
+       L107,111 L130,138 L103,114
+       L100,170
+       L97,114  L70,138  L93,111
+       L-12,105
+       L93,99   L70,72   L97,96
        Z"
     fill="#F3E9E2"
   />
