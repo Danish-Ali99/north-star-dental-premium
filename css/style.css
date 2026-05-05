@@ -173,20 +173,16 @@ p { margin-bottom: 1rem; color: var(--muted); }
 }
 
 .brand-logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #fff;
+  width: 58px;
+  height: 58px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid rgba(201, 136, 107, 0.5);
-  overflow: hidden;
   flex-shrink: 0;
-  margin-right: 20px;
+  margin-right: 18px;
 }
 
-.brand-logo img { width: 90%; height: 90%; object-fit: contain; }
+.brand-logo img { width: 100%; height: 100%; object-fit: contain; }
 
 .brand-text {
   display: flex;
