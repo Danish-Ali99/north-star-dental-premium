@@ -93,17 +93,25 @@
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // Journal mark — rotates the tooth logo upright when the blog section enters view
+  // Journal mark — scroll-linked: logo rotates 90°→0° and line draws as you scroll through the section
   const blogSection = document.querySelector('.blog-home');
-  if (blogSection && 'IntersectionObserver' in window) {
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) blogSection.classList.add('in-view');
-        });
-      },
-      { threshold: 0.25 }
-    );
-    obs.observe(blogSection);
+  const journalLogo = document.querySelector('.journal-logo');
+  const journalLine = document.querySelector('.journal-line');
+
+  if (blogSection && journalLogo && journalLine) {
+    const updateJournal = () => {
+      const rect = blogSection.getBoundingClientRect();
+      const wh = window.innerHeight;
+      // progress 0 = section top just entered bottom of screen
+      // progress 1 = section top has reached 20% from top of screen
+      const start = wh;
+      const end = wh * 0.20;
+      const progress = Math.max(0, Math.min(1, (start - rect.top) / (start - end)));
+      journalLogo.style.transform = `rotate(${90 - 90 * progress}deg)`;
+      journalLine.style.transform = `scaleX(${progress})`;
+    };
+    window.addEventListener('scroll', updateJournal, { passive: true });
+    window.addEventListener('resize', updateJournal);
+    updateJournal();
   }
 })();
