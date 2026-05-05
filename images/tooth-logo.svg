@@ -1,16 +1,28 @@
 <svg viewBox="0 0 200 215" xmlns="http://www.w3.org/2000/svg">
-  <!-- Molar tooth — stroke outline only, no fill -->
+  <!-- Molar: center dip → left cusp → left side → left root → arch → right root → right side → right cusp → back -->
   <path
-    d="M100,40 C108,26 122,18 136,21 C152,25 165,42 167,62 C169,82 167,102 160,118 C154,134 146,148 138,162 C132,174 126,188 120,202 Q100,185 80,202 C74,188 68,174 62,162 C54,148 46,134 40,118 C33,102 31,82 33,62 C35,42 48,25 64,21 C78,18 92,26 100,40 Z"
+    d="M100,38
+       C90,32 75,20 58,20
+       C42,20 28,35 24,58
+       C20,78 22,100 26,120
+       C30,140 36,158 44,172
+       C50,183 55,194 60,202
+       Q100,178 140,202
+       C145,194 150,183 156,172
+       C164,158 170,140 174,120
+       C178,100 180,78 176,58
+       C172,35 158,20 142,20
+       C125,20 110,32 100,38
+       Z"
     fill="none"
     stroke="#F3E9E2"
-    stroke-width="4.5"
+    stroke-width="5"
     stroke-linejoin="round"
     stroke-linecap="round"
   />
-  <!-- 8-pointed compass star — filled, E/W rays extend past tooth edges -->
+  <!-- 8-pointed compass star — E/W tips extend beyond tooth sides -->
   <path
-    d="M100,6 L103,82 L125,65 L108,87 L192,90 L108,93 L125,115 L103,98 L100,162 L97,98 L75,115 L92,93 L8,90 L92,87 L75,65 L97,82 Z"
+    d="M100,6 L103,83 L126,66 L108,88 L192,92 L108,96 L126,118 L103,101 L100,168 L97,101 L74,118 L92,96 L8,92 L92,88 L74,66 L97,83 Z"
     fill="#F3E9E2"
   />
 </svg>
