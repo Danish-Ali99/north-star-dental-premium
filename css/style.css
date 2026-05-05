@@ -807,14 +807,14 @@ section { padding: 120px 0; }
 .doctor-rows {
   display: flex;
   flex-direction: column;
-  gap: 130px;
+  gap: 64px;
   position: relative;
 }
 
 .doctor-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 90px;
+  gap: 60px;
   align-items: center;
 }
 
@@ -834,7 +834,7 @@ section { padding: 120px 0; }
 
 .doctor-portrait img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
 }
@@ -996,40 +996,31 @@ section { padding: 120px 0; }
 /* ============================================
    BLOG
    ============================================ */
-.blog-home { background: var(--cream); position: relative; }
+.blog-home {
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(201, 136, 107, 0.22);
+}
 
-/* Journal mark — thin line + rotating tooth logo at bottom-right */
-.journal-mark {
+/* Large ghost watermark — fills visual emptiness editorially */
+.blog-home::before {
+  content: 'Journal';
   position: absolute;
-  left: 56px;
-  right: 56px;
-  bottom: 28px;
-  display: flex;
-  align-items: center;
-  gap: 28px;
+  right: -0.04em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 21vw;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(13, 43, 53, 0.048);
   pointer-events: none;
+  white-space: nowrap;
+  line-height: 1;
+  user-select: none;
+  letter-spacing: -0.02em;
 }
-
-.journal-line {
-  flex: 1;
-  height: 1px;
-  background: var(--copper);
-  opacity: 0.5;
-  transform-origin: left center;
-  transform: scaleX(0);
-  will-change: transform;
-}
-
-.journal-logo {
-  width: 92px;
-  height: 92px;
-  display: block;
-  flex-shrink: 0;
-  transform: rotate(90deg);
-  will-change: transform;
-}
-
-.journal-logo svg { width: 100%; height: 100%; display: block; overflow: visible; }
 
 .blog-grid {
   display: grid;
