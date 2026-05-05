@@ -933,13 +933,7 @@ section { padding: 120px 0; }
 
 .blog-card--a { grid-column: 2; grid-row: 1; }
 .blog-card--b { grid-column: 3; grid-row: 1; margin-top: 96px; }
-.blog-card--c {
-  grid-column: 2 / 4;
-  grid-row: 2;
-  margin-top: 56px;
-  max-width: 520px;
-  justify-self: center;
-}
+.blog-card--c { grid-column: 2; grid-row: 2; margin-top: 48px; }
 
 .blog-card {
   display: block;
