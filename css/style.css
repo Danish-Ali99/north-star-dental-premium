@@ -801,7 +801,121 @@ section { padding: 120px 0; }
 /* ============================================
    TEAM
    ============================================ */
-.team-home { background: var(--bone); }
+.team-home { background: var(--bone); position: relative; }
+
+/* Editorial alternating doctor rows (home page) */
+.doctor-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 130px;
+  position: relative;
+}
+
+.doctor-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.doctor-row:nth-child(even) .doctor-portrait { grid-column: 2; grid-row: 1; }
+.doctor-row:nth-child(even) .doctor-text     { grid-column: 1; grid-row: 1; }
+
+.doctor-portrait {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.doctor-portrait::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  right: -28px;
+  bottom: -28px;
+  background: var(--copper);
+  border-radius: 50% / 46%;
+  z-index: 0;
+  opacity: 0.92;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.doctor-row:nth-child(even) .doctor-portrait::before {
+  background: var(--deep-teal);
+  left: -28px;
+  right: 28px;
+}
+
+.doctor-row:hover .doctor-portrait::before {
+  transform: rotate(-2deg) scale(1.02);
+}
+
+.doctor-portrait img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 50% / 46%;
+  z-index: 1;
+  display: block;
+  filter: contrast(0.96) saturate(0.95);
+}
+
+.doctor-text { padding: 4px 0; }
+.doctor-text .eyebrow { margin-bottom: 18px; }
+.doctor-text h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 22px;
+  color: var(--deep-teal);
+}
+.doctor-text p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.doctor-stats {
+  display: flex;
+  gap: 60px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line-soft);
+}
+.doctor-stats > div { display: flex; flex-direction: column; gap: 6px; }
+.doctor-stats .num {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: var(--deep-teal);
+  line-height: 1;
+}
+.doctor-stats .label {
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+/* Decorative scattered dots */
+.team-home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(201, 136, 107, 0.5) 2px, transparent 2.5px),
+    radial-gradient(circle, rgba(13, 43, 53, 0.3) 2px, transparent 2.5px);
+  background-size: 380px 380px, 460px 460px;
+  background-position: 8% 18%, 88% 70%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0.85;
+}
 
 .team-grid {
   display: grid;
@@ -1875,6 +1989,19 @@ section { padding: 120px 0; }
     max-width: none;
     padding-right: 0;
   }
+
+  .doctor-rows { gap: 80px; }
+  .doctor-row {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .doctor-row:nth-child(even) .doctor-portrait,
+  .doctor-row:nth-child(even) .doctor-text {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .doctor-portrait { max-width: 340px; }
+  .doctor-stats { gap: 36px; flex-wrap: wrap; }
 
   .services-page-grid, .team-page-grid {
     grid-template-columns: 1fr;
