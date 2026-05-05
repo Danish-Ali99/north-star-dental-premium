@@ -505,45 +505,42 @@ section { padding: 120px 0; }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 90px;
+  grid-template-columns: 0.88fr 1.12fr;
+  gap: 80px;
   align-items: center;
 }
 
 .about-visual {
   position: relative;
-  height: 600px;
+  height: 660px;
 }
 
 .about-visual-main {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85');
+  background-image: url('../images/hero-dental.jpg');
   background-size: cover;
   background-position: center;
-  border-radius: 4px;
-  filter: contrast(1.05);
+  border-radius: 0;
+  filter: contrast(1.04) saturate(1.05);
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Copper inset frame — thin line traced just inside the image edges */
+.about-visual-circle {
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  border: 1px solid var(--copper);
+  border-radius: 0;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .about-visual-accent {
-  position: absolute;
-  bottom: -40px;
-  right: -40px;
-  width: 200px;
-  height: 200px;
-  background: var(--copper);
-  border-radius: 50%;
-  z-index: -1;
-}
-
-.about-visual-circle {
-  position: absolute;
-  top: -30px;
-  left: -30px;
-  width: 100px;
-  height: 100px;
-  border: 1px solid var(--copper);
-  border-radius: 50%;
+  display: none;
 }
 
 .about-content h2 { margin-bottom: 24px; }
