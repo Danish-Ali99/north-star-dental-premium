@@ -92,4 +92,18 @@
   // Set current year in footer
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  // Journal mark — rotates the tooth logo upright when the blog section enters view
+  const blogSection = document.querySelector('.blog-home');
+  if (blogSection && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) blogSection.classList.add('in-view');
+        });
+      },
+      { threshold: 0.25 }
+    );
+    obs.observe(blogSection);
+  }
 })();
