@@ -141,6 +141,7 @@ p { margin-bottom: 1rem; color: var(--muted); }
   box-shadow: 0 14px 40px -20px rgba(13, 43, 53, 0.25);
 }
 .nav.is-light .brand-name { color: var(--deep-teal); }
+.nav.is-light .brand-logo img { filter: invert(1) brightness(0.35); }
 .nav.is-light .nav-links a { color: var(--deep-teal); }
 .nav.is-light .nav-links a:hover,
 .nav.is-light .nav-links a.active { color: var(--copper); }
