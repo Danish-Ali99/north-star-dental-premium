@@ -1,15 +1,27 @@
 (function () {
   'use strict';
 
-  // Sticky nav shadow on scroll
+  // Sticky nav shadow on scroll + color flip when over dark sections
   const nav = document.querySelector('.nav');
   if (nav) {
-    const onScroll = () => {
+    const darkSections = document.querySelectorAll(
+      '.services-home, .booking, .page-hero, .location-info, .footer'
+    );
+    const updateNav = () => {
       if (window.scrollY > 30) nav.classList.add('scrolled');
       else nav.classList.remove('scrolled');
+
+      const navBottom = nav.getBoundingClientRect().bottom;
+      let onDark = false;
+      darkSections.forEach((s) => {
+        const r = s.getBoundingClientRect();
+        if (r.top <= navBottom && r.bottom > navBottom) onDark = true;
+      });
+      nav.classList.toggle('is-light', onDark);
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    window.addEventListener('scroll', updateNav, { passive: true });
+    window.addEventListener('resize', updateNav);
+    updateNav();
   }
 
   // Mobile menu toggle
