@@ -1,0 +1,53 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="toothG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5BD3F0"/>
+      <stop offset="50%" stop-color="#1F8AC9"/>
+      <stop offset="100%" stop-color="#0E3D7A"/>
+    </linearGradient>
+    <radialGradient id="glowG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#FFE9A8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FFE9A8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Solid cream circle, copper ring -->
+  <circle cx="32" cy="32" r="30" fill="#F3E9E2"/>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#C9886B" stroke-width="2.5"/>
+
+  <!-- Tooth (centered, simplified for small size) -->
+  <path
+    d="M20,17
+       C15,15 12,21 13,29
+       C13.5,36 15,42 17,48
+       C18,52 19,55 20,57
+       C24,54 28,51 32,50
+       C36,51 40,54 44,57
+       C45,55 46,52 47,48
+       C49,42 50.5,36 51,29
+       C52,21 49,15 44,17
+       C39,19 35,28 32,28
+       C29,28 25,19 20,17 Z"
+    fill="url(#toothG)"
+    stroke="#0A2B5E"
+    stroke-width="1.4"
+    stroke-linejoin="round"
+  />
+
+  <!-- Star glow halo -->
+  <circle cx="32" cy="34" r="14" fill="url(#glowG)"/>
+
+  <!-- Bright 8-point star -->
+  <path
+    d="M32,18
+       L33,32 L40,28 L34,33
+       L48,34
+       L34,35 L40,40 L33,36
+       L32,50
+       L31,36 L24,40 L30,35
+       L16,34
+       L30,33 L24,28 L31,32 Z"
+    fill="#FFFFFF"
+  />
+</svg>

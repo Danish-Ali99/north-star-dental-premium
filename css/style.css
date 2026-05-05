@@ -18,9 +18,10 @@
   --line: rgba(13, 43, 53, 0.12);
   --line-soft: rgba(13, 43, 53, 0.06);
 
-  --font-serif: 'Baskervville', 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-display: 'Cormorant Garamond', 'Baskervville', Georgia, serif;
+  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-accent: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --radius: 4px;
   --radius-lg: 14px;
@@ -35,7 +36,7 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-fo
 
 body {
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
   color: var(--deep-teal);
@@ -49,16 +50,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 1.15;
+  font-weight: 500;
+  line-height: 1.25;
   letter-spacing: -0.01em;
   color: var(--deep-teal);
 }
 
-h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
-h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); }
-h3 { font-size: clamp(1.4rem, 2.5vw, 2rem); }
-h4 { font-size: 1.25rem; }
+h1 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.6rem); }
+h3 { font-size: clamp(1.2rem, 2.2vw, 1.6rem); }
+h4 { font-size: 1.1rem; }
 
 p { margin-bottom: 1rem; color: var(--muted); }
 
@@ -71,15 +72,15 @@ p { margin-bottom: 1rem; color: var(--muted); }
 
 .eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.32em;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--copper);
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .eyebrow::before {
@@ -91,12 +92,13 @@ p { margin-bottom: 1rem; color: var(--muted); }
 
 .section-title {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 400;
+  font-style: normal;
+  font-weight: 500;
 }
 
 .section-title em {
   font-style: normal;
+  font-weight: 500;
   color: var(--copper);
 }
 
@@ -387,30 +389,40 @@ p { margin-bottom: 1rem; color: var(--muted); }
   opacity: 0.4;
 }
 
+.hero .eyebrow {
+  font-size: 0.92rem;
+  letter-spacing: 0.26em;
+  margin-bottom: 22px;
+}
+
 .hero h1 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(2.4rem, 4.8vw, 4.6rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin-bottom: 18px;
+  font-style: normal;
+  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  margin-bottom: 22px;
   color: var(--deep-teal);
 }
 
 .hero h1 em {
-  font-style: italic;
+  font-style: normal;
+  font-weight: 500;
   color: var(--copper);
 }
 
 .hero-subtitle {
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 1.18rem;
+  line-height: 1.65;
   color: var(--muted);
-  max-width: 440px;
-  margin-bottom: 28px;
-  font-weight: 300;
-  letter-spacing: 0.01em;
+  max-width: 520px;
+  margin-bottom: 36px;
+  font-weight: 400;
+  letter-spacing: 0;
 }
+
+.hero-actions .btn { font-size: 0.92rem; padding: 18px 38px; }
 
 .hero-actions {
   display: flex;
@@ -447,18 +459,19 @@ p { margin-bottom: 1rem; color: var(--muted); }
 
 .hero-trust-item .num {
   font-family: var(--font-display);
-  font-size: 2.2rem;
+  font-size: 2.7rem;
+  font-weight: 500;
   color: var(--copper);
   display: block;
   line-height: 1;
 }
 
 .hero-trust-item .label {
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
+  font-size: 0.84rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-top: 7px;
+  margin-top: 10px;
   display: block;
 }
 
@@ -530,8 +543,9 @@ p { margin-bottom: 1rem; color: var(--muted); }
 
 .hero-tag-text {
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.98rem;
   color: var(--deep-teal);
   line-height: 1.4;
 }
@@ -547,9 +561,9 @@ section { padding: 40px 0; }
   margin: 0 auto 22px;
 }
 
-.section-head .section-title { font-size: clamp(1.7rem, 3.4vw, 2.6rem); }
+.section-head .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 500; }
 .section-head h2 { margin-bottom: 12px; }
-.section-head p { font-size: 0.96rem; line-height: 1.6; }
+.section-head p { font-size: 1rem; line-height: 1.6; }
 .section-head .eyebrow { margin-bottom: 12px; }
 
 .section-head .eyebrow { justify-content: center; }
@@ -632,8 +646,9 @@ section { padding: 40px 0; }
 
 .about-quote {
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.05rem;
   line-height: 1.45;
   color: var(--deep-teal);
   border-left: 2px solid var(--copper);
@@ -873,7 +888,7 @@ section { padding: 40px 0; }
   aspect-ratio: 5 / 4;
   object-fit: cover;
   display: block;
-  max-height: 320px;
+  max-height: 300px;
 }
 
 .doctor-text { padding: 0; }
@@ -1048,9 +1063,9 @@ section { padding: 40px 0; }
   top: 50%;
   transform: translateY(-50%);
   font-family: var(--font-display);
-  font-size: 21vw;
-  font-style: italic;
-  font-weight: 300;
+  font-size: 18vw;
+  font-style: normal;
+  font-weight: 600;
   color: rgba(13, 43, 53, 0.048);
   pointer-events: none;
   white-space: nowrap;
@@ -1331,6 +1346,42 @@ section { padding: 40px 0; }
   max-width: 90%;
 }
 
+/* Services accordion: wider answer area, image + text side by side */
+.services-accordion .faq-item.active .faq-answer { max-height: 360px; }
+
+.services-accordion .faq-answer-inner.service-detail {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+  align-items: center;
+  max-width: none;
+  padding: 4px 0 28px;
+}
+
+.service-detail-image {
+  width: 100%;
+  height: 170px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  box-shadow: 0 16px 32px -16px rgba(13, 43, 53, 0.3);
+}
+
+.service-detail-text {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .services-accordion .faq-item.active .faq-answer { max-height: 520px; }
+  .services-accordion .faq-answer-inner.service-detail {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .service-detail-image { height: 200px; }
+}
+
 /* ============================================
    BOOKING CTA
    ============================================ */
@@ -1379,13 +1430,15 @@ section { padding: 40px 0; }
 
 .booking h2 {
   color: var(--cream);
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
   margin-bottom: 16px;
-  font-style: italic;
+  font-style: normal;
+  font-weight: 500;
 }
 
 .booking h2 em {
   font-style: normal;
+  font-weight: 500;
   color: var(--copper);
 }
 
@@ -1603,13 +1656,15 @@ section { padding: 40px 0; }
 
 .page-hero h1 {
   color: var(--cream);
-  font-style: italic;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
   margin-bottom: 20px;
 }
 
 .page-hero h1 em {
   font-style: normal;
+  font-weight: 500;
   color: var(--copper);
 }
 
@@ -1882,9 +1937,10 @@ section { padding: 40px 0; }
 
 .blog-featured-content h2 {
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  line-height: 1.2;
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  line-height: 1.25;
   margin-bottom: 22px;
 }
 

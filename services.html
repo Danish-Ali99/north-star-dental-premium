@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="alternate icon" href="images/tooth-logo.png" />
   <title>Services · North Star Dental</title>
-  <meta name="description" content="Cosmetic, restorative, preventive, and pediatric dentistry — every service delivered with the same standard of craftsmanship." />
+  <meta name="description" content="Twenty-five dental services — cosmetic, restorative, preventive, specialty, and family — every treatment delivered with the same standard of craft." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Poppins:wght@300;400;500;600&display=swap" />
-  <link rel="stylesheet" href="css/style.css?v=25" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/style.css?v=41" />
 </head>
 <body>
   <nav class="nav">
@@ -41,124 +43,226 @@
     <div class="page-hero-inner">
       <span class="eyebrow">Our Services</span>
       <h1>Care for <em>every chapter</em> of your smile.</h1>
-      <p>From routine hygiene to full smile design — every treatment is delivered with the same considered hand.</p>
+      <p>Twenty-five treatments covering everything from a simple cleaning to a full mouth rehabilitation. Tap any service to see what it involves.</p>
       <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> Services</div>
     </div>
   </section>
 
   <section style="background: var(--bone);">
     <div class="container">
-      <div class="services-page-grid">
-        <div class="service-large fade-in">
-          <div class="service-large-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2c-3 0-5 2-7 2-1 0-1 1-1 2 0 4 2 8 3 12 1 2 2 4 5 4s4-2 5-4c1-4 3-8 3-12 0-1 0-2-1-2-2 0-4-2-7-2z"/></svg>
-          </div>
-          <h3>Cosmetic Dentistry</h3>
-          <p>Smile design that's invisibly excellent — work that draws compliments without ever being noticed.</p>
-          <ul>
-            <li>Porcelain Veneers</li>
-            <li>Professional Whitening</li>
-            <li>Composite Bonding</li>
-            <li>Full Smile Design</li>
-          </ul>
+      <div class="faq-categories fade-in">
+        <button class="faq-cat active" data-cat="all">All</button>
+        <button class="faq-cat" data-cat="cosmetic">Cosmetic</button>
+        <button class="faq-cat" data-cat="restorative">Restorative</button>
+        <button class="faq-cat" data-cat="preventive">Preventive</button>
+        <button class="faq-cat" data-cat="specialty">Specialty</button>
+        <button class="faq-cat" data-cat="family">Family</button>
+      </div>
+
+      <div class="faq-wrap services-accordion fade-in">
+        <!-- COSMETIC -->
+        <div class="faq-item" data-cat="cosmetic">
+          <button class="faq-question">Teeth Whitening<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Professional in-clinic and take-home bleaching that lifts years of coffee, tea, and tobacco stains in a single visit. Safe enamel-friendly gels supervised by a dentist — never a salon.</div>
+          </div></div>
         </div>
 
-        <div class="service-large fade-in">
-          <div class="service-large-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M5 8l7-6 7 6"/></svg>
-          </div>
-          <h3>Implants & Restoration</h3>
-          <p>Permanent replacements designed to feel and function like the teeth you were born with.</p>
-          <ul>
-            <li>Single & Multiple Implants</li>
-            <li>All-On-Four Solutions</li>
-            <li>Crowns & Bridges</li>
-            <li>Same-Day Ceramics</li>
-          </ul>
+        <div class="faq-item" data-cat="cosmetic">
+          <button class="faq-question">Smile Makeover<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1571772996211-2f02c9727629?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">A coordinated combination of treatments — whitening, veneers, alignment, gum reshaping — designed around your face, not just your teeth. We plan every case twice before touching a tooth.</div>
+          </div></div>
         </div>
 
-        <div class="service-large fade-in">
-          <div class="service-large-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
-          </div>
-          <h3>Invisible Aligners</h3>
-          <p>Subtle, precise alignment without metal — planned in 3D, refined chair-side.</p>
-          <ul>
-            <li>Invisalign Certified</li>
-            <li>Digital Treatment Planning</li>
-            <li>Predictable Outcomes</li>
-            <li>Lifetime Retainer Care</li>
-          </ul>
+        <div class="faq-item" data-cat="cosmetic">
+          <button class="faq-question">Dental Veneers<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Ultra-thin porcelain shells bonded to the front of teeth — instantly correcting shape, colour, and minor alignment. Hand-finished to disappear into your smile.</div>
+          </div></div>
         </div>
 
-        <div class="service-large fade-in">
-          <div class="service-large-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12c2-4 5-6 9-6s7 2 9 6c-2 4-5 6-9 6s-7-2-9-6z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <h3>Preventive Hygiene</h3>
-          <p>The unglamorous foundation of every healthy smile — done thoroughly, never rushed.</p>
-          <ul>
-            <li>Cleaning & Polishing</li>
-            <li>Periodontal Therapy</li>
-            <li>Fluoride Treatments</li>
-            <li>Oral Cancer Screening</li>
-          </ul>
+        <div class="faq-item" data-cat="cosmetic">
+          <button class="faq-question">Smile Designing<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1571772996211-2f02c9727629?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Customised aesthetic design tailored to your face shape, lip line, age, and personality. We design smiles that look like they belong to you — never generic.</div>
+          </div></div>
         </div>
 
-        <div class="service-large fade-in">
-          <div class="service-large-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
-          </div>
-          <h3>Pediatric Care</h3>
-          <p>Calm, gentle care for our smallest patients — first visits that build a lifetime of confidence.</p>
-          <ul>
-            <li>First Visit Programmes</li>
-            <li>Sealants & Fluoride</li>
-            <li>Habit Counselling</li>
-            <li>Family Appointments</li>
-          </ul>
+        <div class="faq-item" data-cat="cosmetic">
+          <button class="faq-question">Digital Smile Design (DSD)<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">See your final smile before treatment begins — using 3D digital previews and intraoral scanning. You approve the design first; we build to it.</div>
+          </div></div>
         </div>
 
-        <div class="service-large fade-in">
-          <div class="service-large-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 22h20L12 2z"/><path d="M12 9v6M12 18h.01"/></svg>
-          </div>
-          <h3>Emergency Care</h3>
-          <p>Same-day relief when something hurts — calm, fast, and considered.</p>
-          <ul>
-            <li>Same-Day Appointments</li>
-            <li>Trauma & Pain Relief</li>
-            <li>Out-Of-Hours WhatsApp</li>
-            <li>Honest Triage</li>
-          </ul>
+        <!-- RESTORATIVE -->
+        <div class="faq-item" data-cat="restorative">
+          <button class="faq-question">Dental Implants<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Permanent titanium replacements for missing teeth — surgically placed and topped with a porcelain crown. Restores full chewing function and a natural-looking smile.</div>
+          </div></div>
         </div>
 
-        <div class="service-large fade-in">
-          <div class="service-large-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12c4-2 6-4 10-4s6 2 10 4-6 4-10 4-6-2-10-4z"/></svg>
-          </div>
-          <h3>Root Canal Therapy</h3>
-          <p>Modern endodontics that's nothing like the old reputation — quiet, controlled, and pain-free.</p>
-          <ul>
-            <li>Microscope-Assisted</li>
-            <li>Single Visit Possible</li>
-            <li>Pain-Free Protocols</li>
-            <li>Long-Term Guarantees</li>
-          </ul>
+        <div class="faq-item" data-cat="restorative">
+          <button class="faq-question">Root Canal Treatment (RCT)<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Modern, pain-free endodontics that saves an infected tooth — performed under microscope, often in a single sitting. Nothing like the old reputation.</div>
+          </div></div>
         </div>
 
-        <div class="service-large fade-in">
-          <div class="service-large-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M9 14c1 1 2 1.5 3 1.5s2-.5 3-1.5"/></svg>
-          </div>
-          <h3>Sedation Options</h3>
-          <p>For anxious patients, complex work, or anyone who'd simply rather sleep through it.</p>
-          <ul>
-            <li>Oral Sedation</li>
-            <li>Nitrous Oxide</li>
-            <li>IV Sedation</li>
-            <li>Anaesthesiologist On Call</li>
-          </ul>
+        <div class="faq-item" data-cat="restorative">
+          <button class="faq-question">Tooth Filling (Cavities Treatment)<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Tooth-coloured composite fillings that repair cavities seamlessly. Layered and polished by hand so even you can't see where the filling ends and the tooth begins.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="restorative">
+          <button class="faq-question">Tooth Extraction (Wisdom Tooth Removal)<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Gentle removal of damaged or impacted teeth, including wisdom teeth. Sedation available for anxious patients or complex cases — most patients walk out the same day.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="restorative">
+          <button class="faq-question">Dental Crowns & Bridges<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Restore damaged or missing teeth with porcelain crowns and bridges that look and feel natural. Same-day ceramics available — no temporary, no second visit.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="restorative">
+          <button class="faq-question">Dentures (Full & Partial)<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Custom-fitted full or partial dentures that restore chewing, speech, and confidence. Implant-retained options available for the most secure fit.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="restorative">
+          <button class="faq-question">Full Mouth Rehabilitation<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-daab30f310ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Complete restoration combining implants, crowns, veneers, and bite correction — for total oral health, function, and aesthetics. Phased over weeks, planned over months.</div>
+          </div></div>
+        </div>
+
+        <!-- PREVENTIVE -->
+        <div class="faq-item" data-cat="preventive">
+          <button class="faq-question">Teeth Cleaning & Scaling<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Thorough professional cleaning that removes plaque and tartar from places your brush can't reach. The unglamorous foundation of every healthy mouth — done thoroughly, never rushed.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="preventive">
+          <button class="faq-question">Dental Check-up & Consultation<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-daab30f310ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">A 30-minute exam, digital X-rays, and a written treatment plan — quiet, unhurried, with no obligation to proceed. We'll explain what's necessary, what's optional, and what can wait.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="preventive">
+          <button class="faq-question">Bad Breath Treatment<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Personalised diagnosis and care for halitosis — addressing the root cause, not the symptom. Most cases trace back to a treatable oral or sinus issue.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="preventive">
+          <button class="faq-question">Tooth Sensitivity Treatment<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Lasting relief from sensitivity caused by exposed roots, enamel wear, or gum recession. We diagnose the underlying cause first, then treat the trigger — not just the symptom.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="preventive">
+          <button class="faq-question">Mouth Ulcer Treatment<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Targeted care for recurring ulcers, canker sores, and oral lesions — with healing protocols, dietary guidance, and laser therapy where appropriate.</div>
+          </div></div>
+        </div>
+
+        <!-- SPECIALTY -->
+        <div class="faq-item" data-cat="specialty">
+          <button class="faq-question">Braces & Aligners (Invisalign)<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Straighten your smile with traditional braces or virtually invisible Invisalign aligners. Every case planned in 3D from day one — you see the final result before the first tray is fitted.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="specialty">
+          <button class="faq-question">Gum Treatment (Periodontics)<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Comprehensive treatment for bleeding gums, gum disease, and periodontal infections. Deep cleaning, laser therapy, and surgical options when needed — most cases reverse with the right care.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="specialty">
+          <button class="faq-question">Laser Dentistry<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Precise, virtually painless treatment using advanced dental lasers for gums, cavities, and soft tissue. Less bleeding, faster healing, often no anaesthesia required.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="specialty">
+          <button class="faq-question">Sedation Dentistry (Pain-Free Dentistry)<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-daab30f310ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Anxiety-free treatment with oral sedation, nitrous oxide, or IV options — for nervous patients, complex work, or anyone who'd simply rather sleep through it.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="specialty">
+          <button class="faq-question">TMJ / Jaw Pain Treatment<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Diagnosis and care for jaw joint pain, clicking, locking, and chronic facial discomfort. Custom night guards, bite correction, and physiotherapy referrals where appropriate.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="specialty">
+          <button class="faq-question">Sleep Apnea / Snoring Solutions<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-daab30f310ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Custom oral appliances that quiet snoring and treat mild-to-moderate sleep apnea — a comfortable alternative to CPAP for the right candidates.</div>
+          </div></div>
+        </div>
+
+        <!-- FAMILY -->
+        <div class="faq-item" data-cat="family">
+          <button class="faq-question">Pediatric Dentistry (Kids Dentist)<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Friendly, gentle care for children from age three onwards — first visits, cleanings, fluoride, sealants, and habit counselling. Stickers and smiles guaranteed; tears, rare.</div>
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-cat="family">
+          <button class="faq-question">Emergency Dental Care<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner service-detail">
+            <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
+            <div class="service-detail-text">Same-day appointments for severe pain, broken teeth, knocked-out teeth, or trauma. Pain shouldn't wait — call us, or message on WhatsApp, and we'll find space in the schedule.</div>
+          </div></div>
         </div>
       </div>
     </div>
@@ -207,6 +311,6 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
   </a>
 
-  <script src="js/main.js?v=4"></script>
+  <script src="js/main.js?v=8"></script>
 </body>
 </html>
