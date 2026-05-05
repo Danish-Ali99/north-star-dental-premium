@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Poppins:wght@300;400;500;600&display=swap" />
-  <link rel="stylesheet" href="css/style.css?v=15" />
+  <link rel="stylesheet" href="css/style.css?v=16" />
 </head>
 <body>
   <!-- Navigation -->
@@ -243,7 +243,28 @@
     <div class="journal-mark" aria-hidden="true">
       <span class="journal-line"></span>
       <span class="journal-logo">
-        <img src="images/logo.jpg" alt="" class="journal-logo-img" />
+        <svg viewBox="0 0 200 205" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="jTooth" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0B2E60"/>
+              <stop offset="40%" stop-color="#1068A8"/>
+              <stop offset="100%" stop-color="#10B8D0"/>
+            </linearGradient>
+            <radialGradient id="jGlow" cx="50%" cy="44%" r="40%">
+              <stop offset="0%" stop-color="#FFFDF0"/>
+              <stop offset="40%" stop-color="#F5E8A0" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#E0C040" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <!-- Molar tooth body -->
+          <path d="M100 10 C86 10,65 14,52 26 C35 42,30 62,30 82 C30 102,36 120,48 140 C56 155,64 170,70 182 C74 190,78 200,86 200 C92 200,96 192,100 182 C104 192,108 200,114 200 C122 200,126 190,130 182 C136 170,144 155,152 140 C164 120,170 102,170 82 C170 62,165 42,148 26 C135 14,114 10,100 10 Z" fill="url(#jTooth)"/>
+          <!-- Ambient glow -->
+          <ellipse cx="100" cy="88" rx="52" ry="52" fill="url(#jGlow)"/>
+          <!-- 8-pointed compass star — E/W rays extend beyond tooth -->
+          <path d="M100 6 L103 82 L127 62 L108 87 L188 90 L108 93 L127 118 L103 98 L100 178 L97 98 L73 118 L92 93 L12 90 L92 87 L73 62 L97 82 Z" fill="#FFFFF2" opacity="0.93"/>
+          <!-- Centre highlight -->
+          <circle cx="100" cy="90" r="7" fill="#FFFFF8"/>
+        </svg>
       </span>
     </div>
     <div class="container">
