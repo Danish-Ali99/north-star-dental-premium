@@ -1798,25 +1798,22 @@ section { padding: 110px 0; }
   justify-content: center;
   width: 62px;
   height: 62px;
-  background: var(--deep-teal);
-  color: var(--copper);
+  background: #25D366;
+  color: white;
   border-radius: 50%;
-  border: 1px solid var(--copper);
-  box-shadow: 0 0 0 4px rgba(201, 136, 107, 0.14), 0 14px 36px -10px rgba(13, 43, 53, 0.55);
+  box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.18), 0 14px 40px -10px rgba(37, 211, 102, 0.7);
   transition: all var(--transition);
 }
 
 .whatsapp-float:hover {
-  transform: translateY(-3px) scale(1.04);
-  background: var(--copper);
-  color: var(--cream);
-  border-color: var(--copper);
-  box-shadow: 0 0 0 6px rgba(201, 136, 107, 0.2), 0 20px 44px -10px rgba(201, 136, 107, 0.55);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 0 6px rgba(37, 211, 102, 0.22), 0 20px 50px -10px rgba(37, 211, 102, 0.8);
+  color: white;
 }
 
 .whatsapp-float svg {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   flex-shrink: 0;
 }
 
@@ -1824,7 +1821,7 @@ section { padding: 110px 0; }
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: var(--copper);
+  background: #25D366;
   animation: wa-pulse 2s ease-out infinite;
   z-index: -1;
 }
