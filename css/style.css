@@ -162,10 +162,9 @@ p { margin-bottom: 1rem; color: var(--muted); }
 .nav-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 14px 24px 14px 12px;
+  padding: 4px 24px 4px 12px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
 }
 
@@ -177,13 +176,14 @@ p { margin-bottom: 1rem; color: var(--muted); }
 }
 
 .brand-logo {
-  width: 92px;
-  height: 72px;
+  width: 86px;
+  height: 86px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-right: 8px;
+  margin-right: 0;
+  transform: translateY(-4px);
 }
 
 .brand-logo img {
@@ -206,8 +206,7 @@ p { margin-bottom: 1rem; color: var(--muted); }
   display: flex;
   flex-direction: column;
   line-height: 1.1;
-  border-left: 1px solid rgba(201, 136, 107, 0.38);
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .brand-name {
@@ -225,14 +224,15 @@ p { margin-bottom: 1rem; color: var(--muted); }
   letter-spacing: 0.36em;
   text-transform: uppercase;
   color: var(--copper);
-  margin-top: 6px;
+  margin-top: 3px;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 52px;
+  gap: 38px;
   list-style: none;
+  margin-left: auto;
 }
 
 .nav-links a {
@@ -677,37 +677,140 @@ section { padding: 40px 0; }
   padding: 8px 0;
 }
 
-.about-visual {
+.about-carousel {
   position: relative;
-  height: 580px;
+  width: 100%;
+  height: 500px;
 }
 
-.about-visual-main {
+.carousel-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0 32px 64px -28px rgba(13, 43, 53, 0.55);
+}
+
+.carousel-slide {
   position: absolute;
   inset: 0;
-  background-image: url('../images/hero-dental.jpg');
   background-size: cover;
   background-position: center;
-  border-radius: 0;
-  filter: contrast(1.04) saturate(1.05);
+  filter: contrast(1.05) saturate(1.06);
   image-rendering: -webkit-optimize-contrast;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1100ms ease, transform 6000ms ease-out;
 }
 
-/* Copper inset frame — thin line traced just inside the image edges */
-.about-visual-circle {
+.carousel-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel-caption {
   position: absolute;
-  top: 12px;
-  bottom: 12px;
-  left: 12px;
-  right: 12px;
-  border: 1px solid var(--copper);
-  border-radius: 0;
-  pointer-events: none;
-  z-index: 2;
+  left: -28px;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transform: rotate(-90deg);
+  transform-origin: left center;
+  z-index: 5;
 }
 
-.about-visual-accent {
-  display: none;
+.caption-line {
+  width: 36px;
+  height: 1px;
+  background: var(--copper);
+}
+
+.caption-text {
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--copper);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.carousel-badge {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 116px;
+  height: 116px;
+  background: var(--deep-teal);
+  color: var(--cream);
+  border-radius: 50%;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  z-index: 6;
+  border: 1px solid var(--copper);
+  box-shadow: 0 24px 48px -16px rgba(13, 43, 53, 0.6);
+  padding-top: 14px;
+}
+
+.carousel-badge::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(201, 136, 107, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.badge-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--copper);
+}
+
+.badge-plus {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--copper);
+  margin-left: 2px;
+  line-height: 1;
+}
+
+.badge-label {
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.52rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--cream);
+  font-weight: 400;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 5;
+}
+
+.carousel-dots .dot {
+  width: 28px;
+  height: 2px;
+  background: rgba(13, 43, 53, 0.18);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 400ms ease, width 400ms ease;
+}
+
+.carousel-dots .dot.is-active {
+  background: var(--copper);
+  width: 44px;
 }
 
 .about-content h2 { margin-bottom: 16px; }
@@ -784,13 +887,13 @@ section { padding: 40px 0; }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 8px;
 }
 
 .service-card {
   background: rgba(243, 233, 226, 0.04);
   border: 1px solid rgba(243, 233, 226, 0.08);
-  border-radius: 6px;
+  border-radius: 0;
   padding: 26px 24px;
   transition: all var(--transition);
   position: relative;
@@ -932,77 +1035,110 @@ section { padding: 40px 0; }
    ============================================ */
 .team-home { background: var(--bone); position: relative; }
 
-/* Compact 3-column doctor cards (home page) */
-.doctor-rows {
+/* 3-column doctor cards (home page) */
+.doctor-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
   position: relative;
 }
 
-.doctor-row {
+.doctor-card {
+  background: var(--deep-teal);
+  border-radius: 0;
+  padding: 18px 18px 28px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 18px 36px -22px rgba(13, 43, 53, 0.45);
 }
 
-.doctor-portrait-wrap {
+.doctor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 60px -28px rgba(13, 43, 53, 0.6);
+}
+
+.doctor-card-image {
   width: 100%;
-  max-width: none;
+  border-radius: 0;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.doctor-card-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.04) saturate(1.05);
+  image-rendering: -webkit-optimize-contrast;
+  transition: transform 0.6s ease;
+}
+
+.doctor-card:hover .doctor-card-image img {
+  transform: scale(1.04);
+}
+
+.doctor-card-body {
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.doctor-card-role {
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--copper);
+  font-weight: 500;
+}
+
+.doctor-card-name {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--cream);
   margin: 0;
 }
 
-.doctor-portrait {
-  width: 100%;
-  box-shadow: 0 22px 45px -22px rgba(13, 43, 53, 0.3);
+.doctor-card-bio {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(243, 233, 226, 0.72);
+  margin: 0;
 }
 
-.doctor-portrait img {
-  width: 100%;
-  aspect-ratio: 5 / 4;
-  object-fit: cover;
-  display: block;
-  max-height: 300px;
-}
-
-.doctor-text { padding: 0; }
-.doctor-text .eyebrow { margin-bottom: 8px; }
-.doctor-text h3 {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  margin-bottom: 8px;
-  color: var(--deep-teal);
-}
-.doctor-text p {
-  font-size: 0.9rem;
-  line-height: 1.55;
-  color: var(--muted);
-  margin-bottom: 0;
-}
-
-.doctor-stats {
-  display: flex;
-  gap: 24px;
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid var(--line-soft);
-}
-.doctor-stats > div { display: flex; flex-direction: column; gap: 4px; }
-.doctor-stats .num {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: var(--deep-teal);
-  line-height: 1;
-}
-.doctor-stats .label {
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
+.doctor-card-link {
+  margin-top: 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--copper);
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.doctor-card-link span {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.doctor-card-link:hover {
+  color: var(--cream);
+  gap: 14px;
+}
+
+.doctor-card-link:hover span {
+  transform: translateX(4px);
 }
 
 /* Decorative scattered dots */
@@ -1130,24 +1266,24 @@ section { padding: 40px 0; }
   border-top: 1px solid rgba(201, 136, 107, 0.22);
 }
 
-/* Large ghost watermark — fills visual emptiness editorially */
-.blog-home::before {
-  content: 'Journal';
+/* Faded brand mark next to "Notes from the chair" heading */
+.blog-home::after {
+  content: '';
   position: absolute;
-  right: -0.04em;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--font-display);
-  font-size: 18vw;
-  font-style: normal;
-  font-weight: 600;
-  color: rgba(13, 43, 53, 0.048);
+  left: 6%;
+  top: 40px;
+  width: 200px;
+  height: 200px;
+  background-image: url('../images/logo-mark.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.22;
   pointer-events: none;
-  white-space: nowrap;
-  line-height: 1;
-  user-select: none;
-  letter-spacing: -0.02em;
+  z-index: 0;
 }
+
+.blog-home > * { position: relative; z-index: 1; }
 
 .blog-grid {
   display: grid;
@@ -2140,7 +2276,9 @@ section { padding: 40px 0; }
   .hero-visual { min-height: 480px; }
 
   .about-grid { grid-template-columns: 1fr; gap: 60px; }
-  .about-visual { height: 460px; }
+  .about-collage { height: 460px; }
+  .collage-badge { width: 88px; height: 88px; }
+  .badge-num { font-size: 1.4rem; }
 
   .services-grid, .team-grid, .blog-grid, .blog-page-grid, .contact-grid {
     grid-template-columns: 1fr 1fr;
@@ -2161,8 +2299,7 @@ section { padding: 40px 0; }
     padding-right: 0;
   }
 
-  .doctor-rows { grid-template-columns: 1fr 1fr; gap: 28px; }
-  .doctor-stats { gap: 20px; flex-wrap: wrap; }
+  .doctor-cards { grid-template-columns: 1fr 1fr; gap: 24px; }
 
   .services-page-grid, .team-page-grid {
     grid-template-columns: 1fr;
@@ -2221,7 +2358,7 @@ section { padding: 40px 0; }
   .hero-content::before { display: none; }
   .hero-trust { flex-wrap: wrap; gap: 24px; }
 
-  .services-grid, .team-grid, .blog-grid, .blog-page-grid, .contact-grid {
+  .services-grid, .team-grid, .blog-grid, .blog-page-grid, .contact-grid, .doctor-cards {
     grid-template-columns: 1fr;
   }
 

@@ -93,4 +93,26 @@
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  // About-section carousel: auto-rotate slides + dot click
+  document.querySelectorAll('[data-carousel]').forEach((root) => {
+    const slides = root.querySelectorAll('.carousel-slide');
+    const dots = root.querySelectorAll('.carousel-dots .dot');
+    if (slides.length < 2) return;
+    let idx = 0;
+    let timer;
+    const goTo = (next) => {
+      slides[idx].classList.remove('is-active');
+      dots[idx]?.classList.remove('is-active');
+      idx = (next + slides.length) % slides.length;
+      slides[idx].classList.add('is-active');
+      dots[idx]?.classList.add('is-active');
+    };
+    const start = () => { timer = setInterval(() => goTo(idx + 1), 3000); };
+    const stop = () => clearInterval(timer);
+    dots.forEach((d, i) => d.addEventListener('click', () => { stop(); goTo(i); start(); }));
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    start();
+  });
+
 })();
