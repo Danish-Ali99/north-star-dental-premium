@@ -1,0 +1,43 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Small 4-point sparkle floating above compass — compact -->
+    <path d="M120,8 L123,22 L137,26 L123,30 L120,44 L117,30 L103,26 L117,22 Z"
+          fill="#000" stroke="none"/>
+
+    <!-- Cardinal triangle rays — shortened so they don't crowd the star -->
+    <path d="M120,52  L113,116 L127,116 Z"/>     <!-- N -->
+    <path d="M120,228 L113,176 L127,176 Z"/>     <!-- S -->
+    <path d="M16,148  L70,141  L70,155  Z"/>     <!-- W -->
+    <path d="M224,148 L170,141 L170,155 Z"/>     <!-- E -->
+
+    <!-- Diagonal triangle rays — bases at tooth's diagonal corners -->
+    <path d="M192,68 L150,118 L158,126 Z"/>      <!-- NE -->
+    <path d="M48,68  L90,118  L82,126  Z"/>      <!-- NW -->
+    <path d="M192,228 L152,188 L160,180 Z"/>     <!-- SE -->
+    <path d="M48,228  L88,188  L80,180  Z"/>     <!-- SW -->
+
+    <!-- Tooth outline: rounded crown, central dip, two roots with V-gap -->
+    <path d="M90,118
+             C76,114 64,128 70,148
+             C72,168 76,184 84,196
+             C88,202 94,202 96,200
+             C100,194 102,184 106,180
+             C110,176 116,176 120,176
+             C124,176 130,176 134,180
+             C138,184 140,194 144,200
+             C146,202 152,202 156,196
+             C164,184 168,168 170,148
+             C176,128 164,114 150,118
+             C140,122 130,132 120,134
+             C110,132 100,122 90,118 Z"/>
+
+    <!-- Internal swoosh/curl — flowing line inside the tooth -->
+    <path d="M104,148
+             C112,142 124,142 130,150
+             C134,158 128,164 120,164
+             C112,164 104,168 102,176
+             C100,184 110,188 122,184"/>
+
+  </g>
+</svg>
