@@ -495,7 +495,7 @@ p { margin-bottom: 1rem; color: var(--muted); }
 .hero-actions {
   display: flex;
   gap: 16px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-bottom: 30px;
 }
 
