@@ -1,17 +1,9 @@
 <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .mark-stroke { stroke: #0D2B35; }
-    .mark-fill { fill: #0D2B35; }
-    @media (prefers-color-scheme: dark) {
-      .mark-stroke { stroke: #C9886B; }
-      .mark-fill { fill: #C9886B; }
-    }
-  </style>
-  <g class="mark-stroke" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
 
     <!-- Small 4-point sparkle floating above compass — compact -->
-    <path class="mark-fill" d="M120,8 L123,22 L137,26 L123,30 L120,44 L117,30 L103,26 L117,22 Z"
-          stroke="none"/>
+    <path d="M120,8 L123,22 L137,26 L123,30 L120,44 L117,30 L103,26 L117,22 Z"
+          fill="#000" stroke="none"/>
 
     <!-- Cardinal triangle rays — shortened so they don't crowd the star -->
     <path d="M120,52  L113,116 L127,116 Z"/>     <!-- N -->
