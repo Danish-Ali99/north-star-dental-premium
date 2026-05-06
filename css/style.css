@@ -65,9 +65,9 @@ p { margin-bottom: 1rem; color: var(--muted); }
 
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 20px;
 }
 
 .eyebrow {
@@ -162,11 +162,11 @@ p { margin-bottom: 1rem; color: var(--muted); }
 .nav-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 20px 44px;
+  padding: 14px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 24px;
 }
 
 .brand {
@@ -177,13 +177,13 @@ p { margin-bottom: 1rem; color: var(--muted); }
 }
 
 .brand-logo {
-  width: 80px;
-  height: 64px;
+  width: 92px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-right: 18px;
+  margin-right: 8px;
 }
 
 .brand-logo img {
