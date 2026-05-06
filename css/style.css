@@ -385,6 +385,152 @@ p { margin-bottom: 1rem; color: var(--muted); }
 .menu-toggle { display: none; }
 
 /* ============================================
+   SERVICES MEGA DROPDOWN
+   ============================================ */
+.has-mega { position: relative; }
+
+.has-mega > a {
+  cursor: pointer;
+}
+
+.mega-chev {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.78rem;
+  line-height: 1;
+  color: currentColor;
+  transition: transform 220ms ease;
+}
+.has-mega:hover > a .mega-chev,
+.has-mega:focus-within > a .mega-chev,
+.has-mega.is-open > a .mega-chev {
+  transform: rotate(180deg);
+}
+
+.mega-menu {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  min-width: 280px;
+  background: #FBE3D2;
+  border: none;
+  box-shadow: 0 24px 50px -16px rgba(13, 43, 53, 0.35);
+  padding: 14px 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 220ms ease, visibility 0s 220ms;
+  z-index: 100;
+}
+
+.mega-menu::before {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: 0;
+  right: 0;
+  height: 18px;
+}
+
+.has-mega:hover > .mega-menu,
+.has-mega:focus-within > .mega-menu,
+.has-mega.is-open > .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 0s 0s;
+}
+
+.mega-cats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mega-cat { position: relative; }
+
+.mega-cat > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 24px;
+  color: var(--deep-teal) !important;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+}
+
+.mega-cat > a::after { display: none !important; }
+
+.mega-cat:hover > a,
+.mega-cat:focus-within > a {
+  background: var(--copper);
+  color: var(--cream) !important;
+}
+
+.mega-cat-chev {
+  margin-left: 24px;
+  font-size: 1.1rem;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.mega-sub {
+  position: absolute;
+  top: -14px;
+  left: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 14px 0;
+  min-width: 280px;
+  background: #FBE3D2;
+  border: none;
+  box-shadow: 0 24px 50px -16px rgba(13, 43, 53, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-8px);
+  transition: opacity 200ms ease, transform 200ms ease, visibility 0s 200ms;
+}
+
+.mega-cat:hover > .mega-sub,
+.mega-cat:focus-within > .mega-sub,
+.mega-cat.is-open > .mega-sub {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+  transition: opacity 200ms ease, transform 200ms ease, visibility 0s 0s;
+}
+
+.mega-sub li a {
+  display: block;
+  padding: 11px 24px;
+  color: var(--deep-teal) !important;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition), padding-left var(--transition);
+}
+
+.mega-sub li a::after { display: none !important; }
+
+.mega-sub li a:hover {
+  background: rgba(201, 136, 107, 0.14);
+  color: var(--copper) !important;
+  padding-left: 32px;
+}
+
+/* ============================================
    HERO
    ============================================ */
 .hero {
@@ -2362,6 +2508,48 @@ section { padding: 110px 0; }
   }
 
   .nav-links.open { transform: translateY(0); }
+
+  /* Mega-menu collapses inline on mobile */
+  .has-mega { width: 100%; }
+  .mega-chev { display: none; }
+  .mega-menu {
+    position: static;
+    transform: none !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 8px 0 0;
+    min-width: 0;
+  }
+  .mega-menu::before { display: none; }
+  .mega-cat > a {
+    padding: 10px 0;
+    color: var(--cream) !important;
+    font-size: 0.82rem;
+  }
+  .mega-cat:hover > a { background: transparent; color: var(--copper-soft) !important; }
+  .mega-cat-chev { display: none; }
+  .mega-sub {
+    position: static;
+    transform: none !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0 0 6px 16px;
+    min-width: 0;
+  }
+  .mega-sub li a {
+    padding: 7px 0;
+    color: rgba(243, 233, 226, 0.8) !important;
+    font-size: 0.72rem;
+  }
+  .mega-sub li a:hover { background: transparent; padding-left: 0; color: var(--copper-soft) !important; }
 
   .nav-cta .btn:not(.menu-toggle) { display: none; }
   .menu-toggle {

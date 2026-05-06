@@ -126,6 +126,62 @@
     }
   }
 
+  // Click-to-toggle for the Services mega-menu (in addition to hover)
+  document.querySelectorAll('.has-mega').forEach((mega) => {
+    const trigger = mega.querySelector(':scope > a');
+    if (!trigger) return;
+    trigger.addEventListener('click', (e) => {
+      // On desktop, intercept the first click to reveal the menu; second click follows the link
+      if (window.innerWidth > 768 && !mega.classList.contains('is-open')) {
+        e.preventDefault();
+        document.querySelectorAll('.has-mega.is-open').forEach((m) => {
+          if (m !== mega) m.classList.remove('is-open');
+        });
+        mega.classList.add('is-open');
+      }
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.has-mega')) {
+      document.querySelectorAll('.has-mega.is-open').forEach((m) => m.classList.remove('is-open'));
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.has-mega.is-open').forEach((m) => m.classList.remove('is-open'));
+    }
+  });
+
+  // Open the right service / category when arriving via #hash from the mega-menu
+  const handleServiceHash = () => {
+    const hash = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+    if (!hash) return;
+
+    const categories = ['cosmetic', 'restorative', 'preventive', 'specialty', 'family'];
+    if (categories.includes(hash)) {
+      const catBtn = document.querySelector(`.faq-cat[data-cat="${hash}"]`);
+      if (catBtn) catBtn.click();
+      const cats = document.querySelector('.faq-categories');
+      if (cats) cats.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    const item = document.getElementById(hash);
+    if (!item || !item.classList.contains('faq-item')) return;
+
+    const allBtn = document.querySelector('.faq-cat[data-cat="all"]');
+    if (allBtn && !allBtn.classList.contains('active')) allBtn.click();
+
+    if (!item.classList.contains('active')) {
+      const q = item.querySelector('.faq-question');
+      if (q) q.click();
+    }
+
+    setTimeout(() => item.scrollIntoView({ behavior: 'smooth', block: 'center' }), 220);
+  };
+  window.addEventListener('load', handleServiceHash);
+  window.addEventListener('hashchange', handleServiceHash);
+
   // About-section carousel: auto-rotate slides + dot click
   document.querySelectorAll('[data-carousel]').forEach((root) => {
     const slides = root.querySelectorAll('.carousel-slide');

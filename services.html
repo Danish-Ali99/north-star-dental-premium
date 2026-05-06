@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Poppins:wght@300;400;500;600&display=swap" />
-  <link rel="stylesheet" href="css/style.css?v=72" />
+  <link rel="stylesheet" href="css/style.css?v=75" />
 </head>
 <body>
   <nav class="nav">
@@ -26,7 +26,62 @@
       </a>
       <ul class="nav-links">
         <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
+        <li class="has-mega"><a href="services.html" class="active">Services <svg class="mega-chev" width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1L5.5 5.5L10 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-menu" role="menu">
+            <ul class="mega-cats">
+              <li class="mega-cat">
+                <a href="services.html#cosmetic">Cosmetic<span class="mega-cat-chev" aria-hidden="true">›</span></a>
+                <ul class="mega-sub">
+                  <li><a href="services.html#teeth-whitening">Teeth Whitening</a></li>
+                  <li><a href="services.html#smile-makeover">Smile Makeover</a></li>
+                  <li><a href="services.html#dental-veneers">Dental Veneers</a></li>
+                  <li><a href="services.html#smile-designing">Smile Designing</a></li>
+                  <li><a href="services.html#digital-smile-design">Digital Smile Design</a></li>
+                </ul>
+              </li>
+              <li class="mega-cat">
+                <a href="services.html#restorative">Restorative<span class="mega-cat-chev" aria-hidden="true">›</span></a>
+                <ul class="mega-sub">
+                  <li><a href="services.html#dental-implants">Dental Implants</a></li>
+                  <li><a href="services.html#root-canal">Root Canal Treatment</a></li>
+                  <li><a href="services.html#tooth-filling">Tooth Filling</a></li>
+                  <li><a href="services.html#tooth-extraction">Tooth Extraction</a></li>
+                  <li><a href="services.html#crowns-bridges">Crowns &amp; Bridges</a></li>
+                  <li><a href="services.html#dentures">Dentures</a></li>
+                  <li><a href="services.html#full-mouth-rehab">Full Mouth Rehabilitation</a></li>
+                </ul>
+              </li>
+              <li class="mega-cat">
+                <a href="services.html#preventive">Preventive<span class="mega-cat-chev" aria-hidden="true">›</span></a>
+                <ul class="mega-sub">
+                  <li><a href="services.html#teeth-cleaning">Teeth Cleaning &amp; Scaling</a></li>
+                  <li><a href="services.html#dental-checkup">Dental Check-up</a></li>
+                  <li><a href="services.html#bad-breath">Bad Breath Treatment</a></li>
+                  <li><a href="services.html#tooth-sensitivity">Tooth Sensitivity</a></li>
+                  <li><a href="services.html#mouth-ulcer">Mouth Ulcer Treatment</a></li>
+                </ul>
+              </li>
+              <li class="mega-cat">
+                <a href="services.html#specialty">Specialty<span class="mega-cat-chev" aria-hidden="true">›</span></a>
+                <ul class="mega-sub">
+                  <li><a href="services.html#braces-aligners">Braces &amp; Aligners</a></li>
+                  <li><a href="services.html#gum-treatment">Gum Treatment</a></li>
+                  <li><a href="services.html#laser-dentistry">Laser Dentistry</a></li>
+                  <li><a href="services.html#sedation">Sedation Dentistry</a></li>
+                  <li><a href="services.html#tmj">TMJ / Jaw Pain</a></li>
+                  <li><a href="services.html#sleep-apnea">Sleep Apnea / Snoring</a></li>
+                </ul>
+              </li>
+              <li class="mega-cat">
+                <a href="services.html#family">Family<span class="mega-cat-chev" aria-hidden="true">›</span></a>
+                <ul class="mega-sub">
+                  <li><a href="services.html#pediatric">Pediatric Dentistry</a></li>
+                  <li><a href="services.html#emergency">Emergency Dental Care</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </li>
         <li><a href="team.html">Our Team</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="location.html">Location</a></li>
@@ -63,7 +118,7 @@
 
       <div class="faq-wrap services-accordion fade-in">
         <!-- COSMETIC -->
-        <div class="faq-item" data-cat="cosmetic">
+        <div class="faq-item" data-cat="cosmetic" id="teeth-whitening">
           <button class="faq-question">Teeth Whitening<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.pexels.com/photos/6627570/pexels-photo-6627570.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop');"></div>
@@ -71,7 +126,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="cosmetic">
+        <div class="faq-item" data-cat="cosmetic" id="smile-makeover">
           <button class="faq-question">Smile Makeover<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.pexels.com/photos/6627574/pexels-photo-6627574.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop');"></div>
@@ -79,7 +134,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="cosmetic">
+        <div class="faq-item" data-cat="cosmetic" id="dental-veneers">
           <button class="faq-question">Dental Veneers<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -87,7 +142,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="cosmetic">
+        <div class="faq-item" data-cat="cosmetic" id="smile-designing">
           <button class="faq-question">Smile Designing<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1571772996211-2f02c9727629?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -95,7 +150,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="cosmetic">
+        <div class="faq-item" data-cat="cosmetic" id="digital-smile-design">
           <button class="faq-question">Digital Smile Design (DSD)<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -104,7 +159,7 @@
         </div>
 
         <!-- RESTORATIVE -->
-        <div class="faq-item" data-cat="restorative">
+        <div class="faq-item" data-cat="restorative" id="dental-implants">
           <button class="faq-question">Dental Implants<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -112,7 +167,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="restorative">
+        <div class="faq-item" data-cat="restorative" id="root-canal">
           <button class="faq-question">Root Canal Treatment (RCT)<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.pexels.com/photos/3779691/pexels-photo-3779691.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop');"></div>
@@ -120,7 +175,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="restorative">
+        <div class="faq-item" data-cat="restorative" id="tooth-filling">
           <button class="faq-question">Tooth Filling (Cavities Treatment)<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.pexels.com/photos/6627569/pexels-photo-6627569.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop');"></div>
@@ -128,7 +183,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="restorative">
+        <div class="faq-item" data-cat="restorative" id="tooth-extraction">
           <button class="faq-question">Tooth Extraction (Wisdom Tooth Removal)<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -136,7 +191,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="restorative">
+        <div class="faq-item" data-cat="restorative" id="crowns-bridges">
           <button class="faq-question">Dental Crowns & Bridges<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1518152006812-edab29b069ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -144,7 +199,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="restorative">
+        <div class="faq-item" data-cat="restorative" id="dentures">
           <button class="faq-question">Dentures (Full & Partial)<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.pexels.com/photos/6502342/pexels-photo-6502342.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop');"></div>
@@ -152,7 +207,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="restorative">
+        <div class="faq-item" data-cat="restorative" id="full-mouth-rehab">
           <button class="faq-question">Full Mouth Rehabilitation<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-daab30f310ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -161,7 +216,7 @@
         </div>
 
         <!-- PREVENTIVE -->
-        <div class="faq-item" data-cat="preventive">
+        <div class="faq-item" data-cat="preventive" id="teeth-cleaning">
           <button class="faq-question">Teeth Cleaning & Scaling<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.pexels.com/photos/4269694/pexels-photo-4269694.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop');"></div>
@@ -169,7 +224,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="preventive">
+        <div class="faq-item" data-cat="preventive" id="dental-checkup">
           <button class="faq-question">Dental Check-up & Consultation<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop');"></div>
@@ -177,7 +232,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="preventive">
+        <div class="faq-item" data-cat="preventive" id="bad-breath">
           <button class="faq-question">Bad Breath Treatment<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.pexels.com/photos/5355833/pexels-photo-5355833.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop');"></div>
@@ -185,7 +240,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="preventive">
+        <div class="faq-item" data-cat="preventive" id="tooth-sensitivity">
           <button class="faq-question">Tooth Sensitivity Treatment<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -193,7 +248,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="preventive">
+        <div class="faq-item" data-cat="preventive" id="mouth-ulcer">
           <button class="faq-question">Mouth Ulcer Treatment<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -202,7 +257,7 @@
         </div>
 
         <!-- SPECIALTY -->
-        <div class="faq-item" data-cat="specialty">
+        <div class="faq-item" data-cat="specialty" id="braces-aligners">
           <button class="faq-question">Braces & Aligners (Invisalign)<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -210,7 +265,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="specialty">
+        <div class="faq-item" data-cat="specialty" id="gum-treatment">
           <button class="faq-question">Gum Treatment (Periodontics)<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -218,7 +273,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="specialty">
+        <div class="faq-item" data-cat="specialty" id="laser-dentistry">
           <button class="faq-question">Laser Dentistry<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.pexels.com/photos/4269691/pexels-photo-4269691.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop');"></div>
@@ -226,7 +281,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="specialty">
+        <div class="faq-item" data-cat="specialty" id="sedation">
           <button class="faq-question">Sedation Dentistry (Pain-Free Dentistry)<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.pexels.com/photos/305568/pexels-photo-305568.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop');"></div>
@@ -234,7 +289,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="specialty">
+        <div class="faq-item" data-cat="specialty" id="tmj">
           <button class="faq-question">TMJ / Jaw Pain Treatment<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.pexels.com/photos/6502342/pexels-photo-6502342.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop');"></div>
@@ -242,7 +297,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="specialty">
+        <div class="faq-item" data-cat="specialty" id="sleep-apnea">
           <button class="faq-question">Sleep Apnea / Snoring Solutions<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.pexels.com/photos/7195294/pexels-photo-7195294.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop');"></div>
@@ -251,7 +306,7 @@
         </div>
 
         <!-- FAMILY -->
-        <div class="faq-item" data-cat="family">
+        <div class="faq-item" data-cat="family" id="pediatric">
           <button class="faq-question">Pediatric Dentistry (Kids Dentist)<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -259,7 +314,7 @@
           </div></div>
         </div>
 
-        <div class="faq-item" data-cat="family">
+        <div class="faq-item" data-cat="family" id="emergency">
           <button class="faq-question">Emergency Dental Care<span class="faq-icon">+</span></button>
           <div class="faq-answer"><div class="faq-answer-inner service-detail">
             <div class="service-detail-image" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85');"></div>
@@ -313,6 +368,6 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
   </a>
 
-  <script src="js/main.js?v=8"></script>
+  <script src="js/main.js?v=10"></script>
 </body>
 </html>
