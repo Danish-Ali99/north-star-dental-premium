@@ -93,6 +93,39 @@
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  // Scroll-spy: highlight nav link for the section currently in view
+  const spyLinks = document.querySelectorAll('.nav-links a[data-section]');
+  if (spyLinks.length && 'IntersectionObserver' in window) {
+    const sectionMap = new Map();
+    spyLinks.forEach((link) => {
+      const sec = document.getElementById(link.dataset.section);
+      if (sec) sectionMap.set(sec, link);
+    });
+    if (sectionMap.size) {
+      const visible = new Map();
+      const spyObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) visible.set(e.target, e.intersectionRatio);
+            else visible.delete(e.target);
+          });
+          if (visible.size) {
+            let bestEl = null;
+            let bestRatio = -1;
+            visible.forEach((ratio, el) => {
+              if (ratio > bestRatio) { bestRatio = ratio; bestEl = el; }
+            });
+            spyLinks.forEach((l) => l.classList.remove('active'));
+            const link = sectionMap.get(bestEl);
+            if (link) link.classList.add('active');
+          }
+        },
+        { threshold: [0.25, 0.5, 0.75], rootMargin: '-100px 0px -40% 0px' }
+      );
+      sectionMap.forEach((_, sec) => spyObserver.observe(sec));
+    }
+  }
+
   // About-section carousel: auto-rotate slides + dot click
   document.querySelectorAll('[data-carousel]').forEach((root) => {
     const slides = root.querySelectorAll('.carousel-slide');
