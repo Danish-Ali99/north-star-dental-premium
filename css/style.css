@@ -167,16 +167,6 @@ p { margin-bottom: 1rem; color: var(--muted); }
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  position: relative;
-}
-
-/* Center the nav links absolutely so they sit at the true centre of the bar
-   regardless of how wide the brand or cta are */
-.nav-inner > .nav-links {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .brand {
