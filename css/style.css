@@ -162,11 +162,21 @@ p { margin-bottom: 1rem; color: var(--muted); }
 .nav-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 14px 24px 14px 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  position: relative;
+}
+
+/* Center the nav links absolutely so they sit at the true centre of the bar
+   regardless of how wide the brand or cta are */
+.nav-inner > .nav-links {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .brand {
@@ -268,10 +278,10 @@ p { margin-bottom: 1rem; color: var(--muted); }
   background: var(--cream);
   color: var(--deep-teal);
   border-color: var(--cream);
-  padding: 13px 34px;
-  letter-spacing: 0.2em;
+  padding: 14px 56px;
+  letter-spacing: 0.22em;
   border-radius: 100px;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
 }
 
 .nav .btn-primary:hover {
