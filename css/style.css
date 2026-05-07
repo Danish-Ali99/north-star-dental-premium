@@ -530,6 +530,18 @@ p { margin-bottom: 1rem; color: var(--muted); }
   padding-left: 32px;
 }
 
+/* Right-anchored variant for dropdowns near the end of the nav */
+.has-mega-end .mega-menu {
+  left: auto;
+  right: 0;
+  transform: translateX(0) translateY(-8px);
+}
+.has-mega-end:hover > .mega-menu,
+.has-mega-end:focus-within > .mega-menu,
+.has-mega-end.is-open > .mega-menu {
+  transform: translateX(0) translateY(0);
+}
+
 /* ============================================
    HERO
    ============================================ */
