@@ -2882,7 +2882,7 @@ section { padding: 110px 0; }
   background: var(--deep-teal);
   position: relative;
   overflow: hidden;
-  padding: 170px 0 110px;
+  padding: 110px 0 70px;
 }
 .service-page-hero::before {
   content: '';
@@ -3107,7 +3107,7 @@ section { padding: 110px 0; }
 .service-faq-grid .faq-item.active .faq-answer { max-height: 420px; }
 
 @media (max-width: 920px) {
-  .service-page-hero { padding: 140px 0 80px; }
+  .service-page-hero { padding: 95px 0 55px; }
   .service-detail-section { padding: 70px 0; }
   .service-cta { padding: 70px 0; }
   .service-cta-inner {
