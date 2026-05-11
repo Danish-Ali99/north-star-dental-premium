@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="css/style.css?v=91" />
+  <link rel="stylesheet" href="css/style.css?v=93" />
 </head>
 <body>
   <!-- Navigation -->
@@ -231,50 +231,99 @@
   </section>
 
   <!-- TEAM (HOME PREVIEW) -->
-  <section class="team-home" id="team">
+  <!-- CINEMATIC QUOTE -->
+  <section class="cinema-quote">
+    <div class="cinema-quote-inner fade-in">
+      <span class="cinema-quote-mark" aria-hidden="true">&ldquo;</span>
+      <blockquote class="cinema-quote-text">The best dentistry is the kind you <em>barely notice</em>.</blockquote>
+      <span class="cinema-quote-attr">Dr. Anya Verma &middot; Founder</span>
+    </div>
+  </section>
+
+  <!-- DOCTOR SPOTLIGHT (HOME) -->
+  <section class="doctor-spotlight" id="team">
     <div class="container">
       <div class="section-head fade-in">
         <span class="eyebrow">Our Team</span>
         <h2 class="section-title">The people behind your smile.</h2>
-        <p>Specialists chosen as much for warmth as for technique — because exceptional care is always a partnership.</p>
+        <p>One specialist at a time — meet the hands and minds behind every quiet outcome.</p>
       </div>
-      <div class="doctor-cards">
-        <article class="doctor-card fade-in">
-          <div class="doctor-card-image">
-            <img src="https://images.unsplash.com/photo-1612531386530-97286d97c2d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85" alt="Dr. Anya Verma" />
+      <div class="spotlight-stage fade-in" data-spotlight>
+        <div class="spotlight-slide is-active" data-index="0">
+          <div class="spotlight-image">
+            <img src="https://images.unsplash.com/photo-1612531386530-97286d97c2d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85" alt="Dr. Anya Verma" loading="lazy" />
+            <span class="spotlight-frame" aria-hidden="true"></span>
           </div>
-          <div class="doctor-card-body">
-            <span class="doctor-card-role">Founder · Cosmetic Lead</span>
-            <h3 class="doctor-card-name">Dr. Anya Verma</h3>
-            <p class="doctor-card-bio">Fifteen years refining smiles across three continents. Known for porcelain veneer work that genuinely disappears.</p>
-            <a href="team.html" class="doctor-card-link">Read More <span aria-hidden="true">→</span></a>
+          <div class="spotlight-body">
+            <span class="spotlight-eyebrow">Founder &middot; Cosmetic Lead</span>
+            <h3 class="spotlight-name">Dr. Anya Verma</h3>
+            <p class="spotlight-signature">Signature: porcelain veneer work that disappears.</p>
+            <p class="spotlight-quote">&ldquo;My job is to make you forget you ever needed me.&rdquo;</p>
+            <a href="team.html" class="spotlight-link">Full Profile <span aria-hidden="true">&rarr;</span></a>
           </div>
-        </article>
-        <article class="doctor-card fade-in">
-          <div class="doctor-card-image">
-            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85" alt="Dr. Marcus Hale" />
+        </div>
+        <div class="spotlight-slide" data-index="1">
+          <div class="spotlight-image">
+            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85" alt="Dr. Marcus Hale" loading="lazy" />
+            <span class="spotlight-frame" aria-hidden="true"></span>
           </div>
-          <div class="doctor-card-body">
-            <span class="doctor-card-role">Implantologist · Restorative</span>
-            <h3 class="doctor-card-name">Dr. Marcus Hale</h3>
-            <p class="doctor-card-bio">A restorative specialist with a quiet chair-side manner. Places more implants in a year than most clinics see in five.</p>
-            <a href="team.html" class="doctor-card-link">Read More <span aria-hidden="true">→</span></a>
+          <div class="spotlight-body">
+            <span class="spotlight-eyebrow">Implantologist &middot; Restorative</span>
+            <h3 class="spotlight-name">Dr. Marcus Hale</h3>
+            <p class="spotlight-signature">Signature: same-day implant placement, no theatrics.</p>
+            <p class="spotlight-quote">&ldquo;A good implant is one the patient stops thinking about.&rdquo;</p>
+            <a href="team.html" class="spotlight-link">Full Profile <span aria-hidden="true">&rarr;</span></a>
           </div>
-        </article>
-        <article class="doctor-card fade-in">
-          <div class="doctor-card-image">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85" alt="Dr. Lina Okafor" />
+        </div>
+        <div class="spotlight-slide" data-index="2">
+          <div class="spotlight-image">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85" alt="Dr. Lina Okafor" loading="lazy" />
+            <span class="spotlight-frame" aria-hidden="true"></span>
           </div>
-          <div class="doctor-card-body">
-            <span class="doctor-card-role">Orthodontist · Aligner Specialist</span>
-            <h3 class="doctor-card-name">Dr. Lina Okafor</h3>
-            <p class="doctor-card-bio">An aligner specialist with an architect's eye. Plans every smile in 3D before the first tray is touched.</p>
-            <a href="team.html" class="doctor-card-link">Read More <span aria-hidden="true">→</span></a>
+          <div class="spotlight-body">
+            <span class="spotlight-eyebrow">Orthodontist &middot; Aligner Specialist</span>
+            <h3 class="spotlight-name">Dr. Lina Okafor</h3>
+            <p class="spotlight-signature">Signature: every smile planned in 3D before tray one.</p>
+            <p class="spotlight-quote">&ldquo;Straight teeth are the easy part. The plan is everything.&rdquo;</p>
+            <a href="team.html" class="spotlight-link">Full Profile <span aria-hidden="true">&rarr;</span></a>
           </div>
-        </article>
+        </div>
+        <div class="spotlight-controls" role="tablist" aria-label="Featured doctor">
+          <button class="spotlight-dot is-active" data-target="0" aria-label="Dr. Anya Verma"></button>
+          <button class="spotlight-dot" data-target="1" aria-label="Dr. Marcus Hale"></button>
+          <button class="spotlight-dot" data-target="2" aria-label="Dr. Lina Okafor"></button>
+        </div>
       </div>
       <div class="services-cta fade-in">
         <a href="team.html" class="btn btn-outline">Meet The Full Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOME COUNTERS -->
+  <section class="outcome-counters" id="outcomes">
+    <div class="container">
+      <div class="counter-head fade-in">
+        <span class="eyebrow">By The Numbers</span>
+        <h2 class="section-title">Quiet work, loud outcomes.</h2>
+      </div>
+      <div class="counter-grid fade-in" data-counters>
+        <div class="counter-item">
+          <span class="counter-num"><span class="counter-val" data-target="2150">0</span><span class="counter-suffix">+</span></span>
+          <span class="counter-label">Smiles Transformed</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-num"><span class="counter-val" data-target="850">0</span><span class="counter-suffix">+</span></span>
+          <span class="counter-label">Implants Placed</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-num"><span class="counter-val" data-target="15">0</span><span class="counter-suffix">+</span></span>
+          <span class="counter-label">Years of Craft</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-num"><span class="counter-val" data-target="98">0</span><span class="counter-suffix">%</span></span>
+          <span class="counter-label">Return Patients</span>
+        </div>
       </div>
     </div>
   </section>
@@ -316,6 +365,91 @@
             <span class="service-link">Read Article</span>
           </div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATIENT QUOTES MARQUEE -->
+  <section class="quote-marquee" id="testimonials">
+    <div class="container">
+      <div class="section-head fade-in">
+        <span class="eyebrow">In Their Words</span>
+        <h2 class="section-title">Stories from real patients.</h2>
+        <p>Unprompted notes, unedited &mdash; the quiet kind of feedback we work for.</p>
+      </div>
+    </div>
+    <div class="marquee-track fade-in">
+      <div class="marquee-strip">
+        <article class="marquee-card">
+          <p>&ldquo;Best dental experience I've had. Calm, gentle, and zero pressure.&rdquo;</p>
+          <span class="marquee-attr">Priya M. &middot; Implants</span>
+        </article>
+        <article class="marquee-card">
+          <p>&ldquo;They didn't push treatment. They explained everything. Rare.&rdquo;</p>
+          <span class="marquee-attr">Rahul S. &middot; Veneers</span>
+        </article>
+        <article class="marquee-card">
+          <p>&ldquo;My five-year-old asked when she could come back. That's a first.&rdquo;</p>
+          <span class="marquee-attr">Anjali K. &middot; Family Dentistry</span>
+        </article>
+        <article class="marquee-card">
+          <p>&ldquo;Same-day pain relief at 9pm. I owe them.&rdquo;</p>
+          <span class="marquee-attr">Marcus T. &middot; Emergency</span>
+        </article>
+        <article class="marquee-card">
+          <p>&ldquo;Whitening that actually lasted. Zero sensitivity.&rdquo;</p>
+          <span class="marquee-attr">Sneha P. &middot; Whitening</span>
+        </article>
+        <article class="marquee-card">
+          <p>&ldquo;Aligners without the hard sell. Honest plan, fair price.&rdquo;</p>
+          <span class="marquee-attr">Karan D. &middot; Invisalign</span>
+        </article>
+        <article class="marquee-card">
+          <p>&ldquo;I've finally found a dentist I'll actually keep going back to.&rdquo;</p>
+          <span class="marquee-attr">Maya R. &middot; Cleanings</span>
+        </article>
+        <article class="marquee-card">
+          <p>&ldquo;The 3D scan was wild. The chair-side manner, even better.&rdquo;</p>
+          <span class="marquee-attr">Vikram J. &middot; Crowns</span>
+        </article>
+        <!-- duplicate set for seamless loop -->
+        <article class="marquee-card" aria-hidden="true">
+          <p>&ldquo;Best dental experience I've had. Calm, gentle, and zero pressure.&rdquo;</p>
+          <span class="marquee-attr">Priya M. &middot; Implants</span>
+        </article>
+        <article class="marquee-card" aria-hidden="true">
+          <p>&ldquo;They didn't push treatment. They explained everything. Rare.&rdquo;</p>
+          <span class="marquee-attr">Rahul S. &middot; Veneers</span>
+        </article>
+        <article class="marquee-card" aria-hidden="true">
+          <p>&ldquo;My five-year-old asked when she could come back. That's a first.&rdquo;</p>
+          <span class="marquee-attr">Anjali K. &middot; Family Dentistry</span>
+        </article>
+        <article class="marquee-card" aria-hidden="true">
+          <p>&ldquo;Same-day pain relief at 9pm. I owe them.&rdquo;</p>
+          <span class="marquee-attr">Marcus T. &middot; Emergency</span>
+        </article>
+        <article class="marquee-card" aria-hidden="true">
+          <p>&ldquo;Whitening that actually lasted. Zero sensitivity.&rdquo;</p>
+          <span class="marquee-attr">Sneha P. &middot; Whitening</span>
+        </article>
+        <article class="marquee-card" aria-hidden="true">
+          <p>&ldquo;Aligners without the hard sell. Honest plan, fair price.&rdquo;</p>
+          <span class="marquee-attr">Karan D. &middot; Invisalign</span>
+        </article>
+        <article class="marquee-card" aria-hidden="true">
+          <p>&ldquo;I've finally found a dentist I'll actually keep going back to.&rdquo;</p>
+          <span class="marquee-attr">Maya R. &middot; Cleanings</span>
+        </article>
+        <article class="marquee-card" aria-hidden="true">
+          <p>&ldquo;The 3D scan was wild. The chair-side manner, even better.&rdquo;</p>
+          <span class="marquee-attr">Vikram J. &middot; Crowns</span>
+        </article>
+      </div>
+    </div>
+    <div class="container">
+      <div class="services-cta fade-in">
+        <a href="faq.html" class="btn btn-outline">Read Full FAQ</a>
       </div>
     </div>
   </section>
@@ -367,67 +501,6 @@
         <div class="location-map">
           <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=77.20%2C28.60%2C77.25%2C28.65&layer=mapnik" loading="lazy" title="Clinic location"></iframe>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ (HOME PREVIEW) -->
-  <section class="faq-home" id="faq">
-    <div class="container">
-      <div class="section-head fade-in">
-        <span class="eyebrow">Common Questions</span>
-        <h2 class="section-title">Things you've probably wondered.</h2>
-        <p>Quick, honest answers — written by our clinicians, not a marketing team.</p>
-      </div>
-      <div class="faq-wrap fade-in">
-        <div class="faq-item">
-          <button class="faq-question">
-            How do I book my first appointment?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Use the "Book Visit" button anywhere on this site, or message us on WhatsApp. New patients usually start with a 30-minute consultation — quiet, unhurried, and with no obligation to proceed.</div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            Do you accept dental insurance?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Yes. We work with most major insurers and will gladly process claims on your behalf. We also offer transparent self-pay pricing for treatments outside coverage.</div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            What can I expect from my first visit?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">A conversation, an examination, and a written plan. No pressure, no upselling — we'll explain what's necessary, what's optional, and what can wait.</div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            Do you treat children and families?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Absolutely. We see entire families — from first visits at age three to grandparents needing implants. Many of our patients have been with us across generations.</div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            How quickly can I be seen for an emergency?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Same-day, in most cases. Call us — or message on WhatsApp — and we'll find space in the schedule. Pain shouldn't wait.</div>
-          </div>
-        </div>
-      </div>
-      <div class="services-cta fade-in">
-        <a href="faq.html" class="btn btn-outline">View All Questions</a>
       </div>
     </div>
   </section>
@@ -512,6 +585,22 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
   </a>
 
-  <script src="js/main.js?v=10"></script>
+  <!-- STICKY ACTION BAR -->
+  <div class="sticky-cta" data-sticky-cta aria-label="Quick actions">
+    <a href="https://click4appointment.com/clinic-details/drvdentalaesthetics-3361" target="_blank" rel="noopener" class="sticky-cta-btn sticky-cta-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+      <span>Book Visit</span>
+    </a>
+    <a href="tel:+919035462760" class="sticky-cta-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 01-1.1 1A19 19 0 012 4.1 1 1 0 013 3h4a1 1 0 011 .8c.1.9.3 1.8.6 2.6a1 1 0 01-.2 1L6.6 9a16 16 0 008.4 8.4l1.6-1.8a1 1 0 011-.2c.8.3 1.7.5 2.6.6a1 1 0 01.8 1z"/></svg>
+      <span>Call</span>
+    </a>
+    <a href="https://wa.me/919035462760?text=Hello%20North%20Star%20Dental%2C%20I%27d%20like%20to%20enquire%20about%20an%20appointment." target="_blank" rel="noopener" class="sticky-cta-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+
+  <script src="js/main.js?v=11"></script>
 </body>
 </html>
