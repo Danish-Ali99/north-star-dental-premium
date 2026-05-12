@@ -103,22 +103,28 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 
 .eyebrow::before {
   content: '';
-  width: 30px;
-  height: 1px;
-  background: var(--copper);
-  opacity: 0.85;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: var(--copper);
+  -webkit-mask: url('../images/logo-mark.svg') center/contain no-repeat;
+          mask: url('../images/logo-mark.svg') center/contain no-repeat;
+  opacity: 0.9;
+  flex-shrink: 0;
 }
 
-/* When .eyebrow-flanked is also applied, add a second line on the right */
 .eyebrow.eyebrow-flanked::after {
   content: '';
-  width: 30px;
-  height: 1px;
-  background: var(--copper);
-  opacity: 0.85;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: var(--copper);
+  -webkit-mask: url('../images/logo-mark.svg') center/contain no-repeat;
+          mask: url('../images/logo-mark.svg') center/contain no-repeat;
+  opacity: 0.9;
+  flex-shrink: 0;
 }
 
-/* Hide nested .eyebrow-line spans if any markup still uses them (legacy) */
 .eyebrow .eyebrow-line { display: none; }
 
 .section-title {
@@ -639,10 +645,60 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
   font-weight: 600;
   font-style: normal;
   font-size: clamp(1.6rem, 2.4vw, 1.95rem);
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.005em;
   margin-bottom: 22px;
   color: var(--deep-teal);
+}
+
+/* Hero headline word-by-word reveal */
+.hero-headline {
+  display: block;
+}
+
+.hero-headline .hero-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  margin-right: 0.18em;
+  line-height: 1.25;
+}
+
+.hero-headline .hero-word > span {
+  display: inline-block;
+  transform: translateY(115%);
+  animation: heroWordRise 950ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-headline .hero-word:nth-child(1) > span { animation-delay: 200ms; }
+.hero-headline .hero-word:nth-child(2) > span { animation-delay: 320ms; }
+.hero-headline .hero-word:nth-child(3) > span { animation-delay: 440ms; }
+.hero-headline .hero-word:nth-child(4) > span { animation-delay: 560ms; color: var(--copper); }
+
+@keyframes heroWordRise {
+  from { transform: translateY(115%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-headline .hero-word > span {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Hero subtitle fades in after the last word lands */
+.hero-subtitle {
+  opacity: 0;
+  animation: heroSubFade 800ms cubic-bezier(0.22, 1, 0.36, 1) 900ms forwards;
+}
+
+@keyframes heroSubFade {
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-subtitle { animation: none; opacity: 1; }
 }
 
 .hero h1 em {
@@ -928,7 +984,7 @@ section { padding: 110px 0; }
 .team-home,
 .reviews-home,
 .blog-home {
-  padding: 110px 0;
+  padding: 150px 0;
 }
 
 .about-home {
@@ -1738,7 +1794,28 @@ section { padding: 110px 0; }
   gap: 24px;
 }
 
+.reviews-intro {
+  position: relative;
+}
+
+.reviews-intro::before {
+  content: '';
+  position: absolute;
+  top: -78px;
+  left: -42px;
+  width: 220px;
+  height: 220px;
+  background-color: var(--deep-teal);
+  -webkit-mask: url('../images/logo-mark.svg') center/contain no-repeat;
+          mask: url('../images/logo-mark.svg') center/contain no-repeat;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .reviews-title {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 1.5rem;
@@ -1857,8 +1934,8 @@ section { padding: 110px 0; }
 }
 
 @media (max-width: 720px) {
-  .reviews-home { padding: 80px 0; }
-  .about-home, .services-home, .team-home, .blog-home { padding: 80px 0; }
+  .reviews-home { padding: 100px 0; }
+  .about-home, .services-home, .team-home, .blog-home { padding: 100px 0; }
   .reviews-corner { width: 56px; height: 56px; }
   .reviews-corner--tl { top: 28px; left: 28px; }
   .reviews-corner--br { bottom: 28px; right: 28px; }
