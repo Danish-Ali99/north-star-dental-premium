@@ -207,4 +207,31 @@
     start();
   });
 
+  // Scroll-driven parallax for the quote section background
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    document.querySelectorAll('[data-parallax]').forEach((section) => {
+      const bg = section.querySelector('[data-parallax-bg]');
+      if (!bg) return;
+      let ticking = false;
+      const update = () => {
+        const rect = section.getBoundingClientRect();
+        const vh = window.innerHeight;
+        if (rect.bottom < 0 || rect.top > vh) { ticking = false; return; }
+        const progress = (vh - rect.top) / (vh + rect.height);
+        const translate = (progress - 0.5) * 120;
+        bg.style.transform = `translate3d(0, ${translate.toFixed(1)}px, 0)`;
+        ticking = false;
+      };
+      const onScroll = () => {
+        if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+      document.body.addEventListener('scroll', onScroll, { passive: true });
+      update();
+    });
+  }
+  window.__parallaxInit = true;
+
 })();

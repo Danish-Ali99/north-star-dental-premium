@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="css/style.css?v=107" />
+  <link rel="stylesheet" href="css/style.css?v=110" />
 </head>
 <body>
   <!-- Navigation -->
@@ -369,93 +369,67 @@
 
   <!-- REVIEWS (HOME PREVIEW) -->
   <section class="reviews-home" id="reviews">
+    <div class="reviews-corner reviews-corner--tl" aria-hidden="true">
+      <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M2 30 L2 2 L30 2"/>
+        <path d="M10 30 L10 10 L30 10"/>
+      </svg>
+    </div>
+    <div class="reviews-corner reviews-corner--br" aria-hidden="true">
+      <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M58 30 L58 58 L30 58"/>
+        <path d="M50 30 L50 50 L30 50"/>
+      </svg>
+    </div>
     <div class="container">
-      <div class="section-head reviews-head fade-in">
-        <span class="eyebrow eyebrow-flanked"><span class="eyebrow-line"></span>Patient Voices<span class="eyebrow-line"></span></span>
-        <h2 class="section-title">What our patients say.</h2>
-      </div>
-
-      <div class="reviews-summary fade-in">
-        <div class="reviews-summary-score">
-          <span class="reviews-summary-num">4.9</span>
-          <span class="reviews-summary-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </span>
+      <div class="reviews-layout">
+        <div class="reviews-intro fade-in">
+          <h2 class="reviews-title">Word Of Mouth.</h2>
+          <p class="reviews-blurb">The best part of our craft is hearing it described by the people we made it for.</p>
+          <div class="reviews-photo">
+            <img src="images/about-waiting.jpg" alt="North Star Dental team and patients" loading="lazy" />
+          </div>
+          <div class="reviews-meta">
+            <span class="reviews-meta-num">4.9</span>
+            <span class="reviews-meta-stars" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </span>
+            <span class="reviews-meta-text">600+ Verified Reviews</span>
+          </div>
         </div>
-        <div class="reviews-summary-meta">
-          <span class="reviews-summary-count">From 600+ verified reviews</span>
-          <span class="reviews-summary-source">Google &middot; Practo &middot; JustDial</span>
+
+        <div class="reviews-column fade-in">
+          <blockquote class="review-quote">
+            <p>&ldquo;I came in dreading the chair and left wishing every clinic felt this calm. The team explained every step, never rushed, and the result is genuinely beautiful &mdash; I can finally smile in photos again.&rdquo;</p>
+            <footer>&mdash; Priya M.</footer>
+          </blockquote>
+          <blockquote class="review-quote">
+            <p>&ldquo;I am so thankful for Dr. Anya and her team. I'm normally a very anxious patient at the dentist, but they made me feel so relaxed. Kind, unhurried, and the most thorough exam I've ever had &mdash; I won't go anywhere else now.&rdquo;</p>
+            <footer>&mdash; Rohan K.</footer>
+          </blockquote>
         </div>
-      </div>
 
-      <div class="reviews-grid">
-        <article class="review-card fade-in">
-          <span class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </span>
-          <p class="review-text">I came in dreading the chair and left wishing every clinic felt this calm. The team explained every step, never rushed, and the result is genuinely beautiful — I can finally smile in photos again.</p>
-          <div class="review-author">
-            <span class="review-author-avatar" aria-hidden="true">P</span>
-            <div class="review-author-meta">
-              <span class="review-author-name">Priya M.</span>
-              <span class="review-author-treatment">Porcelain Veneers &middot; 2025</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="review-card fade-in">
-          <span class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </span>
-          <p class="review-text">Walked in with a fractured molar at 9pm, walked out at 11 with zero pain and a temporary that lasted me until the final crown. Honest pricing, no upsell, and a chair-side manner I haven't seen in any clinic in this city.</p>
-          <div class="review-author">
-            <span class="review-author-avatar" aria-hidden="true">R</span>
-            <div class="review-author-meta">
-              <span class="review-author-name">Rohan K.</span>
-              <span class="review-author-treatment">Emergency Crown &middot; 2025</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="review-card fade-in">
-          <span class="review-stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </span>
-          <p class="review-text">My Invisalign plan was mapped out in 3D before we ever started — I knew exactly what twenty months would look like. The team checked in every six weeks, and the final result is everything I hoped for. Worth every rupee.</p>
-          <div class="review-author">
-            <span class="review-author-avatar" aria-hidden="true">A</span>
-            <div class="review-author-meta">
-              <span class="review-author-name">Ayesha N.</span>
-              <span class="review-author-treatment">Invisalign &middot; 2024</span>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="reviews-cta fade-in">
-        <a href="https://g.co/kgs/" target="_blank" rel="noopener" class="btn-ghost">Read All Reviews</a>
+        <div class="reviews-column fade-in">
+          <blockquote class="review-quote">
+            <p>&ldquo;Wonderful clinic and team. They go the extra mile to walk you through every option before any treatment, which is greatly appreciated. Dr. Anya pays attention to the smallest detail and explains everything you ask about.&rdquo;</p>
+            <footer>&mdash; Rebecca N.</footer>
+          </blockquote>
+          <blockquote class="review-quote">
+            <p>&ldquo;The whole team at North Star Dental is just amazing. Welcoming, always with a smile, and they truly make the whole process an easy experience. Dr. Marcus solved an urgent crown problem I had &mdash; left 150% satisfied with my results.&rdquo;</p>
+            <footer>&mdash; Adriana P.</footer>
+          </blockquote>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- PARALLAX QUOTE -->
-  <section class="quote-parallax" aria-label="Patient sentiment">
+  <section class="quote-parallax" aria-label="Patient sentiment" data-parallax>
+    <div class="quote-parallax-bg" data-parallax-bg></div>
     <div class="quote-parallax-overlay"></div>
     <div class="quote-parallax-content fade-in">
       <span class="quote-parallax-mark" aria-hidden="true">&ldquo;</span>
@@ -699,6 +673,6 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
   </a>
 
-  <script src="js/main.js?v=11"></script>
+  <script src="js/main.js?v=14"></script>
 </body>
 </html>
