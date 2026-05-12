@@ -1926,17 +1926,13 @@ section { padding: 110px 0; }
   text-align: center;
   overflow: hidden;
   isolation: isolate;
-}
-
-.quote-parallax-bg {
-  position: absolute;
-  inset: -80px 0;
   background-image: url('../images/about-reception.jpg');
   background-size: cover;
   background-position: center;
-  will-change: transform;
-  z-index: 0;
+  background-attachment: fixed;
 }
+
+.quote-parallax-bg { display: none; }
 
 .quote-parallax-overlay {
   position: absolute;
@@ -1984,7 +1980,10 @@ section { padding: 110px 0; }
 }
 
 @media (max-width: 920px) {
-  .quote-parallax { min-height: 380px; }
+  .quote-parallax {
+    min-height: 380px;
+    background-attachment: scroll;
+  }
   .quote-parallax-content { padding: 60px 24px; }
 }
 
