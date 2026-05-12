@@ -186,6 +186,7 @@
   document.querySelectorAll('[data-carousel]').forEach((root) => {
     const slides = root.querySelectorAll('.carousel-slide');
     const dots = root.querySelectorAll('.carousel-dots .dot');
+    const slideNum = root.querySelector('[data-slide-num]');
     if (slides.length < 2) return;
     let idx = 0;
     let timer;
@@ -195,7 +196,9 @@
       idx = (next + slides.length) % slides.length;
       slides[idx].classList.add('is-active');
       dots[idx]?.classList.add('is-active');
+      if (slideNum) slideNum.textContent = idx + 1;
     };
+    if (slideNum) slideNum.textContent = idx + 1;
     const start = () => { timer = setInterval(() => goTo(idx + 1), 3000); };
     const stop = () => clearInterval(timer);
     dots.forEach((d, i) => d.addEventListener('click', () => { stop(); goTo(i); start(); }));
