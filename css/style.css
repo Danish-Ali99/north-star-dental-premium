@@ -37,8 +37,8 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-fo
 body {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.75;
   color: var(--deep-teal);
   background: var(--bone);
   overflow-x: hidden;
@@ -67,12 +67,12 @@ h1, h2, h3, h4, h5 {
   color: var(--deep-teal);
 }
 
-h1 { font-size: clamp(1.6rem, 2.6vw, 2rem); font-weight: 400; }    /* flattened scale */
-h2 { font-size: clamp(1.4rem, 2.2vw, 1.7rem); font-weight: 400; }
-h3 { font-size: clamp(1.1rem, 1.4vw, 1.25rem); font-weight: 500; }
-h4 { font-size: 1.05rem; font-weight: 500; }
+h1 { font-size: clamp(1.7rem, 2.6vw, 2.1rem); font-weight: 400; }
+h2 { font-size: clamp(1.55rem, 2.3vw, 1.85rem); font-weight: 400; }
+h3 { font-size: clamp(1.15rem, 1.4vw, 1.3rem); font-weight: 500; }
+h4 { font-size: 1.08rem; font-weight: 500; }
 
-p { margin-bottom: 1rem; color: var(--muted); }
+p { margin-bottom: 1rem; color: var(--muted); font-size: 1.02rem; line-height: 1.78; }
 
 .container {
   width: 100%;
@@ -987,10 +987,10 @@ section { padding: 110px 0; }
 .about-title {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 1.7rem;
+  font-size: 1.85rem;
   line-height: 1.25;
   color: var(--deep-teal);
-  margin: 16px 0 22px;
+  margin: 16px 0 24px;
   letter-spacing: -0.005em;
 }
 
@@ -1004,9 +1004,9 @@ section { padding: 110px 0; }
 
 .about-content > p {
   font-family: var(--font-sans);
-  font-size: 0.95rem;
-  line-height: 1.75;
-  margin-bottom: 14px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
   color: var(--muted);
 }
 
@@ -1355,21 +1355,6 @@ section { padding: 110px 0; }
   transform: translateX(4px);
 }
 
-/* Decorative scattered dots */
-.team-home::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle, rgba(201, 136, 107, 0.5) 2px, transparent 2.5px),
-    radial-gradient(circle, rgba(13, 43, 53, 0.3) 2px, transparent 2.5px);
-  background-size: 380px 380px, 460px 460px;
-  background-position: 8% 18%, 88% 70%;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  opacity: 0.85;
-}
-
 /* Team trio (featured center + two sides) */
 .team-home-head { text-align: center; margin-bottom: 56px; }
 .team-home-head .section-title { margin-top: 14px; }
@@ -1618,6 +1603,257 @@ section { padding: 110px 0; }
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--muted);
+}
+
+/* ============================================
+   REVIEWS (HOME)
+   ============================================ */
+.reviews-home {
+  background: var(--cream-soft);
+  position: relative;
+  padding: 110px 0 100px;
+}
+
+.reviews-head { text-align: center; margin-bottom: 32px; }
+.reviews-head .section-title { margin-top: 14px; }
+
+.reviews-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+
+.reviews-summary-score {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.reviews-summary-num {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: var(--deep-teal);
+  line-height: 1;
+}
+
+.reviews-summary-stars {
+  display: inline-flex;
+  gap: 4px;
+  color: var(--copper);
+}
+
+.reviews-summary-stars svg {
+  width: 22px;
+  height: 22px;
+}
+
+.reviews-summary-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
+}
+
+.reviews-summary-count {
+  font-size: 0.92rem;
+  color: var(--deep-teal);
+  font-weight: 500;
+}
+
+.reviews-summary-source {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.review-card {
+  position: relative;
+  background: #ffffff;
+  padding: 38px 32px 30px;
+  border: 1px solid rgba(13, 43, 53, 0.06);
+  box-shadow: 0 24px 56px -34px rgba(13, 43, 53, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.review-card::before {
+  content: '"';
+  position: absolute;
+  top: 12px;
+  right: 22px;
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--copper);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 36px 72px -32px rgba(13, 43, 53, 0.35);
+}
+
+.review-stars {
+  display: inline-flex;
+  gap: 3px;
+  color: var(--copper);
+}
+
+.review-stars svg {
+  width: 16px;
+  height: 16px;
+}
+
+.review-text {
+  font-size: 1.08rem;
+  line-height: 1.78;
+  color: var(--deep-teal);
+  margin: 0;
+  flex: 1;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.review-author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--copper);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.review-author-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.review-author-name {
+  font-weight: 600;
+  color: var(--deep-teal);
+  font-size: 0.96rem;
+}
+
+.review-author-treatment {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.reviews-cta {
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media (max-width: 920px) {
+  .reviews-home { padding: 80px 0 70px; }
+  .reviews-grid { grid-template-columns: 1fr; gap: 22px; max-width: 540px; }
+  .reviews-summary { gap: 18px; margin-bottom: 40px; }
+  .reviews-summary-meta { padding-left: 18px; }
+  .reviews-summary-num { font-size: 2.1rem; }
+}
+
+/* ============================================
+   PARALLAX QUOTE
+   ============================================ */
+.quote-parallax {
+  position: relative;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('images/about-reception.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.quote-parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(13, 43, 53, 0.78) 0%, rgba(13, 43, 53, 0.72) 100%);
+  z-index: 1;
+}
+
+.quote-parallax-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  padding: 80px 32px;
+}
+
+.quote-parallax-mark {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  line-height: 0.6;
+  color: var(--copper);
+  opacity: 0.85;
+  margin-bottom: 18px;
+}
+
+.quote-parallax-text {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  line-height: 1.4;
+  color: var(--cream);
+  margin: 0 0 26px;
+  letter-spacing: 0.005em;
+}
+
+.quote-parallax-attribution {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--copper);
+  font-weight: 500;
+}
+
+@media (max-width: 920px) {
+  .quote-parallax {
+    min-height: 360px;
+    background-attachment: scroll;
+  }
+  .quote-parallax-content { padding: 60px 24px; }
 }
 
 /* ============================================
