@@ -103,26 +103,18 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 
 .eyebrow::before {
   content: '';
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  background-color: var(--copper);
-  -webkit-mask: url('../images/logo-mark.png') center/contain no-repeat;
-          mask: url('../images/logo-mark.png') center/contain no-repeat;
-  opacity: 0.9;
-  flex-shrink: 0;
+  width: 30px;
+  height: 1px;
+  background: var(--copper);
+  opacity: 0.85;
 }
 
 .eyebrow.eyebrow-flanked::after {
   content: '';
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  background-color: var(--copper);
-  -webkit-mask: url('../images/logo-mark.png') center/contain no-repeat;
-          mask: url('../images/logo-mark.png') center/contain no-repeat;
-  opacity: 0.9;
-  flex-shrink: 0;
+  width: 30px;
+  height: 1px;
+  background: var(--copper);
+  opacity: 0.85;
 }
 
 .eyebrow .eyebrow-line { display: none; }
@@ -1794,28 +1786,7 @@ section { padding: 110px 0; }
   gap: 24px;
 }
 
-.reviews-intro {
-  position: relative;
-}
-
-.reviews-intro::before {
-  content: '';
-  position: absolute;
-  top: -78px;
-  left: -42px;
-  width: 220px;
-  height: 220px;
-  background-color: var(--deep-teal);
-  -webkit-mask: url('../images/logo-mark.png') center/contain no-repeat;
-          mask: url('../images/logo-mark.png') center/contain no-repeat;
-  opacity: 0.1;
-  pointer-events: none;
-  z-index: 0;
-}
-
 .reviews-title {
-  position: relative;
-  z-index: 1;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 1.5rem;
