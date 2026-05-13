@@ -699,11 +699,11 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.22rem;
   line-height: 1.7;
   color: var(--muted);
-  max-width: 520px;
-  margin-bottom: 36px;
+  max-width: 540px;
+  margin-bottom: 38px;
   font-weight: 400;
   letter-spacing: 0;
 }
