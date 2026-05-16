@@ -4087,21 +4087,19 @@ section { padding: 110px 0; }
     color: rgba(243, 233, 226, 0.82);
   }
 
-  /* Hero CTAs — stack full-width with cream/copper styling for dark bg */
+  /* Hero CTAs — primary button + ghost text link with arrow */
   .hero-actions {
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: stretch;
-    gap: 12px;
+    align-items: center;
+    gap: 22px;
     margin-bottom: 0;
   }
-  .hero-actions .btn {
+  .hero-actions .btn-primary {
     width: 100%;
     padding: 16px 22px;
     font-size: 0.8rem;
     letter-spacing: 0.2em;
-  }
-  .hero-actions .btn-primary {
     background: var(--copper);
     border-color: var(--copper);
     color: var(--cream);
@@ -4111,14 +4109,39 @@ section { padding: 110px 0; }
     border-color: var(--copper-deep);
   }
   .hero-actions .btn-outline {
+    width: auto !important;
+    padding: 4px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(243, 233, 226, 0.5) !important;
+    border-radius: 0;
     color: var(--cream);
-    border-color: rgba(243, 233, 226, 0.5);
-    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    align-self: center;
+    transition: color var(--transition), border-color var(--transition), gap var(--transition);
+  }
+  .hero-actions .btn-outline::after {
+    content: '→';
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--copper-soft);
+    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
   }
   .hero-actions .btn-outline:hover {
-    background: var(--cream);
-    color: var(--deep-teal);
-    border-color: var(--cream);
+    color: var(--copper-soft);
+    border-bottom-color: var(--copper-soft);
+    background: transparent !important;
+    transform: none;
+  }
+  .hero-actions .btn-outline:hover::after {
+    transform: translateX(4px);
   }
 
   /* Image visual is now the hero bg — hide the duplicate column */
