@@ -3987,6 +3987,12 @@ section { padding: 110px 0; }
   .brand-logo { width: 56px; height: 56px; transform: none; }
   .brand-text { padding-left: 8px; }
   .brand-name { font-size: 1.05rem; letter-spacing: 0; }
+  .brand-tagline {
+    display: block;
+    font-size: 0.55rem;
+    letter-spacing: 0.28em;
+    margin-top: 2px;
+  }
   .nav-links {
     top: 76px;
     padding: 24px 22px;
