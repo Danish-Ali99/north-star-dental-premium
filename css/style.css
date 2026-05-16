@@ -4246,7 +4246,7 @@ section { padding: 110px 0; }
   .reviews-title { font-size: 1.4rem; }
   .reviews-blurb { font-size: 0.96rem; }
 
-  /* QUOTE SECTION on mobile — static centered image (parallax disabled on phones) */
+  /* QUOTE SECTION on mobile — subtle parallax, image stays roughly centered */
   .quote-parallax {
     min-height: 320px;
     background-image: none;
@@ -4255,12 +4255,15 @@ section { padding: 110px 0; }
   .quote-parallax-bg {
     display: block;
     position: absolute;
-    inset: 0;
+    top: -12%;
+    left: 0;
+    right: 0;
+    height: 124%;
     background-image: url('../images/about-reception.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    transform: none !important;
+    will-change: transform;
     z-index: 0;
   }
   .quote-parallax-overlay { z-index: 1; }
