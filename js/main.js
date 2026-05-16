@@ -27,10 +27,22 @@
   // Mobile menu toggle
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
+  const preventTouchMove = (e) => { e.preventDefault(); };
+  const lockScroll = () => {
+    document.documentElement.classList.add('menu-open');
+    document.body.classList.add('menu-open');
+    document.addEventListener('touchmove', preventTouchMove, { passive: false });
+  };
+  const unlockScroll = () => {
+    document.documentElement.classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
+    document.removeEventListener('touchmove', preventTouchMove);
+  };
   if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
       const isOpen = navLinks.classList.contains('open');
+      if (isOpen) lockScroll(); else unlockScroll();
       menuToggle.innerHTML = isOpen
         ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>'
         : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
@@ -40,7 +52,11 @@
         // Don't close the panel when tapping a parent that toggles a dropdown
         if (link.closest('.has-mega') && link.parentElement.classList.contains('has-mega') && window.innerWidth <= 768) return;
         if (link.closest('.mega-cat') && link.parentElement.classList.contains('mega-cat') && link.parentElement.querySelector('.mega-sub') && window.innerWidth <= 768) return;
-        navLinks.classList.remove('open');
+        if (navLinks.classList.contains('open')) {
+          navLinks.classList.remove('open');
+          unlockScroll();
+          if (menuToggle) menuToggle.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
+        }
       });
     });
   }
@@ -264,25 +280,16 @@
   }
   window.__parallaxInit = true;
 
-  // Inject mobile menu footer (phone + Book Online CTA + close) inside the open nav drawer
+  // Inject mobile menu footer (Book Online CTA + phone link) inside the open nav drawer
   (() => {
     if (!navLinks || document.querySelector('.mobile-menu-cta')) return;
     const wrap = document.createElement('div');
     wrap.className = 'mobile-menu-cta';
     wrap.innerHTML = `
-      <a class="mobile-menu-phone" href="tel:+919035462760">+91 90354 62760</a>
       <a class="mobile-menu-book btn" href="https://click4appointment.com/clinic-details/drvdentalaesthetics-3361" target="_blank" rel="noopener">Book Online</a>
-      <button type="button" class="mobile-menu-close" aria-label="Close menu">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        <span>Close menu</span>
-      </button>
+      <a class="mobile-menu-phone" href="tel:+919035462760">+91 90354 62760</a>
     `;
     navLinks.appendChild(wrap);
-
-    // Wire the close button to trigger the same toggle as the hamburger
-    wrap.querySelector('.mobile-menu-close').addEventListener('click', () => {
-      if (menuToggle) menuToggle.click();
-    });
   })();
 
   // Inject persistent bottom navigation bar (mobile only via CSS)

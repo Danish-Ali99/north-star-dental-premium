@@ -3994,8 +3994,8 @@ section { padding: 110px 0; }
     margin-top: 2px;
   }
   .nav-links {
-    top: 76px;
-    padding: 24px 22px;
+    top: 70px;
+    padding: 6px 22px 24px;
     gap: 14px;
     align-items: stretch;
     margin-left: 0;
@@ -4099,9 +4099,9 @@ section { padding: 110px 0; }
     width: auto;
     min-width: 0;
     align-self: flex-start;
-    padding: 16px 34px;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
+    padding: 13px 38px;
+    font-size: 0.84rem;
+    letter-spacing: 0.18em;
     background: var(--copper);
     border-color: var(--copper);
     color: var(--cream);
@@ -4110,41 +4110,21 @@ section { padding: 110px 0; }
     background: var(--copper-deep);
     border-color: var(--copper-deep);
   }
-  .hero-actions .btn-outline {
-    width: auto !important;
-    padding: 4px 0 !important;
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 1px solid rgba(243, 233, 226, 0.5) !important;
-    border-radius: 0;
-    color: var(--cream);
-    font-family: var(--font-sans);
-    font-size: 0.78rem;
-    font-weight: 400;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+
+  /* "Or Call ..." plain text link below the Book button */
+  .hero-call-link {
     align-self: flex-start;
-    transition: color var(--transition), border-color var(--transition), gap var(--transition);
+    color: rgba(243, 233, 226, 0.85);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    transition: color var(--transition);
   }
-  .hero-actions .btn-outline::after {
-    content: '→';
-    font-size: 1rem;
-    line-height: 1;
-    color: var(--copper-soft);
-    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .hero-actions .btn-outline:hover {
-    color: var(--copper-soft);
-    border-bottom-color: var(--copper-soft);
-    background: transparent !important;
-    transform: none;
-  }
-  .hero-actions .btn-outline:hover::after {
-    transform: translateX(4px);
-  }
+  .hero-call-link span { color: var(--cream); font-weight: 500; }
+  .hero-call-link:hover { color: var(--copper-soft); }
+  .hero-call-link:hover span { color: var(--copper-soft); }
 
   /* Image visual is now the hero bg — hide the duplicate column */
   .hero-visual { display: none; }
@@ -4401,26 +4381,14 @@ section { padding: 110px 0; }
     background: var(--copper-deep);
     border-color: var(--copper-deep);
   }
-  .mobile-menu-close {
-    margin-top: 6px;
-    background: transparent;
-    border: none;
-    color: rgba(243, 233, 226, 0.65);
-    font-family: var(--font-sans);
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    padding: 12px 0;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    align-self: center;
-    transition: color var(--transition);
+
+  /* Lock body scroll while the mobile menu drawer is open */
+  html.menu-open,
+  body.menu-open {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: contain;
   }
-  .mobile-menu-close:hover { color: var(--copper-soft); }
-  .mobile-menu-close svg { display: block; opacity: 0.85; }
 
   /* Persistent bottom action bar — always-visible quick actions */
   .mobile-bottom-bar {
@@ -4474,7 +4442,7 @@ section { padding: 110px 0; }
   .mbb-label { display: block; font-weight: 500; line-height: 1; }
 
   /* VALUE STRIP MARQUEE */
-  .value-strip { padding: 14px 0; }
+  .value-strip { padding: 20px 0; }
   .value-strip-row { gap: 22px; padding-right: 22px; }
   .value-strip-icon { width: 28px; height: 28px; }
   .value-strip-icon svg { width: 13px; height: 13px; }
