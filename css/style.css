@@ -4035,35 +4035,65 @@ section { padding: 110px 0; }
   }
   .menu-toggle.btn svg { width: 18px; height: 18px; }
 
-  /* HERO — stack, smaller type, image below */
+  /* HERO — full-bleed image as background with text overlaid */
+  .hero {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1588776814546-daab30f310ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=85');
+    background-size: cover;
+    background-position: center;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg,
+        rgba(13, 43, 53, 0.6) 0%,
+        rgba(13, 43, 53, 0.7) 45%,
+        rgba(8, 30, 38, 0.92) 100%);
+    z-index: 0;
+  }
   .hero-grid {
     grid-template-columns: 1fr;
-    min-height: auto;
+    min-height: 85vh;
   }
   .hero-content {
-    padding: 48px 18px 56px;
+    position: relative;
+    z-index: 2;
+    padding: 70px 22px 56px;
     min-height: auto;
+    justify-content: flex-end;
   }
-  .hero .eyebrow { font-size: 0.78rem; }
+  .hero .eyebrow {
+    font-size: 0.78rem;
+    color: var(--copper-soft);
+  }
+  .hero .eyebrow::before { background: var(--copper-soft); }
   .hero h1 {
-    font-size: 1.85rem;
-    line-height: 1.2;
+    font-size: 2rem;
+    line-height: 1.18;
     margin-bottom: 18px;
+    color: var(--cream);
   }
-  .hero-headline .hero-word { margin-right: 0.22em; line-height: 1.2; }
+  .hero-headline .hero-word { margin-right: 0.22em; line-height: 1.18; }
+  .hero-headline .hero-word > span { color: var(--cream); }
+  .hero-headline .hero-word:nth-child(4) > span { color: var(--copper-soft); }
   .hero-subtitle {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 28px;
+    color: rgba(243, 233, 226, 0.82);
   }
 
-  /* Hero CTAs — stack full-width */
+  /* Hero CTAs — stack full-width with cream/copper styling for dark bg */
   .hero-actions {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: stretch;
     gap: 12px;
-    margin-bottom: 28px;
+    margin-bottom: 0;
   }
   .hero-actions .btn {
     width: 100%;
@@ -4071,38 +4101,28 @@ section { padding: 110px 0; }
     font-size: 0.8rem;
     letter-spacing: 0.2em;
   }
+  .hero-actions .btn-primary {
+    background: var(--copper);
+    border-color: var(--copper);
+    color: var(--cream);
+  }
+  .hero-actions .btn-primary:hover {
+    background: var(--copper-deep);
+    border-color: var(--copper-deep);
+  }
+  .hero-actions .btn-outline {
+    color: var(--cream);
+    border-color: rgba(243, 233, 226, 0.5);
+    background: transparent;
+  }
+  .hero-actions .btn-outline:hover {
+    background: var(--cream);
+    color: var(--deep-teal);
+    border-color: var(--cream);
+  }
 
-  /* Hero trust row — stack stats neatly */
-  .hero-trust {
-    flex-wrap: wrap;
-    gap: 14px 22px;
-    padding-top: 20px;
-    max-width: 100%;
-  }
-  .hero-trust-divider { display: none; }
-  .hero-trust-rating { gap: 10px; flex: 1 1 100%; }
-  .hero-trust-stat { flex: 0 0 auto; }
-  .hero-trust-num { font-size: 1.1rem; }
-  .hero-trust-label,
-  .hero-trust-meta { font-size: 0.7rem; letter-spacing: 0.12em; }
-
-  /* Hero visual: as a normal block, with the tag inline below */
-  .hero-visual {
-    position: relative;
-    min-height: 340px;
-    overflow: hidden;
-  }
-  .hero-image { opacity: 0.85; mix-blend-mode: normal; }
-  .hero-tag {
-    position: absolute;
-    bottom: 18px;
-    right: 18px;
-    left: 18px;
-    max-width: none;
-    padding: 16px 18px;
-  }
-  .hero-tag-text { font-size: 0.88rem; line-height: 1.45; }
-  .hero-tag-eyebrow { font-size: 0.66rem; letter-spacing: 0.2em; }
+  /* Image visual is now the hero bg — hide the duplicate column */
+  .hero-visual { display: none; }
 
   /* Generic section heads */
   .section-head { margin-bottom: 36px; padding: 0 4px; }
