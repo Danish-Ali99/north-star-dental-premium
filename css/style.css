@@ -4248,20 +4248,21 @@ section { padding: 110px 0; }
 
   /* PARALLAX QUOTE — JS-driven layer on mobile (iOS ignores background-attachment: fixed) */
   .quote-parallax {
-    min-height: 380px;
+    min-height: 340px;
     background-image: none;
     overflow: hidden;
   }
   .quote-parallax-bg {
     display: block;
     position: absolute;
-    top: -80%;
+    top: -25%;
     left: 0;
     right: 0;
-    height: 260%;
+    height: 150%;
     background-image: url('../images/about-reception.jpg');
     background-size: cover;
     background-position: center;
+    background-color: var(--deep-teal);
     will-change: transform;
     z-index: 0;
   }

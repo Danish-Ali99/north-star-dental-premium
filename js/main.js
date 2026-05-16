@@ -248,7 +248,7 @@
         const vh = window.innerHeight;
         if (rect.bottom < 0 || rect.top > vh) { ticking = false; return; }
         const progress = (vh - rect.top) / (vh + rect.height);
-        const range = window.innerWidth <= 768 ? 420 : 120;
+        const range = window.innerWidth <= 768 ? 130 : 120;
         const translate = (progress - 0.5) * range;
         bg.style.transform = `translate3d(0, ${translate.toFixed(1)}px, 0)`;
         ticking = false;
