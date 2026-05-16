@@ -4246,24 +4246,21 @@ section { padding: 110px 0; }
   .reviews-title { font-size: 1.4rem; }
   .reviews-blurb { font-size: 0.96rem; }
 
-  /* PARALLAX QUOTE — JS-driven layer on mobile (iOS ignores background-attachment: fixed) */
+  /* QUOTE SECTION on mobile — static centered image (parallax disabled on phones) */
   .quote-parallax {
-    min-height: 280px;
+    min-height: 320px;
     background-image: none;
     overflow: hidden;
   }
   .quote-parallax-bg {
     display: block;
     position: absolute;
-    top: -15%;
-    left: 0;
-    right: 0;
-    height: 130%;
+    inset: 0;
     background-image: url('../images/about-reception.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
-    will-change: transform;
+    transform: none !important;
     z-index: 0;
   }
   .quote-parallax-overlay { z-index: 1; }
