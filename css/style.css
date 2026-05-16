@@ -4091,13 +4091,15 @@ section { padding: 110px 0; }
   .hero-actions {
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 22px;
+    align-items: flex-start;
+    gap: 20px;
     margin-bottom: 0;
   }
   .hero-actions .btn-primary {
-    width: 100%;
-    padding: 16px 22px;
+    width: auto;
+    min-width: 0;
+    align-self: flex-start;
+    padding: 16px 34px;
     font-size: 0.8rem;
     letter-spacing: 0.2em;
     background: var(--copper);
@@ -4124,7 +4126,7 @@ section { padding: 110px 0; }
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    align-self: center;
+    align-self: flex-start;
     transition: color var(--transition), border-color var(--transition), gap var(--transition);
   }
   .hero-actions .btn-outline::after {
@@ -4471,13 +4473,35 @@ section { padding: 110px 0; }
   .mbb-icon svg { width: 22px; height: 22px; display: block; }
   .mbb-label { display: block; font-weight: 500; line-height: 1; }
 
-  /* VALUE STRIP MARQUEE */
-  .value-strip { padding: 14px 0; }
-  .value-strip-row { gap: 22px; padding-right: 22px; }
-  .value-strip-icon { width: 28px; height: 28px; }
-  .value-strip-icon svg { width: 13px; height: 13px; }
-  .value-strip-label { font-size: 0.66rem; letter-spacing: 0.12em; }
+  /* VALUE STRIP MARQUEE — more prominent, copper accents */
+  .value-strip {
+    padding: 18px 0;
+    background: var(--ink);
+    border-top: 1px solid rgba(201, 136, 107, 0.45);
+    border-bottom: 1px solid rgba(201, 136, 107, 0.45);
+  }
+  .value-strip-row { gap: 28px; padding-right: 28px; }
+  .value-strip-icon {
+    width: 34px;
+    height: 34px;
+    background: rgba(201, 136, 107, 0.18);
+    border-color: var(--copper);
+  }
+  .value-strip-icon svg { width: 16px; height: 16px; color: var(--copper-soft); }
+  .value-strip-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    color: var(--cream);
+    font-weight: 500;
+  }
+  .value-strip-sep {
+    width: 7px;
+    height: 7px;
+    background: var(--copper);
+    opacity: 0.85;
+  }
   .value-strip::before, .value-strip::after { width: 40px; }
+  .value-strip-track { animation-duration: 38s; }
 
   /* DOCTOR / TEAM HOMEPAGE composite cards */
   .doctor-cards { grid-template-columns: 1fr; gap: 20px; }
