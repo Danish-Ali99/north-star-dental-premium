@@ -4248,27 +4248,26 @@ section { padding: 110px 0; }
 
   /* PARALLAX QUOTE — JS-driven layer on mobile (iOS ignores background-attachment: fixed) */
   .quote-parallax {
-    min-height: 340px;
+    min-height: 280px;
     background-image: none;
     overflow: hidden;
   }
   .quote-parallax-bg {
     display: block;
     position: absolute;
-    top: -30%;
+    top: -15%;
     left: 0;
     right: 0;
-    height: 160%;
+    height: 130%;
     background-image: url('../images/about-reception.jpg');
-    background-size: 100% auto;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: var(--deep-teal-2);
     will-change: transform;
     z-index: 0;
   }
   .quote-parallax-overlay { z-index: 1; }
-  .quote-parallax-content { padding: 60px 22px; position: relative; z-index: 2; }
+  .quote-parallax-content { padding: 50px 22px; position: relative; z-index: 2; }
   .quote-parallax-text { font-size: 1.15rem; line-height: 1.5; }
   .quote-parallax-mark { font-size: 2rem; }
   .quote-parallax-attribution { font-size: 0.78rem; letter-spacing: 0.2em; }
