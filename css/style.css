@@ -4255,14 +4255,15 @@ section { padding: 110px 0; }
   .quote-parallax-bg {
     display: block;
     position: absolute;
-    top: -25%;
+    top: -30%;
     left: 0;
     right: 0;
-    height: 150%;
+    height: 160%;
     background-image: url('../images/about-reception.jpg');
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center;
-    background-color: var(--deep-teal);
+    background-repeat: no-repeat;
+    background-color: var(--deep-teal-2);
     will-change: transform;
     z-index: 0;
   }
