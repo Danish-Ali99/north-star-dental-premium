@@ -4768,31 +4768,46 @@ section { padding: 110px 0; }
   .reviews-title { font-size: 1.4rem; }
   .reviews-blurb { font-size: 0.96rem; }
 
-  /* QUOTE SECTION on mobile — subtle parallax, image stays roughly centered */
+  /* QUOTE SECTION on mobile — visible parallax (matches desktop), dental clinic bg */
   .quote-parallax {
-    min-height: 320px;
+    min-height: 360px;
     background-image: none;
     overflow: hidden;
   }
   .quote-parallax-bg {
     display: block;
     position: absolute;
-    top: -12%;
+    top: -50%;
     left: 0;
     right: 0;
-    height: 124%;
-    background-image: url('../images/about-reception.jpg');
+    height: 200%;
+    background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=85');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     will-change: transform;
     z-index: 0;
   }
+  /* Lighter overlay so the dental clinic image stays prominent */
+  .quote-parallax-overlay {
+    background: linear-gradient(to bottom,
+      rgba(13, 43, 53, 0.45) 0%,
+      rgba(13, 43, 53, 0.55) 60%,
+      rgba(8, 30, 38, 0.7) 100%) !important;
+  }
   .quote-parallax-overlay { z-index: 1; }
   .quote-parallax-content { padding: 50px 22px; position: relative; z-index: 2; }
-  .quote-parallax-text { font-size: 1.15rem; line-height: 1.5; }
-  .quote-parallax-mark { font-size: 2rem; }
-  .quote-parallax-attribution { font-size: 0.78rem; letter-spacing: 0.2em; }
+  .quote-parallax-text {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.45);
+  }
+  .quote-parallax-mark { font-size: 2rem; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+  .quote-parallax-attribution {
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  }
 
   /* BLOG (home + listing) */
   .blog-grid, .blog-page-grid, .blog-stagger { grid-template-columns: 1fr; gap: 28px; }
@@ -5088,4 +5103,129 @@ section { padding: 110px 0; }
   .about-stat-num { font-size: 1rem; }
   .about-stat-label { font-size: 0.55rem; }
   .hero-trust-stat { flex: 1 1 calc(50% - 11px); }
+}
+
+/* ============================================
+   MOBILE — compact, bigger headings, richer sections
+   (overrides earlier mobile rules; placed last so it wins)
+   ============================================ */
+@media (max-width: 768px) {
+  /* Tighter section padding everywhere */
+  section { padding: 44px 0 !important; }
+  .about-home,
+  .services-home,
+  .team-home,
+  .reviews-home,
+  .blog-home,
+  .faq-home,
+  .location-home { padding: 52px 0 !important; }
+  /* Keep the value strip marquee thin — section { 44px } would make it too thick */
+  .value-strip { padding: 20px 0 !important; }
+
+  /* Bigger, more prominent hero headline */
+  .hero h1 {
+    font-size: 2.25rem;
+    line-height: 1.13;
+    margin-bottom: 16px;
+  }
+  .hero-headline .hero-word { line-height: 1.13; }
+  .hero-subtitle { font-size: 1.02rem; line-height: 1.6; margin-bottom: 24px; }
+
+  /* Section headers — bigger, richer */
+  .section-head { margin-bottom: 28px; padding: 0 4px; }
+  .section-head .eyebrow,
+  .about-home .eyebrow,
+  .services-home .eyebrow,
+  .reviews-head .eyebrow,
+  .team-home .eyebrow,
+  .blog-home .eyebrow,
+  .location-home .eyebrow {
+    font-size: 0.88rem;
+    letter-spacing: 0.22em;
+    margin-bottom: 14px;
+  }
+  .section-head .section-title,
+  .section-head h2 {
+    font-size: 1.85rem;
+    line-height: 1.18;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .section-head p {
+    font-size: 1.02rem;
+    line-height: 1.55;
+  }
+  .about-title { font-size: 1.65rem; line-height: 1.2; margin: 14px 0 16px; }
+  .reviews-head h2,
+  .team-home-head h2 { font-size: 1.85rem; line-height: 1.18; }
+  .blog-home .section-head h2,
+  .location-home .section-head h2,
+  .faq-home .section-head h2 { font-size: 1.85rem; line-height: 1.18; }
+  .booking h2 { font-size: 1.7rem; line-height: 1.2; }
+
+  /* Tighter inner spacing inside sections */
+  .about-grid { gap: 28px; }
+  .about-content > p { margin-bottom: 12px; }
+  .about-stack { margin: 0 auto 4px; }
+  .about-stats { margin: 16px 0 20px; padding: 14px 0; }
+  .services-grid { gap: 10px; }
+  .team-trio { gap: 16px; }
+  .team-home-cta { margin-top: 22px; }
+  .reviews-tile-grid { gap: 12px; }
+  .blog-grid, .blog-page-grid, .blog-stagger { gap: 20px; }
+  .blog-home .section-head { margin-bottom: 26px; }
+  .faq-wrap { padding: 0 2px; }
+
+  /* HERO — keep image bg but tighten content top padding so headline reads sooner */
+  .hero-content { padding: 36px 18px 40px; }
+
+  /* TEAM trio — smaller doctor cards, less scroll */
+  .team-trio {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .team-trio .team-card,
+  .team-trio .team-card--featured,
+  .team-trio .team-card--side {
+    aspect-ratio: 4 / 3;
+    max-height: 280px;
+  }
+  .team-trio .team-card-photo {
+    aspect-ratio: auto;
+    height: 100%;
+    margin-bottom: 0;
+  }
+  .team-trio .team-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .team-trio .team-card-overlay {
+    padding: 14px 16px;
+  }
+  .team-trio .team-card-name { font-size: 1rem; }
+  .team-trio .team-card-role { font-size: 0.62rem; letter-spacing: 0.22em; }
+  .team-trio .team-card-overlay p { display: none; }
+  .team-trio .team-card-tag { font-size: 0.62rem; padding: 5px 12px; top: 12px; left: 12px; }
+
+  /* LOCATION on home: hide the map (annoying on touch-scroll), keep info card + Get Directions */
+  .location-home .location-grid {
+    display: block;
+  }
+  .location-home .location-map { display: none; }
+  .location-home .location-info {
+    border-radius: 0;
+    padding: 28px 22px;
+  }
+
+  /* Word of Mouth heading bigger */
+  .reviews-mobile .reviews-head {
+    margin-bottom: 26px;
+  }
+
+  /* Footer compaction */
+  .footer { padding: 36px 0 0; }
+  .footer-grid { gap: 28px; padding-bottom: 24px; }
+  .footer-bottom { padding: 18px 0; }
 }
