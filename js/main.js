@@ -91,13 +91,18 @@
     });
   });
 
-  // Fade-in on scroll
+  // Fade-in on scroll (supports per-element data-delay in seconds)
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            const delay = parseFloat(entry.target.dataset.delay || '0');
+            if (delay > 0) {
+              setTimeout(() => entry.target.classList.add('visible'), delay * 1000);
+            } else {
+              entry.target.classList.add('visible');
+            }
             observer.unobserve(entry.target);
           }
         });
@@ -107,6 +112,49 @@
     document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
   } else {
     document.querySelectorAll('.fade-in').forEach((el) => el.classList.add('visible'));
+  }
+
+  // Auto-stagger children inside grids (services, team, reviews, blog, etc.)
+  // No HTML changes needed — each child gets a small data-delay.
+  const STAGGER_TARGETS = [
+    '.services-grid', '.team-trio', '.team-grid', '.team-page-grid',
+    '.reviews-tile-grid', '.blog-grid', '.blog-page-grid', '.contact-grid',
+    '.comfort-grid', '.clinic-cards', '.services-page-grid'
+  ];
+  STAGGER_TARGETS.forEach((sel) => {
+    document.querySelectorAll(sel).forEach((grid) => {
+      Array.from(grid.children).forEach((child, i) => {
+        if (!child.classList.contains('fade-in')) child.classList.add('fade-in');
+        if (!child.dataset.delay) child.dataset.delay = String(0.08 * i);
+      });
+    });
+  });
+
+  // Animated number counters — any element with [data-count] counts from 0
+  // up to that number when it scrolls into view.
+  if ('IntersectionObserver' in window) {
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseFloat(el.dataset.count);
+        const isDecimal = !Number.isInteger(target);
+        const duration = 1600;
+        const start = performance.now();
+        const tick = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          // ease-out cubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = target * eased;
+          el.textContent = isDecimal ? current.toFixed(1) : Math.floor(current).toLocaleString();
+          if (progress < 1) requestAnimationFrame(tick);
+          else el.textContent = isDecimal ? target.toFixed(1) : target.toLocaleString();
+        };
+        requestAnimationFrame(tick);
+        counterObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach((el) => counterObs.observe(el));
   }
 
   // FAQ category filter (faq.html)

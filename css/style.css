@@ -5229,3 +5229,27 @@ section { padding: 110px 0; }
   .footer-grid { gap: 28px; padding-bottom: 24px; }
   .footer-bottom { padding: 18px 0; }
 }
+
+/* ============================================
+   MOBILE — stronger scroll-reveal motion
+   ============================================ */
+@media (max-width: 768px) {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Stat numbers feel a beat more substantial when they pop in */
+  .about-stat-num,
+  .about-stack-badge-num,
+  .reviews-summary-num { font-variant-numeric: tabular-nums; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
