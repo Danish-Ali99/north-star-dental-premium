@@ -5114,11 +5114,12 @@ section { padding: 110px 0; }
   section { padding: 44px 0 !important; }
   .about-home,
   .services-home,
-  .team-home,
   .reviews-home,
   .blog-home,
   .faq-home,
   .location-home { padding: 52px 0 !important; }
+  /* Team section runs tighter — the carousel already creates breathing room */
+  .team-home { padding: 36px 0 28px !important; }
   /* Keep the value strip marquee thin — section { 44px } would make it too thick */
   .value-strip { padding: 20px 0 !important; }
 
@@ -5179,8 +5180,13 @@ section { padding: 110px 0; }
   .blog-home .section-head { margin-bottom: 26px; }
   .faq-wrap { padding: 0 2px; }
 
-  /* HERO — keep image bg but tighten content top padding so headline reads sooner */
-  .hero-content { padding: 36px 18px 40px; }
+  /* HERO — keep image bg but tighten content top padding so headline reads sooner.
+     Bottom padding clears the fixed bottom action bar (~75px tall). */
+  .hero-content { padding: 36px 18px 110px; }
+
+  /* TEAM section — tighten head + cta gaps so it feels intentional, not empty */
+  .team-home-head { margin-bottom: 18px !important; }
+  .team-home-cta { margin-top: 14px !important; }
 
   /* TEAM trio — smaller doctor cards, less scroll */
   .team-trio {
@@ -5372,7 +5378,7 @@ section { padding: 110px 0; }
     flex: 0 0 100%;
     scroll-snap-align: center;
     max-height: none !important;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: auto;
     padding: 0 18px;
     background: transparent !important;
     border: none !important;
@@ -5380,6 +5386,7 @@ section { padding: 110px 0; }
   }
   .team-trio.team-carousel .team-card-photo {
     aspect-ratio: 4 / 5;
+    width: 100%;
     height: auto;
     margin: 0;
     background: transparent;
@@ -5397,7 +5404,7 @@ section { padding: 110px 0; }
     align-items: center;
     justify-content: center;
     gap: 18px;
-    margin: 18px 0 0;
+    margin: 10px 0 0;
     padding: 0 4px;
   }
   .team-carousel-btn {
