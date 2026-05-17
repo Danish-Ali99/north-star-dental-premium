@@ -1,6 +1,23 @@
 (function () {
   'use strict';
 
+  // On mobile: route the "Location" nav link to the home page's #location
+  // section instead of the dedicated location.html page. Also redirect mobile
+  // visitors who land directly on location.html.
+  (() => {
+    const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+    if (!isMobile()) return;
+    // Redirect if the user is on the standalone location page
+    if (/\/location\.html$/i.test(window.location.pathname)) {
+      window.location.replace('index.html#location');
+      return;
+    }
+    // Rewrite all "Location" nav links to point to the home #location anchor
+    document.querySelectorAll('a[href$="location.html"]').forEach((a) => {
+      a.setAttribute('href', 'index.html#location');
+    });
+  })();
+
   // Sticky nav shadow on scroll + color flip when over dark sections
   const nav = document.querySelector('.nav');
   if (nav) {

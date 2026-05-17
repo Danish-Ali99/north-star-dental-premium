@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="css/style.css?v=178" />
+  <link rel="stylesheet" href="css/style.css?v=181" />
 </head>
 <body>
   <nav class="nav">
@@ -101,7 +101,8 @@
         <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=77.5354%2C12.8716%2C77.6712%2C13.0866&amp;layer=mapnik&amp;marker=12.9116%2C77.5854" loading="lazy" title="North Star Dental clinic locations across Bengaluru"></iframe>
       </div>
 
-      <div class="contact-grid contact-grid--locations">
+      <!-- DESKTOP: simple 2-card layout (matches previous design) -->
+      <div class="contact-grid contact-grid--locations location-desktop">
         <div class="contact-card fade-in">
           <div class="contact-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
@@ -123,6 +124,69 @@
           <p style="margin-top: 14px;"><a href="tel:+919035462760" style="color: var(--copper); text-decoration: none;">+91 90354 62760</a></p>
           <a href="https://maps.app.goo.gl/jqHBdz1itjzvM9bX9" target="_blank" rel="noopener" class="btn btn-outline-teal" style="margin-top: 18px;">Get Directions</a>
         </div>
+      </div>
+
+      <!-- MOBILE: editorial clinic cards -->
+      <div class="clinic-cards location-mobile">
+        <article class="clinic-card clinic-card--light fade-in">
+          <div class="clinic-card-media" style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85');">
+            <span class="clinic-card-num">01</span>
+            <span class="clinic-card-badge">Main Clinic</span>
+          </div>
+          <div class="clinic-card-body">
+            <span class="eyebrow">— South Bengaluru</span>
+            <h3>JP Nagar Clinic</h3>
+            <p class="clinic-card-tagline">Tucked into 2nd Phase, next to HDFC Bank.</p>
+            <dl class="clinic-meta">
+              <div>
+                <dt>Address</dt>
+                <dd>952, 24th Main Rd, 2nd Phase<br/>J. P. Nagar, Bengaluru 560041</dd>
+              </div>
+              <div>
+                <dt>Hours</dt>
+                <dd>Mon — Sat &middot; 9:00 to 20:00<br/>Sunday &middot; By appointment</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+919035462760">+91 90354 62760</a></dd>
+              </div>
+            </dl>
+            <div class="clinic-card-actions">
+              <a href="https://maps.app.goo.gl/4bqNGdXSn57rxErv8" target="_blank" rel="noopener" class="btn btn-copper">Get Directions</a>
+              <a href="tel:+919035462760" class="btn btn-outline-teal">Call Clinic</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="clinic-card clinic-card--dark fade-in">
+          <div class="clinic-card-media" style="background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85');">
+            <span class="clinic-card-num">02</span>
+            <span class="clinic-card-badge">North Bengaluru</span>
+          </div>
+          <div class="clinic-card-body">
+            <span class="eyebrow">— Manyata Tech Park</span>
+            <h3>Manyata Tech Park Clinic</h3>
+            <p class="clinic-card-tagline">On Manyata Tech Park Rd in Mfar Greenheart Phase IV.</p>
+            <dl class="clinic-meta">
+              <div>
+                <dt>Address</dt>
+                <dd>Mfar Greenheart Phase IV<br/>Manyata Tech Park Rd, Nagavara<br/>Bengaluru 560045</dd>
+              </div>
+              <div>
+                <dt>Hours</dt>
+                <dd>Mon — Sat &middot; 10:00 to 20:00<br/>Sunday &middot; Closed</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+919035462760">+91 90354 62760</a></dd>
+              </div>
+            </dl>
+            <div class="clinic-card-actions">
+              <a href="https://maps.app.goo.gl/jqHBdz1itjzvM9bX9" target="_blank" rel="noopener" class="btn btn-copper">Get Directions</a>
+              <a href="tel:+919035462760" class="btn btn-outline-teal">Call Clinic</a>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
