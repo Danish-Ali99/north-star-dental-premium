@@ -3422,6 +3422,13 @@ section { padding: 110px 0; }
   gap: 30px;
 }
 
+.contact-grid--locations {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 980px;
+  margin: 0 auto;
+  gap: 32px;
+}
+
 .contact-card {
   background: var(--cream);
   border: 1px solid var(--line-soft);
