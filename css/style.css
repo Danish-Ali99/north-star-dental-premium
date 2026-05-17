@@ -36,8 +36,27 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color-scheme: light;
+  color-scheme: only light;
   forced-color-adjust: none;
+}
+
+/* Defensive: if a browser still tries to force-dark, re-pin the brand colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --deep-teal: #0D2B35;
+    --deep-teal-2: #081E26;
+    --teal-mid: #0a4150;
+    --copper: #C9886B;
+    --copper-soft: #d8a48a;
+    --copper-deep: #a76d51;
+    --cream: #F3E9E2;
+    --cream-soft: #faf4ee;
+    --bone: #fbf6f1;
+    --ink: #061a21;
+    --muted: #6b6258;
+    color-scheme: only light;
+  }
+  html, body { background: var(--bone) !important; color: var(--deep-teal) !important; }
 }
 
 body {
