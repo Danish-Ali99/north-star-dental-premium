@@ -5374,11 +5374,16 @@ section { padding: 110px 0; }
     max-height: none !important;
     aspect-ratio: 4 / 5;
     padding: 0 18px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
   }
   .team-trio.team-carousel .team-card-photo {
     aspect-ratio: 4 / 5;
     height: auto;
     margin: 0;
+    background: transparent;
+    border: none;
   }
   /* Featured tag stays positioned inside the card */
   .team-trio.team-carousel .team-card-tag {
