@@ -5131,7 +5131,7 @@ section { padding: 110px 0; }
   .hero-headline .hero-word { line-height: 1.13; }
   .hero-subtitle { font-size: 1.02rem; line-height: 1.6; margin-bottom: 24px; }
 
-  /* Section headers — small bold eyebrows, smaller titles */
+  /* Section headers — eyebrows kept large but lighter, smaller titles */
   .section-head { margin-bottom: 24px; padding: 0 4px; }
   .section-head .eyebrow,
   .about-home .eyebrow,
@@ -5144,7 +5144,7 @@ section { padding: 110px 0; }
   .booking .eyebrow {
     font-size: 1.05rem;
     letter-spacing: 0.24em;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 14px;
   }
   .section-head .section-title,
