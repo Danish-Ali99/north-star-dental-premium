@@ -2173,6 +2173,16 @@ section { padding: 110px 0; }
   z-index: 0;
 }
 
+@media (max-width: 720px) {
+  .blog-home::after {
+    width: 72px;
+    height: 72px;
+    left: 18px;
+    top: 22px;
+    opacity: 0.2;
+  }
+}
+
 .blog-home > * { position: relative; z-index: 1; }
 
 .blog-grid {
