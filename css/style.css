@@ -212,7 +212,7 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 .nav-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 4px 24px 4px 12px;
+  padding: 10px 28px;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -221,19 +221,19 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 .brand {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 12px;
   text-decoration: none;
 }
 
 .brand-logo {
-  width: 86px;
-  height: 86px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   margin-right: 0;
-  transform: translateY(-4px);
+  transform: none;
 }
 
 .brand-logo img {
@@ -256,12 +256,12 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
   display: flex;
   flex-direction: column;
   line-height: 1.1;
-  padding-left: 10px;
+  padding-left: 0;
 }
 
 .brand-name {
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: 1.35rem;
   font-weight: 400;
   letter-spacing: 0.01em;
   color: var(--cream);
@@ -270,11 +270,11 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 }
 
 .brand-tagline {
-  font-size: 0.72rem;
-  letter-spacing: 0.32em;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--copper);
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
 .nav-links {
@@ -285,15 +285,21 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
   margin-left: auto;
 }
 
-.nav-links a {
-  font-size: 0.88rem;
-  letter-spacing: 0.18em;
+.nav-links a,
+.nav-cta .btn-primary {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.nav-links a {
   color: var(--cream);
   position: relative;
   padding: 6px 0;
-  white-space: nowrap;
+}
+.nav-cta .btn-primary {
+  padding: 12px 26px;
 }
 
 .nav-links a::after {
@@ -662,9 +668,9 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
   font-family: var(--font-sans);
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(1.6rem, 2.4vw, 1.95rem);
-  line-height: 1.3;
-  letter-spacing: -0.005em;
+  font-size: clamp(2rem, 3.2vw, 2.65rem);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
   margin-bottom: 22px;
   color: var(--deep-teal);
 }
@@ -748,15 +754,16 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 .hero-actions .hero-call-link {
   color: var(--ink-soft, rgba(13, 43, 53, 0.75));
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   text-transform: none;
   transition: color var(--transition);
 }
 .hero-actions .hero-call-link span {
   color: var(--deep-teal);
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 1.25rem;
 }
 .hero-actions .hero-call-link:hover {
   color: var(--copper);
@@ -963,10 +970,15 @@ section { padding: 110px 0; }
 /* Unified home section vertical rhythm */
 .about-home,
 .services-home,
-.team-home,
 .reviews-home,
 .blog-home {
   padding: 150px 0;
+}
+
+/* Team section runs tighter — the cards are the focal point and the
+   surrounding bone bg looks empty when padded as heavily as other sections */
+.team-home {
+  padding: 80px 0 70px;
 }
 
 .about-home {
@@ -1455,7 +1467,7 @@ section { padding: 110px 0; }
 }
 
 /* Team trio (featured center + two sides) */
-.team-home-head { text-align: center; margin-bottom: 56px; }
+.team-home-head { text-align: center; margin-bottom: 32px; }
 .team-home-head .section-title { margin-top: 14px; }
 .team-home-head .section-title em {
   color: var(--copper);
@@ -1492,8 +1504,11 @@ section { padding: 110px 0; }
 
 .team-card--side .team-card-photo {
   aspect-ratio: 3 / 4;
-  margin-bottom: 56px;
+  margin-bottom: 0;
 }
+
+/* Vertically center the side cards against the taller featured card */
+.team-trio { align-items: center; }
 
 .team-card--featured .team-card-photo {
   aspect-ratio: 3 / 4.2;
@@ -1584,7 +1599,7 @@ section { padding: 110px 0; }
 
 .team-home-cta {
   text-align: center;
-  margin-top: 44px;
+  margin-top: 24px;
   position: relative;
   z-index: 2;
 }
@@ -4649,20 +4664,21 @@ section { padding: 110px 0; }
     border-color: var(--copper-deep);
   }
 
-  /* "Or Call ..." plain text link below the Book button */
-  .hero-call-link {
+  /* "Or Call ..." plain text link below the Book button.
+     Selector matches the desktop one to beat its specificity. */
+  .hero-actions .hero-call-link {
     align-self: flex-start;
     color: rgba(243, 233, 226, 0.85);
     font-family: var(--font-sans);
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.02em;
     text-transform: none;
     transition: color var(--transition);
   }
-  .hero-call-link span { color: var(--cream); font-weight: 500; }
-  .hero-call-link:hover { color: var(--copper-soft); }
-  .hero-call-link:hover span { color: var(--copper-soft); }
+  .hero-actions .hero-call-link span { color: var(--cream); font-weight: 500; font-size: 1.05rem; }
+  .hero-actions .hero-call-link:hover { color: var(--copper-soft); }
+  .hero-actions .hero-call-link:hover span { color: var(--copper-soft); }
 
   /* Image visual is now the hero bg — hide the duplicate column */
   .hero-visual { display: none; }
@@ -5203,9 +5219,11 @@ section { padding: 110px 0; }
   .blog-home .section-head { margin-bottom: 26px; }
   .faq-wrap { padding: 0 2px; }
 
-  /* HERO — keep image bg but tighten content top padding so headline reads sooner.
-     Bottom padding clears the fixed bottom action bar (~75px tall). */
-  .hero-content { padding: 36px 18px 110px; }
+  /* HERO — keep original compact height; bottom padding tightened so the
+     value strip sits closer to the Or Call link instead of floating far
+     below it. Still clears the fixed bottom action bar (~75px tall). */
+  .hero { padding: 0 !important; }
+  .hero-content { padding: 36px 18px 60px; }
 
   /* TEAM section — tighten head + cta gaps so it feels intentional, not empty */
   .team-home-head { margin-bottom: 18px !important; }
