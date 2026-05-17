@@ -737,9 +737,31 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 
 .hero-actions {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 16px;
-  flex-wrap: nowrap;
   margin-bottom: 30px;
+}
+
+/* Desktop call link styling — sits below the Book button */
+.hero-actions .hero-call-link {
+  color: var(--ink-soft, rgba(13, 43, 53, 0.75));
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  transition: color var(--transition);
+}
+.hero-actions .hero-call-link span {
+  color: var(--deep-teal);
+  font-weight: 600;
+}
+.hero-actions .hero-call-link:hover {
+  color: var(--copper);
+}
+.hero-actions .hero-call-link:hover span {
+  color: var(--copper);
 }
 
 .hero-trust {
