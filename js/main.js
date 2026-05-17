@@ -91,6 +91,30 @@
     });
   });
 
+  // Auto-stagger children inside grids (services, team, reviews, blog, etc.)
+  // Run BEFORE the IntersectionObserver attaches so newly-tagged elements are observed.
+  const STAGGER_TARGETS = [
+    '.services-grid', '.team-trio', '.team-grid', '.team-page-grid',
+    '.reviews-tile-grid', '.blog-grid', '.blog-page-grid', '.contact-grid',
+    '.comfort-grid', '.clinic-cards', '.services-page-grid'
+  ];
+  STAGGER_TARGETS.forEach((sel) => {
+    document.querySelectorAll(sel).forEach((grid) => {
+      Array.from(grid.children).forEach((child, i) => {
+        if (!child.classList.contains('fade-in')) child.classList.add('fade-in');
+        if (!child.dataset.delay) child.dataset.delay = String(0.08 * i);
+      });
+    });
+  });
+
+  // Tag the about-section images so they reveal on scroll too
+  document.querySelectorAll(
+    '.about-stack-main, .about-stack-offset, .about-stack-badge'
+  ).forEach((el, i) => {
+    if (!el.classList.contains('fade-in')) el.classList.add('fade-in');
+    if (!el.dataset.delay) el.dataset.delay = String(0.1 * i);
+  });
+
   // Fade-in on scroll (supports per-element data-delay in seconds)
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
@@ -113,22 +137,6 @@
   } else {
     document.querySelectorAll('.fade-in').forEach((el) => el.classList.add('visible'));
   }
-
-  // Auto-stagger children inside grids (services, team, reviews, blog, etc.)
-  // No HTML changes needed — each child gets a small data-delay.
-  const STAGGER_TARGETS = [
-    '.services-grid', '.team-trio', '.team-grid', '.team-page-grid',
-    '.reviews-tile-grid', '.blog-grid', '.blog-page-grid', '.contact-grid',
-    '.comfort-grid', '.clinic-cards', '.services-page-grid'
-  ];
-  STAGGER_TARGETS.forEach((sel) => {
-    document.querySelectorAll(sel).forEach((grid) => {
-      Array.from(grid.children).forEach((child, i) => {
-        if (!child.classList.contains('fade-in')) child.classList.add('fade-in');
-        if (!child.dataset.delay) child.dataset.delay = String(0.08 * i);
-      });
-    });
-  });
 
   // Animated number counters — any element with [data-count] counts from 0
   // up to that number when it scrolls into view.
@@ -400,6 +408,82 @@
         });
       });
     });
+  })();
+
+  // Team trio → swipeable carousel on mobile (one doctor at a time, arrows + dots)
+  (() => {
+    const trio = document.querySelector('.team-home .team-trio');
+    if (!trio) return;
+    const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+    if (!isMobile()) return;
+    if (trio.classList.contains('team-carousel')) return;
+
+    trio.classList.add('team-carousel');
+    const cards = Array.from(trio.children).filter((c) => c.classList.contains('team-card'));
+    if (!cards.length) return;
+
+    // Build controls
+    const controls = document.createElement('div');
+    controls.className = 'team-carousel-controls';
+    const prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.className = 'team-carousel-btn';
+    prevBtn.setAttribute('aria-label', 'Previous doctor');
+    prevBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>';
+    const nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = 'team-carousel-btn';
+    nextBtn.setAttribute('aria-label', 'Next doctor');
+    nextBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>';
+    const dots = document.createElement('div');
+    dots.className = 'team-carousel-dots';
+    cards.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.type = 'button';
+      d.className = 'team-carousel-dot' + (i === 0 ? ' is-active' : '');
+      d.setAttribute('aria-label', 'Go to doctor ' + (i + 1));
+      d.dataset.idx = String(i);
+      dots.appendChild(d);
+    });
+    controls.appendChild(prevBtn);
+    controls.appendChild(dots);
+    controls.appendChild(nextBtn);
+    trio.parentNode.insertBefore(controls, trio.nextSibling);
+
+    const scrollTo = (i) => {
+      const clamped = Math.max(0, Math.min(cards.length - 1, i));
+      cards[clamped].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    };
+    const currentIdx = () => {
+      const center = trio.scrollLeft + trio.clientWidth / 2;
+      let best = 0;
+      let bestDist = Infinity;
+      cards.forEach((c, i) => {
+        const cardCenter = c.offsetLeft + c.offsetWidth / 2;
+        const d = Math.abs(cardCenter - center);
+        if (d < bestDist) { bestDist = d; best = i; }
+      });
+      return best;
+    };
+    const syncDots = () => {
+      const idx = currentIdx();
+      dots.querySelectorAll('.team-carousel-dot').forEach((d, i) => {
+        d.classList.toggle('is-active', i === idx);
+      });
+    };
+
+    prevBtn.addEventListener('click', () => scrollTo(currentIdx() - 1));
+    nextBtn.addEventListener('click', () => scrollTo(currentIdx() + 1));
+    dots.addEventListener('click', (e) => {
+      const t = e.target.closest('.team-carousel-dot');
+      if (!t) return;
+      scrollTo(parseInt(t.dataset.idx, 10));
+    });
+    let scrollTick;
+    trio.addEventListener('scroll', () => {
+      clearTimeout(scrollTick);
+      scrollTick = setTimeout(syncDots, 80);
+    }, { passive: true });
   })();
 
   // Back-to-top floating button — appears when scrolled, smooth-scrolls to top on click

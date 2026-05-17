@@ -5131,37 +5131,40 @@ section { padding: 110px 0; }
   .hero-headline .hero-word { line-height: 1.13; }
   .hero-subtitle { font-size: 1.02rem; line-height: 1.6; margin-bottom: 24px; }
 
-  /* Section headers — bigger, richer */
-  .section-head { margin-bottom: 28px; padding: 0 4px; }
+  /* Section headers — small bold eyebrows, smaller titles */
+  .section-head { margin-bottom: 24px; padding: 0 4px; }
   .section-head .eyebrow,
   .about-home .eyebrow,
   .services-home .eyebrow,
   .reviews-head .eyebrow,
   .team-home .eyebrow,
   .blog-home .eyebrow,
-  .location-home .eyebrow {
-    font-size: 0.88rem;
-    letter-spacing: 0.22em;
+  .location-home .eyebrow,
+  .faq-home .eyebrow,
+  .booking .eyebrow {
+    font-size: 1.05rem;
+    letter-spacing: 0.24em;
+    font-weight: 700;
     margin-bottom: 14px;
   }
   .section-head .section-title,
   .section-head h2 {
-    font-size: 1.85rem;
-    line-height: 1.18;
+    font-size: 1.45rem;
+    line-height: 1.22;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .section-head p {
-    font-size: 1.02rem;
+    font-size: 0.96rem;
     line-height: 1.55;
   }
-  .about-title { font-size: 1.65rem; line-height: 1.2; margin: 14px 0 16px; }
+  .about-title { font-size: 1.4rem; line-height: 1.22; margin: 12px 0 14px; }
   .reviews-head h2,
-  .team-home-head h2 { font-size: 1.85rem; line-height: 1.18; }
+  .team-home-head h2 { font-size: 1.45rem; line-height: 1.22; }
   .blog-home .section-head h2,
   .location-home .section-head h2,
-  .faq-home .section-head h2 { font-size: 1.85rem; line-height: 1.18; }
-  .booking h2 { font-size: 1.7rem; line-height: 1.2; }
+  .faq-home .section-head h2 { font-size: 1.45rem; line-height: 1.22; }
+  .booking h2 { font-size: 1.4rem; line-height: 1.22; }
 
   /* Tighter inner spacing inside sections */
   .about-grid { gap: 28px; }
@@ -5252,4 +5255,182 @@ section { padding: 110px 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .fade-in { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* ============================================
+   MOBILE — services cards in wedding-style:
+   clean cream cards, numbered badges, image at top, copper CTA
+   ============================================ */
+@media (max-width: 768px) {
+  .services-grid {
+    counter-reset: svc-num;
+    gap: 22px !important;
+  }
+
+  .services-grid .service-card {
+    background: var(--cream) !important;
+    color: var(--deep-teal) !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    position: relative;
+    border: 1px solid rgba(13, 43, 53, 0.08) !important;
+    counter-increment: svc-num;
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  /* (Numbered badge removed) */
+  .services-grid .service-card::after { content: none; }
+
+  /* Image becomes a top header section, not an overlay */
+  .services-grid .service-card .service-card-image {
+    position: relative !important;
+    inset: auto !important;
+    height: 240px;
+    width: 100%;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: 0;
+    margin: 0;
+  }
+  .services-grid .service-card .service-card-image::after {
+    display: none !important;
+  }
+
+  /* Hide the original icon — number badge replaces it */
+  .services-grid .service-card .service-icon { display: none !important; }
+
+  /* Text below image, padded generously like the wedding cards */
+  .services-grid .service-card > h3 {
+    padding: 18px 22px 6px;
+    margin: 0;
+    color: var(--deep-teal) !important;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-shadow: none !important;
+  }
+  .services-grid .service-card > p {
+    padding: 0 22px 12px;
+    margin: 0;
+    color: var(--muted) !important;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    text-shadow: none !important;
+  }
+
+  /* Copper "Learn More →" CTA at the bottom */
+  .services-grid .service-card > .service-link {
+    padding: 0 22px 18px;
+    margin: 0 !important;
+    color: var(--copper) !important;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-shadow: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    text-decoration: none;
+  }
+  .services-grid .service-card > .service-link::after {
+    content: '→';
+    color: var(--copper);
+    transition: transform var(--transition);
+  }
+
+  /* Cancel the hover/dark-overlay treatment that we used earlier */
+  .services-grid .service-card { border-color: rgba(13, 43, 53, 0.08) !important; }
+}
+
+/* ============================================
+   MOBILE — Team trio as a swipeable carousel
+   ============================================ */
+@media (max-width: 768px) {
+  .team-trio.team-carousel {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0;
+    margin: 0 -18px;
+  }
+  .team-trio.team-carousel::-webkit-scrollbar { display: none; }
+  .team-trio.team-carousel .team-card,
+  .team-trio.team-carousel .team-card--featured,
+  .team-trio.team-carousel .team-card--side {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    max-height: none !important;
+    aspect-ratio: 4 / 5;
+    padding: 0 18px;
+  }
+  .team-trio.team-carousel .team-card-photo {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    margin: 0;
+  }
+  /* Featured tag stays positioned inside the card */
+  .team-trio.team-carousel .team-card-tag {
+    top: 16px;
+    left: 30px;
+  }
+
+  /* Controls strip below the carousel */
+  .team-carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 18px 0 0;
+    padding: 0 4px;
+  }
+  .team-carousel-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(13, 43, 53, 0.25);
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--deep-teal);
+    transition: background var(--transition), border-color var(--transition), color var(--transition);
+  }
+  .team-carousel-btn:hover,
+  .team-carousel-btn:active {
+    background: var(--copper);
+    border-color: var(--copper);
+    color: var(--cream);
+  }
+  .team-carousel-btn svg { width: 14px; height: 14px; }
+  .team-carousel-dots {
+    display: flex;
+    gap: 8px;
+  }
+  .team-carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(13, 43, 53, 0.18);
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+    padding: 0;
+  }
+  .team-carousel-dot.is-active {
+    background: var(--copper);
+    transform: scale(1.15);
+  }
 }
