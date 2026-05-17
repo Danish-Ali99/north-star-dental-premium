@@ -2303,6 +2303,49 @@ section { padding: 110px 0; }
    ============================================ */
 .location-home { background: var(--bone); }
 
+/* Location toggle (two-clinic tabs) */
+.location-toggle {
+  display: inline-flex;
+  padding: 5px;
+  background: rgba(13, 43, 53, 0.06);
+  border-radius: 100px;
+  margin: 0 auto 32px;
+  gap: 4px;
+  position: relative;
+  z-index: 2;
+}
+.location-home .section-head + .location-toggle {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.location-tab {
+  padding: 12px 26px;
+  background: transparent;
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+}
+.location-tab.is-active {
+  background: var(--deep-teal);
+  color: var(--cream);
+}
+.location-tab:not(.is-active):hover { color: var(--deep-teal); }
+
+.location-panels { position: relative; }
+.location-panel { display: none; }
+.location-panel.is-active { display: block; }
+
 .location-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -4496,6 +4539,18 @@ section { padding: 110px 0; }
 
   /* LOCATION (home + page) */
   .location-grid { grid-template-columns: 1fr; }
+  .location-toggle {
+    display: flex !important;
+    width: 100% !important;
+    margin: 0 0 22px !important;
+    padding: 4px;
+  }
+  .location-tab {
+    flex: 1;
+    padding: 11px 14px;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+  }
   .location-info { padding: 36px 22px; }
   .location-info h2 { font-size: 1.5rem; }
   .location-list li { padding: 11px 0; gap: 12px; }

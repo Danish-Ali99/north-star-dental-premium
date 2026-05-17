@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="css/style.css?v=170" />
+  <link rel="stylesheet" href="css/style.css?v=171" />
 </head>
 <body>
   <!-- Navigation -->
@@ -509,48 +509,101 @@
   <section class="location-home" id="location">
     <div class="container">
       <div class="section-head fade-in">
-        <span class="eyebrow">Location</span>
-        <h2 class="section-title">Find us, quietly tucked away.</h2>
-        <p>A calm clinic at the heart of the city — easy to reach, easy to return to.</p>
+        <span class="eyebrow">Locations</span>
+        <h2 class="section-title">Two clinics, <em>one standard</em>.</h2>
+        <p>Find the clinic closest to you — both equipped, both calm, both ours.</p>
       </div>
-      <div class="location-grid fade-in">
-        <div class="location-info">
-          <span class="eyebrow">Visit The Studio</span>
-          <h2>Where craft meets <em style="color: var(--copper); font-style: normal;">comfort</em>.</h2>
-          <p>Step inside a clinic designed to feel anything but clinical — warm wood, soft light, and a chair that doesn't quite feel like one.</p>
-          <ul class="location-list">
-            <li>
-              <div class="location-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-              </div>
-              <div class="location-detail">
-                <span class="label">Address</span>
-                <span class="value">12 Linden Court, Garden District<br/>Suite 04, Floor 02</span>
-              </div>
-            </li>
-            <li>
-              <div class="location-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              </div>
-              <div class="location-detail">
-                <span class="label">Hours</span>
-                <span class="value">Mon — Fri · 9:00 to 19:00<br/>Saturday · 10:00 to 16:00</span>
-              </div>
-            </li>
-            <li>
-              <div class="location-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 01-1.1 1A19 19 0 012 4.1 1 1 0 013 3h4a1 1 0 011 .8c.1.9.3 1.8.6 2.6a1 1 0 01-.2 1L6.6 9a16 16 0 008.4 8.4l1.6-1.8a1 1 0 011-.2c.8.3 1.7.5 2.6.6a1 1 0 01.8 1z"/></svg>
-              </div>
-              <div class="location-detail">
-                <span class="label">Reach Us</span>
-                <span class="value">+91 90354 62760<br/>hello@northstardental.com</span>
-              </div>
-            </li>
-          </ul>
-          <a href="location.html" class="btn btn-copper">Get Directions</a>
+
+      <div class="location-toggle fade-in" role="tablist" aria-label="Choose clinic">
+        <button type="button" class="location-tab is-active" role="tab" data-loc="jpnagar" aria-selected="true">JP Nagar</button>
+        <button type="button" class="location-tab" role="tab" data-loc="manyata" aria-selected="false">Manyata Tech Park</button>
+      </div>
+
+      <div class="location-panels fade-in">
+        <div class="location-panel is-active" data-loc="jpnagar" role="tabpanel">
+          <div class="location-grid">
+            <div class="location-info">
+              <span class="eyebrow">JP Nagar Clinic</span>
+              <h2>Where craft meets <em style="color: var(--copper); font-style: normal;">comfort</em>.</h2>
+              <p>Tucked into 2nd Phase next to HDFC Bank — warm wood, soft light, and a chair that doesn't quite feel like one.</p>
+              <ul class="location-list">
+                <li>
+                  <div class="location-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                  </div>
+                  <div class="location-detail">
+                    <span class="label">Address</span>
+                    <span class="value">952, 24th Main Rd, next to HDFC Bank<br/>2nd Phase, J. P. Nagar, Bengaluru 560041</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="location-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  </div>
+                  <div class="location-detail">
+                    <span class="label">Hours</span>
+                    <span class="value">Mon — Sat · 9:00 to 20:00<br/>Sunday · By appointment</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="location-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 01-1.1 1A19 19 0 012 4.1 1 1 0 013 3h4a1 1 0 011 .8c.1.9.3 1.8.6 2.6a1 1 0 01-.2 1L6.6 9a16 16 0 008.4 8.4l1.6-1.8a1 1 0 011-.2c.8.3 1.7.5 2.6.6a1 1 0 01.8 1z"/></svg>
+                  </div>
+                  <div class="location-detail">
+                    <span class="label">Reach Us</span>
+                    <span class="value">+91 90354 62760<br/>hello@northstardental.com</span>
+                  </div>
+                </li>
+              </ul>
+              <a href="https://maps.app.goo.gl/4bqNGdXSn57rxErv8" target="_blank" rel="noopener" class="btn btn-copper">Get Directions</a>
+            </div>
+            <div class="location-map">
+              <iframe src="https://maps.google.com/maps?q=Aster%20Clinic%20JP%20Nagar%2C%20952%2C%2024th%20Main%20Rd%2C%20J.%20P.%20Nagar%2C%20Bengaluru%2C%20Karnataka%20560041&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" title="JP Nagar clinic location"></iframe>
+            </div>
+          </div>
         </div>
-        <div class="location-map">
-          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=77.20%2C28.60%2C77.25%2C28.65&layer=mapnik" loading="lazy" title="Clinic location"></iframe>
+
+        <div class="location-panel" data-loc="manyata" role="tabpanel" hidden>
+          <div class="location-grid">
+            <div class="location-info">
+              <span class="eyebrow">Manyata Tech Park Clinic</span>
+              <h2>Care close to <em style="color: var(--copper); font-style: normal;">your desk</em>.</h2>
+              <p>On Manyata Tech Park Rd in Mfar Greenheart Phase IV — designed for the city's quietest dental moments between meetings.</p>
+              <ul class="location-list">
+                <li>
+                  <div class="location-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                  </div>
+                  <div class="location-detail">
+                    <span class="label">Address</span>
+                    <span class="value">Mfar Greenheart Phase IV, Manyata Tech Park Rd<br/>Nagavara, Bengaluru 560045</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="location-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  </div>
+                  <div class="location-detail">
+                    <span class="label">Hours</span>
+                    <span class="value">Mon — Sat · 10:00 to 20:00<br/>Sunday · Closed</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="location-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 01-1.1 1A19 19 0 012 4.1 1 1 0 013 3h4a1 1 0 011 .8c.1.9.3 1.8.6 2.6a1 1 0 01-.2 1L6.6 9a16 16 0 008.4 8.4l1.6-1.8a1 1 0 011-.2c.8.3 1.7.5 2.6.6a1 1 0 01.8 1z"/></svg>
+                  </div>
+                  <div class="location-detail">
+                    <span class="label">Reach Us</span>
+                    <span class="value">+91 90354 62760<br/>hello@northstardental.com</span>
+                  </div>
+                </li>
+              </ul>
+              <a href="https://maps.app.goo.gl/jqHBdz1itjzvM9bX9" target="_blank" rel="noopener" class="btn btn-copper">Get Directions</a>
+            </div>
+            <div class="location-map">
+              <iframe src="https://maps.google.com/maps?q=Aster%20Clinic%2C%20Mfar%20Greenheart%20Phase%20IV%2C%20Manyata%20Tech%20Park%20Rd%2C%20Nagavara%2C%20Bengaluru%2C%20Karnataka%20560045&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" title="Manyata Tech Park clinic location"></iframe>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -697,6 +750,6 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
   </a>
 
-  <script src="js/main.js?v=25"></script>
+  <script src="js/main.js?v=26"></script>
 </body>
 </html>

@@ -315,6 +315,28 @@
     document.body.appendChild(bar);
   })();
 
+  // Location toggle (two-clinic tabs)
+  (() => {
+    const tabs = document.querySelectorAll('.location-tab');
+    const panels = document.querySelectorAll('.location-panel');
+    if (!tabs.length || !panels.length) return;
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.loc;
+        tabs.forEach((t) => {
+          const active = t.dataset.loc === target;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        panels.forEach((p) => {
+          const active = p.dataset.loc === target;
+          p.classList.toggle('is-active', active);
+          if (active) p.removeAttribute('hidden'); else p.setAttribute('hidden', '');
+        });
+      });
+    });
+  })();
+
   // Back-to-top floating button — appears when scrolled, smooth-scrolls to top on click
   (() => {
     if (document.querySelector('.back-to-top')) return;
