@@ -1173,17 +1173,7 @@ section { padding: 110px 0; }
   isolation: isolate;
 }
 
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--copper);
-  transition: width var(--transition);
-  z-index: 3;
-}
+.service-card::before { display: none; }
 
 /* Hover image — slides up from bottom with a darkening gradient */
 .service-card-image {
