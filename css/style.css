@@ -212,10 +212,10 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 .nav-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 24px 0 12px;
+  padding: 0 20px 0 12px;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
 }
 
 .brand {
@@ -226,8 +226,8 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 }
 
 .brand-logo {
-  width: 100px;
-  height: 100px;
+  width: 98px;
+  height: 98px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -243,13 +243,43 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
   filter: brightness(1.4);
 }
 
-/* Recolorable logo mark (exact brand asset) — color via background-color */
+/* Recolorable logo mark (exact brand asset) — color via background-color. */
 .brand-logo .logo-mark {
   width: 100%;
   height: 100%;
   background-color: var(--copper);
-  -webkit-mask: url('../images/logo-mark.png') no-repeat center / contain;
-          mask: url('../images/logo-mark.png') no-repeat center / contain;
+  -webkit-mask: url('../images/logo-mark-xsoft.png') no-repeat center / contain;
+          mask: url('../images/logo-mark-xsoft.png') no-repeat center / contain;
+}
+
+/* HEADER ONLY: split off the top star so it can shimmer / flare on its own.
+   Base = compass + tooth (static); ::after = top star (animated).
+   Footer logo is untouched (still the full single mark). */
+.nav .brand-logo { position: relative; }
+.nav .brand-logo .logo-mark {
+  -webkit-mask: url('../images/logo-base.png') no-repeat center / contain;
+          mask: url('../images/logo-base.png') no-repeat center / contain;
+}
+.nav .brand-logo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--copper);
+  -webkit-mask: url('../images/logo-star.png') no-repeat center / contain;
+          mask: url('../images/logo-star.png') no-repeat center / contain;
+  transform-origin: 50% 10%;
+  animation: starTwinkle 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes starTwinkle {
+  0%, 46%, 100% { opacity: 0.85; transform: scale(1); filter: brightness(1); }
+  23%           { opacity: 1; }                       /* gentle shimmer */
+  66%           { opacity: 1; transform: scale(1.5);
+                  filter: brightness(2) drop-shadow(0 0 5px rgba(243, 233, 226, 0.9)); } /* flare */
+  74%           { opacity: 0.9; transform: scale(1); filter: brightness(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav .brand-logo::after { animation: none; opacity: 0.9; }
 }
 
 .brand-text {
@@ -281,26 +311,28 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 .nav-links {
   display: flex;
   align-items: center;
-  gap: clamp(14px, 1.6vw, 28px);
+  gap: clamp(13px, 1.5vw, 32px);
   list-style: none;
   margin-left: auto;
 }
 
-.nav-links a,
-.nav-cta .btn-primary {
-  font-size: 0.96rem;
-  letter-spacing: 0.12em;
+.nav-links a {
+  font-size: 1.02rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 500;
   white-space: nowrap;
-}
-.nav-links a {
   color: var(--cream);
   position: relative;
   padding: 6px 0;
 }
 .nav-cta .btn-primary {
-  padding: 12px 26px;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 11px 22px;
 }
 
 .nav-links a::after {
@@ -642,7 +674,7 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 .hero-grid {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 150px);
   align-items: stretch;
 }
 
@@ -2970,15 +3002,23 @@ section { padding: 110px 0; }
 
 .footer-brand { padding-right: 30px; }
 
-.footer-brand .brand { margin-bottom: 22px; }
+.footer-brand .brand { margin-bottom: 22px; align-items: center; gap: 6px; }
 .footer-brand .brand-name { color: var(--cream); }
-.footer-brand .brand-logo { width: 52px; height: 40px; margin-right: 14px; }
+.footer-brand .brand-logo { width: 84px; height: 84px; margin-right: 0; }
+/* Footer wordmark sits centered with the logo (no header nudge) */
+.footer-brand .brand-text { margin-top: 0; }
 
 .footer-brand p {
   font-size: 0.92rem;
   line-height: 1.8;
   color: rgba(243, 233, 226, 0.6);
+  /* Start the description under the wordmark (logo 84px + 6px gap) */
+  margin-left: 90px;
 }
+
+/* Push the columns down so their headers line up with the "North Star
+   Dental" wordmark (which sits centered against the taller logo). */
+.footer-col { padding-top: 16px; }
 
 .footer-col h5 {
   font-family: var(--font-sans);
@@ -2992,7 +3032,13 @@ section { padding: 110px 0; }
 
 .footer-col ul { list-style: none; }
 
-.footer-col li { margin-bottom: 14px; }
+/* Plain <li> text and <a> links read identically across all footer columns */
+.footer-col li {
+  margin-bottom: 14px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(243, 233, 226, 0.7);
+}
 
 .footer-col a {
   color: rgba(243, 233, 226, 0.7);
@@ -5486,3 +5532,5 @@ section { padding: 110px 0; }
     transform: scale(1.15);
   }
 }
+
+
