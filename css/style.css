@@ -268,15 +268,16 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
   -webkit-mask: url('../images/logo-star.png') no-repeat center / contain;
           mask: url('../images/logo-star.png') no-repeat center / contain;
   transform-origin: 50% 10%;
-  animation: starTwinkle 5.5s ease-in-out infinite;
+  animation: starTwinkle 1.5s ease-in-out infinite;
   pointer-events: none;
 }
+/* Tiny top star glows ~every 1.5s: holds steady, then a bright glowing flare. */
 @keyframes starTwinkle {
-  0%, 46%, 100% { opacity: 0.85; transform: scale(1); filter: brightness(1); }
-  23%           { opacity: 1; }                       /* gentle shimmer */
-  66%           { opacity: 1; transform: scale(1.5);
-                  filter: brightness(2) drop-shadow(0 0 5px rgba(243, 233, 226, 0.9)); } /* flare */
-  74%           { opacity: 0.9; transform: scale(1); filter: brightness(1); }
+  0%, 62%, 100% { opacity: 0.85; transform: scale(1);
+                  filter: brightness(1) drop-shadow(0 0 0 rgba(243, 233, 226, 0)); }
+  80%           { opacity: 1; transform: scale(1.6);
+                  filter: brightness(2.3) drop-shadow(0 0 7px rgba(243, 233, 226, 0.95)); } /* glow */
+  90%           { opacity: 0.92; transform: scale(1); filter: brightness(1); }
 }
 @media (prefers-reduced-motion: reduce) {
   .nav .brand-logo::after { animation: none; opacity: 0.9; }
@@ -673,8 +674,8 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  min-height: calc(100vh - 150px);
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 120px);
   align-items: stretch;
 }
 
@@ -695,6 +696,15 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
   font-size: 1rem;
   letter-spacing: 0.22em;
   margin-bottom: 22px;
+}
+/* Small copper ring accent before the COSMETIC eyebrow */
+.hero .eyebrow::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--copper);
+  background: transparent;
+  opacity: 1;
 }
 
 .hero h1 {
@@ -773,32 +783,50 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
   letter-spacing: 0;
 }
 
-.hero-actions .btn { font-size: 1.28rem; padding: 12px 28px; letter-spacing: 0.14em; }
+.hero-actions .btn { font-size: 0.9rem; padding: 14px 15px; letter-spacing: 0.07em; }
 
 .hero-actions {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 14px;
   margin-bottom: 30px;
 }
-
-/* Desktop call link styling — sits below the Book button */
+/* Both CTAs sit side by side, equal + compact width */
+.hero-actions .btn,
 .hero-actions .hero-call-link {
-  color: var(--ink-soft, rgba(13, 43, 53, 0.75));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 208px;
+}
+
+/* Desktop call link — boxed (ghost) button to pair with the Book button */
+.hero-actions .hero-call-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 15px;
+  border: 1.5px solid rgba(13, 43, 53, 0.3);
+  color: var(--ink-soft, rgba(13, 43, 53, 0.78));
   font-family: var(--font-sans);
-  font-size: 1.15rem;
+  font-size: 0.88rem;
   font-weight: 400;
   letter-spacing: 0.01em;
   text-transform: none;
-  transition: color var(--transition);
+  white-space: nowrap;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
 }
 .hero-actions .hero-call-link span {
   color: var(--deep-teal);
-  font-weight: 400;
-  font-size: 1.25rem;
+  font-weight: 600;
+  font-size: 0.92rem;
 }
 .hero-actions .hero-call-link:hover {
+  border-color: var(--copper);
   color: var(--copper);
 }
 .hero-actions .hero-call-link:hover span {
@@ -895,54 +923,30 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
   overflow: hidden;
 }
 
-.hero-visual::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: -80px;
-  transform: translateY(-50%);
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background: var(--copper);
-  opacity: 0.32;
-  z-index: 1;
-}
-
-.hero-visual::after {
-  content: '';
-  position: absolute;
-  bottom: -180px;
-  right: -180px;
-  width: 480px;
-  height: 480px;
-  border-radius: 50%;
-  background: var(--cream);
-  opacity: 0.06;
-  z-index: 1;
-}
+/* Decorative circle overlays removed — they read as marks over the photo */
+.hero-visual::before,
+.hero-visual::after { display: none; }
 
 .hero-image {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1588776814546-daab30f310ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=85');
+  background-image: url('../images/hero-smile.jpg?v=2');
   background-size: cover;
-  background-position: center top;
-  filter: grayscale(0.15) contrast(1.05) brightness(0.88);
-  mix-blend-mode: luminosity;
-  opacity: 0.65;
+  background-position: center center;
+  filter: contrast(1.03) saturate(1.04);
+  opacity: 0.97;
   z-index: 0;
 }
 
 .hero-tag {
   position: absolute;
-  bottom: 60px;
-  right: 60px;
+  bottom: 28px;
+  right: 28px;
   z-index: 3;
   background: var(--cream);
-  padding: 24px 28px;
+  padding: 18px 22px;
   border-radius: 0;
-  max-width: 280px;
+  max-width: 238px;
   box-shadow: var(--shadow-deep);
 }
 
@@ -958,7 +962,7 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
 .hero-tag-text {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.88rem;
   color: var(--deep-teal);
   line-height: 1.5;
 }
@@ -4636,7 +4640,7 @@ section { padding: 110px 0; }
   /* HERO — full-bleed image as background with text overlaid */
   .hero {
     position: relative;
-    background-image: url('https://images.unsplash.com/photo-1588776814546-daab30f310ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=85');
+    background-image: url('../images/hero-smile.jpg?v=2');
     background-size: cover;
     background-position: center;
     isolation: isolate;
@@ -5534,3 +5538,45 @@ section { padding: 110px 0; }
 }
 
 
+
+/* ============================================
+   BLOG ARTICLE (individual post pages)
+   ============================================ */
+.blog-article { max-width: 760px; margin: 0 auto; }
+.blog-byline {
+  color: var(--copper);
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 26px;
+  font-weight: 500;
+}
+.blog-article-figure { margin: 0 0 34px; }
+.blog-article-figure img { width: 100%; height: auto; display: block; }
+.blog-article h2 {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--deep-teal);
+  margin: 36px 0 14px;
+  line-height: 1.3;
+}
+.blog-article h3 {
+  font-size: 1.16rem;
+  font-weight: 600;
+  color: var(--deep-teal);
+  margin: 26px 0 10px;
+}
+.blog-article p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+.blog-article ul, .blog-article ol {
+  margin: 0 0 20px 22px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.blog-article li { margin-bottom: 8px; }
+.blog-article strong { color: var(--deep-teal); }
