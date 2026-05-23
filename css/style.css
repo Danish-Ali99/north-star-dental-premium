@@ -5961,11 +5961,10 @@ section { padding: 110px 0; }
    SERVICES HERO — centred text variant (services.html)
    ============================================ */
 .services-hero--centered {
-  background-color: rgb(145, 212, 237);
+  background-color: #0d2b35;
 }
 .services-hero--centered .services-hero-bg {
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
 }
 .services-hero--centered .services-hero-overlay {
