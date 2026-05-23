@@ -1023,6 +1023,28 @@ section { padding: 110px 0; }
   position: relative;
   display: flex;
   align-items: center;
+  overflow: hidden;
+}
+
+.about-home .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Faded compass-star watermark sitting behind the about copy, bleeding off the right edge */
+.about-watermark {
+  position: absolute;
+  top: 44%;
+  right: -34px;
+  transform: translateY(-50%);
+  width: 440px;
+  height: 440px;
+  background-color: var(--deep-teal);
+  opacity: 0.07;
+  -webkit-mask: url('../images/logo-mark.png') no-repeat center / contain;
+          mask: url('../images/logo-mark.png') no-repeat center / contain;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .about-grid {
@@ -1042,14 +1064,15 @@ section { padding: 110px 0; }
 .about-stack {
   position: relative;
   width: 100%;
-  min-height: 600px;
+  min-height: 0;
 }
 
 .about-stack-main {
   position: relative;
-  width: 78%;
-  aspect-ratio: 4 / 4.6;
+  width: 100%;
+  aspect-ratio: 1 / 1.1;
   overflow: hidden;
+  border-radius: 6px;
   box-shadow: 0 28px 60px -28px rgba(13, 43, 53, 0.45);
 }
 
@@ -1082,8 +1105,8 @@ section { padding: 110px 0; }
 
 .about-stack-badge {
   position: absolute;
-  top: 38px;
-  right: 4%;
+  top: 55%;
+  right: -52px;
   width: 132px;
   height: 132px;
   border-radius: 50%;
@@ -2276,7 +2299,7 @@ section { padding: 110px 0; }
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(201, 136, 107, 0.22);
-  padding: 84px 0 !important;   /* compact — fits one screen, no empty gap */
+  padding: 66px 0 !important;   /* compact — fits one screen, no empty gap */
 }
 
 /* "View More" sits centred below the three cards — solid teal box */
@@ -2284,7 +2307,7 @@ section { padding: 110px 0; }
   grid-column: 1 / -1;
   grid-row: 3;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 12px;
 }
 .blog-viewmore a {
   display: inline-flex;
@@ -2292,9 +2315,9 @@ section { padding: 110px 0; }
   justify-content: center;
   background: var(--deep-teal);
   color: var(--cream);
-  padding: 19px 52px;
+  padding: 15px 40px;
   font-family: var(--font-sans);
-  font-size: 1.08rem;
+  font-size: 0.96rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2352,7 +2375,7 @@ section { padding: 110px 0; }
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto auto;
   column-gap: 28px;
-  row-gap: 28px;
+  row-gap: 20px;
   align-items: stretch;
 }
 
@@ -3885,9 +3908,10 @@ section { padding: 110px 0; }
 
   .about-grid { grid-template-columns: 1fr; gap: 60px; }
   .about-stack { min-height: 480px; }
-  .about-stack-main { width: 82%; aspect-ratio: 4/4.4; }
+  .about-stack-main { width: 100%; aspect-ratio: 1/1.08; }
   .about-stack-offset { width: 58%; }
-  .about-stack-badge { width: 104px; height: 104px; top: 22px; }
+  .about-stack-badge { width: 104px; height: 104px; top: 18px; right: 4%; }
+  .about-watermark { display: none; }
   .about-stack-badge-num { font-size: 1.4rem; }
   .about-stack-badge-label { font-size: 0.52rem; }
   .about-stats { gap: 14px; }
@@ -4154,7 +4178,7 @@ section { padding: 110px 0; }
   border-top: 1px solid rgba(201, 136, 107, 0.18);
   border-bottom: 1px solid rgba(201, 136, 107, 0.18);
   overflow: hidden;
-  padding: 12px 0;
+  padding: 18px 0;
 }
 
 .value-strip::before,
@@ -4183,10 +4207,6 @@ section { padding: 110px 0; }
   width: max-content;
   animation: valueStripScroll 55s linear infinite;
   will-change: transform;
-}
-
-.value-strip:hover .value-strip-track {
-  animation-play-state: paused;
 }
 
 .value-strip-row {
@@ -4783,8 +4803,8 @@ section { padding: 110px 0; }
   /* ABOUT (home) — stack + scale down stack composition */
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .about-title { font-size: 1.4rem; margin: 12px 0 18px; }
-  .about-stack { min-height: 0; aspect-ratio: 4/4.2; max-width: 420px; margin: 0 auto; }
-  .about-stack-main { width: 80%; aspect-ratio: 4 / 4.4; }
+  .about-stack { min-height: 0; aspect-ratio: auto; max-width: 460px; margin: 0 auto; }
+  .about-stack-main { width: 100%; aspect-ratio: 4 / 4.4; }
   .about-stack-offset { width: 56%; border-width: 5px; }
   .about-stack-badge {
     width: 86px;
@@ -5575,51 +5595,127 @@ section { padding: 110px 0; }
 /* ============================================
    BLOG ARTICLE (individual post pages)
    ============================================ */
-.blog-article { max-width: 820px; margin: 0 auto; }
-.blog-article::after { content: ''; display: block; clear: both; }
-.blog-byline {
-  color: var(--copper);
-  font-size: 0.92rem;
-  letter-spacing: 0.04em;
-  margin-bottom: 22px;
-  font-weight: 500;
+/* ============================================
+   PREMIUM EDITORIAL ARTICLE (blog post pages)
+   ============================================ */
+
+/* Hero — large serif headline, clean editorial (no inline CTA) */
+.blog-post-hero { padding: 104px 0 86px; }
+.blog-post-hero .eyebrow { color: var(--copper-soft); margin-bottom: 24px; }
+.blog-post-hero .eyebrow::before,
+.blog-post-hero .eyebrow::after { display: none; }
+.blog-post-hero h1 {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  font-size: clamp(2.15rem, 4.2vw, 3.35rem);
+  line-height: 1.14;
+  letter-spacing: 0.2px;
+  margin-bottom: 24px;
 }
-/* Smaller image floated left; the article text wraps to its right, then below */
+.blog-post-hero p.lede {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.12rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.blog-post-hero .service-page-hero-actions,
+.blog-post-hero .service-page-hero-call { display: none; }
+
+/* Author byline under the title (Aster-style: name + date) */
+.blog-post-hero .blog-byline-hero {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem;
+  color: var(--copper-soft);
+  letter-spacing: 0.01em;
+  margin: -2px 0 22px;
+}
+.blog-post-hero .blog-byline-hero .sep { margin: 0 9px; opacity: 0.6; }
+
+/* Article: wide feature image + full-width text column (all blog posts) */
+.blog-article { max-width: 1180px; margin: 0 auto; }
+.container:has(> .blog-article) { max-width: 1460px; }  /* let the blog article extend wider than the standard container */
+
+/* Wide lead image — kept large/prominent like the reference */
 .blog-article-figure {
-  float: left;
-  width: 320px;
-  max-width: 42%;
-  margin: 4px 34px 16px 0;
+  width: 100%;
+  margin: 0 0 48px;
+  overflow: hidden;
 }
-.blog-article-figure img { width: 100%; height: auto; display: block; }
+.blog-article-figure img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+}
+
+/* Text spans the full width of the feature image */
+.blog-article > p,
+.blog-article h2,
+.blog-article h3,
+.blog-article ul,
+.blog-article ol {
+  max-width: 100%;
+}
+
+.blog-article p {
+  font-family: 'Lora', Georgia, serif;
+  color: #463f39;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+.blog-article > p:first-of-type {
+  font-size: 1.22rem;
+  line-height: 1.75;
+  color: #322d28;
+  margin-bottom: 28px;
+}
+
 .blog-article h2 {
-  font-family: var(--font-sans);
-  font-size: 1.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.7rem;
   font-weight: 600;
   color: var(--deep-teal);
-  margin: 36px 0 14px;
-  line-height: 1.3;
+  line-height: 1.25;
+  margin: 46px auto 16px;
 }
 .blog-article h3 {
-  font-size: 1.16rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--deep-teal);
-  margin: 26px 0 10px;
+  margin: 30px auto 10px;
 }
-.blog-article p {
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.75;
-  margin-bottom: 16px;
+
+.blog-article ul,
+.blog-article ol {
+  margin-top: 0;
+  margin-bottom: 22px;
+  padding-left: 24px;
+  font-family: 'Lora', Georgia, serif;
+  color: #463f39;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
-.blog-article ul, .blog-article ol {
-  margin: 0 0 20px 22px;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
+.blog-article ul { list-style: disc; }
+.blog-article ol { list-style: decimal; }
+.blog-article li { margin-bottom: 10px; padding-left: 4px; }
+.blog-article strong { color: var(--deep-teal); font-weight: 600; }
+
+@media (max-width: 768px) {
+  .blog-post-hero { padding: 80px 0 56px; }
+  .blog-post-hero h1 { font-size: 1.9rem; }
+  .blog-post-hero p.lede { font-size: 1.02rem; }
+  .blog-article { max-width: 100%; }
+  .blog-article > p,
+  .blog-article h2,
+  .blog-article h3,
+  .blog-article ul,
+  .blog-article ol { max-width: 100%; }
+  .blog-article h2 { font-size: 1.42rem; }
+  .blog-article h3 { font-size: 1.2rem; }
 }
-.blog-article li { margin-bottom: 8px; }
-.blog-article strong { color: var(--deep-teal); }
 
 /* ============================================
    BLOG LIST PAGE — alternating full-width rows
@@ -5684,3 +5780,201 @@ section { padding: 110px 0; }
   .blog-article-figure { float: none; width: 100%; max-width: 100%; margin: 0 0 24px; }
   .blog-post-hero .service-page-hero-actions .btn { font-size: 1rem; padding: 15px 22px; }
 }
+
+
+/* ============================================
+   BLOG LISTING — "The Journal" (magazine layout)
+   ============================================ */
+.journal-hero {
+  background: var(--deep-teal);
+  background-image:
+    radial-gradient(130% 100% at 50% -20%, rgba(201, 136, 107, 0.18), transparent 55%),
+    radial-gradient(90% 80% at 50% 130%, rgba(243, 233, 226, 0.06), transparent 60%);
+  text-align: center;
+  padding: 122px 24px 96px;
+  color: var(--cream);
+}
+.journal-hero-inner { max-width: 780px; margin: 0 auto; }
+.journal-hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: var(--cream);
+  margin: 0 0 24px;
+}
+.journal-hero-sub {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  line-height: 1.95;
+  color: var(--copper-soft);
+  max-width: 470px;
+  margin: 0 auto;
+}
+
+.journal-browse-bar { background: var(--bone); padding: 34px 0 8px; }
+.journal-browse { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 28px; }
+.journal-browse-label {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.45rem;
+  color: var(--deep-teal);
+}
+.journal-cats { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-left: auto; }
+.journal-cat {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-sans);
+  text-transform: uppercase; letter-spacing: 0.16em;
+  font-size: 0.72rem; font-weight: 500;
+  color: var(--deep-teal); padding: 6px 0;
+  position: relative; transition: color var(--transition);
+}
+.journal-cat::after {
+  content: ''; position: absolute; left: 0; bottom: 0;
+  width: 0; height: 1.5px; background: var(--copper);
+  transition: width var(--transition);
+}
+.journal-cat:hover, .journal-cat.is-active { color: var(--copper); }
+.journal-cat.is-active::after { width: 100%; }
+
+.journal-body { background: var(--bone); padding: 44px 0 104px; }
+
+.journal-featured { position: relative; margin-bottom: 72px; }
+.journal-featured-img {
+  display: block; position: relative; min-height: 320px;
+  background-size: cover; background-position: center;
+}
+.journal-badge {
+  position: absolute; top: 22px; left: 22px;
+  width: 82px; height: 82px; border-radius: 50%;
+  background: var(--deep-teal); color: var(--cream);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  font-size: 0.62rem; font-weight: 600; line-height: 1.55;
+  font-family: var(--font-sans);
+}
+.journal-badge em { font-style: normal; display: block; }
+.journal-featured-card { background: var(--cream-soft); padding: 38px 40px; }
+.journal-featured-cat {
+  display: inline-block; font-family: var(--font-sans);
+  text-transform: uppercase; letter-spacing: 0.18em;
+  font-size: 0.68rem; color: var(--copper); margin-bottom: 14px;
+}
+.journal-featured-card h2 {
+  font-family: 'Playfair Display', Georgia, serif; font-weight: 600;
+  font-size: clamp(1.6rem, 2.6vw, 2.35rem); line-height: 1.18; margin-bottom: 16px;
+}
+.journal-featured-card h2 a { color: var(--deep-teal); text-decoration: none; transition: color var(--transition); }
+.journal-featured-card h2 a:hover { color: var(--copper); }
+.journal-featured-card p {
+  font-family: 'Lora', Georgia, serif; color: #463f39;
+  font-size: 1.02rem; line-height: 1.8; margin-bottom: 26px;
+}
+
+@media (min-width: 880px) {
+  .journal-featured { display: grid; grid-template-columns: 1.1fr 0.94fr; align-items: center; }
+  .journal-featured-img { min-height: 510px; height: 100%; }
+  .journal-featured-card {
+    margin-left: -92px; z-index: 2; padding: 50px 48px;
+    box-shadow: 0 34px 80px -34px rgba(13, 43, 53, 0.5);
+  }
+}
+
+.journal-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+  gap: 46px 38px;
+}
+.journal-card { position: relative; }
+.journal-card-img {
+  display: block; position: relative; aspect-ratio: 4 / 5;
+  background-size: cover; background-position: center;
+  margin-bottom: 20px; overflow: hidden;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 500ms ease;
+}
+.journal-card-img:hover { transform: translateY(-5px); box-shadow: 0 26px 50px -24px rgba(13, 43, 53, 0.45); }
+.journal-card-vcat {
+  position: absolute; top: 14px; right: 12px;
+  writing-mode: vertical-rl;
+  text-transform: uppercase; letter-spacing: 0.22em;
+  font-size: 0.62rem; font-weight: 600; color: var(--cream);
+  font-family: var(--font-sans); text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+.journal-card h3 {
+  font-family: 'Playfair Display', Georgia, serif; font-weight: 600;
+  font-size: 1.32rem; line-height: 1.28; margin-bottom: 12px; text-align: center;
+}
+.journal-card h3 a { color: var(--deep-teal); text-decoration: none; transition: color var(--transition); }
+.journal-card h3 a:hover { color: var(--copper); }
+.journal-card p {
+  font-family: 'Lora', Georgia, serif; color: #463f39;
+  font-size: 0.95rem; line-height: 1.75; text-align: center; margin-bottom: 16px;
+}
+.journal-readmore {
+  display: block; text-align: center; text-decoration: none;
+  font-family: 'Playfair Display', Georgia, serif; font-style: italic;
+  font-size: 1.05rem; color: var(--deep-teal); transition: color var(--transition);
+}
+.journal-readmore span { display: inline-block; transition: transform var(--transition); }
+.journal-readmore:hover { color: var(--copper); }
+.journal-readmore:hover span { transform: translateX(6px); }
+
+@media (max-width: 879px) {
+  .journal-hero { padding: 88px 22px 64px; }
+  .journal-browse { justify-content: center; }
+  .journal-cats { margin-left: 0; }
+  .journal-featured-img { min-height: 280px; }
+  .journal-featured-card { padding: 30px 26px; }
+}
+
+
+/* ============================================
+   ABOUT HERO — journal-style centred text over feature image
+   ============================================ */
+.about-journal-hero .services-hero-overlay {
+  background: linear-gradient(180deg, rgba(13, 43, 53, 0.7) 0%, rgba(13, 43, 53, 0.5) 48%, rgba(13, 43, 53, 0.72) 100%);
+}
+.about-journal-hero .services-hero-inner {
+  align-items: center;
+  text-align: center;
+  max-width: 860px;
+}
+.about-journal-hero .services-hero-inner .eyebrow { justify-content: center; }
+.about-journal-hero .services-hero-inner h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2.3rem, 4.6vw, 3.5rem);
+  line-height: 1.16;
+  letter-spacing: 0.4px;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+.about-journal-hero .services-hero-actions { justify-content: center; }
+
+/* full-bleed single About image — no extra zoom so the room reads clearly */
+.about-stack-main img { transform: none; }
+
+/* ============================================
+   SERVICES HERO — centred text variant (services.html)
+   ============================================ */
+.services-hero--centered {
+  background-color: rgb(145, 212, 237);
+}
+.services-hero--centered .services-hero-bg {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.services-hero--centered .services-hero-overlay {
+  background: linear-gradient(180deg, rgba(13, 43, 53, 0.52) 0%, rgba(13, 43, 53, 0.42) 50%, rgba(13, 43, 53, 0.56) 100%);
+}
+.services-hero--centered .services-hero-inner {
+  align-items: center;
+  text-align: center;
+  max-width: 920px;
+}
+.services-hero--centered .services-hero-inner .eyebrow { justify-content: center; }
+.services-hero--centered .services-hero-actions { justify-content: center; }
