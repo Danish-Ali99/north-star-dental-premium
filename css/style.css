@@ -697,15 +697,17 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
   letter-spacing: 0.22em;
   margin-bottom: 22px;
 }
-/* Small copper ring accent before the COSMETIC eyebrow */
+/* Small dash accent before the COSMETIC eyebrow */
 .hero .eyebrow::before {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1.5px solid var(--copper);
-  background: transparent;
+  width: 14px;
+  height: 1px;
+  border-radius: 1px;
+  background: var(--copper);
+  border: none;
   opacity: 1;
 }
+
+
 
 .hero h1 {
   font-family: var(--font-sans);
@@ -935,6 +937,14 @@ p { margin-bottom: 1rem; color: var(--muted); font-size: 1.05rem; line-height: 1
   background-position: center center;
   filter: contrast(1.03) saturate(1.04);
   opacity: 0.97;
+  z-index: 0;
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: 0;
 }
 
@@ -2713,7 +2723,7 @@ section { padding: 110px 0; }
    ============================================ */
 .services-hero {
   position: relative;
-  height: clamp(520px, 78vh, 760px);
+  height: clamp(460px, 68vh, 660px);
   overflow: hidden;
   background: var(--deep-teal);
 }
@@ -2724,6 +2734,67 @@ section { padding: 110px 0; }
   background-size: cover;
   background-position: center;
   filter: contrast(1.04) saturate(1.05);
+}
+.services-hero-bg--video {
+  background: none;
+  filter: none;
+  overflow: hidden;
+}
+.services-hero-bg--solid {
+  background-image: none !important;
+  background-color: #0d2b35;
+  filter: none;
+  /* Subtle dot-grid texture */
+  background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px) !important;
+  background-size: 26px 26px !important;
+}
+.services-hero-bg--solid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.015) 25%, transparent 25%) -13px 0,
+              linear-gradient(225deg, rgba(255,255,255,0.015) 25%, transparent 25%) -13px 0,
+              linear-gradient(315deg, rgba(255,255,255,0.015) 25%, transparent 25%),
+              linear-gradient(45deg, rgba(255,255,255,0.015) 25%, transparent 25%);
+  background-size: 26px 26px;
+  pointer-events: none;
+}
+/* No dark overlay needed for solid bg */
+.services-hero-bg--solid ~ .services-hero-overlay {
+  background: linear-gradient(180deg, rgba(13,43,53,0.15) 0%, rgba(13,43,53,0.35) 100%);
+}
+/* Solid-bg hero: eyebrow brown, consistent text sizes, copper button */
+.services-hero-bg--solid ~ .services-hero-overlay ~ .services-hero-inner .eyebrow {
+  color: var(--copper);
+  text-shadow: none;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+}
+.services-hero-bg--solid ~ .services-hero-overlay ~ .services-hero-inner h1 {
+  color: #fff;
+  text-shadow: none;
+  font-size: clamp(1.95rem, 3.6vw, 2.75rem);
+  line-height: 1.2;
+}
+.services-hero-bg--solid ~ .services-hero-overlay ~ .services-hero-inner p {
+  color: rgba(255,255,255,0.85);
+  text-shadow: none;
+}
+.services-hero-bg--solid ~ .services-hero-overlay ~ .services-hero-inner .btn-copper {
+  background: var(--copper);
+  border-color: var(--copper);
+  color: #fff;
+}
+.services-hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.75);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
 }
 
 .services-hero-overlay {
@@ -3390,7 +3461,7 @@ section { padding: 110px 0; }
 .content-split.reverse > :first-child { order: 2; }
 
 .content-split-image {
-  height: 520px;
+  height: 420px;
   border-radius: 0;
   background-size: cover;
   background-position: center;
@@ -5983,12 +6054,39 @@ section { padding: 110px 0; }
   background-position: center;
 }
 .services-hero--centered .services-hero-overlay {
-  background: linear-gradient(180deg, rgba(13, 43, 53, 0.52) 0%, rgba(13, 43, 53, 0.42) 50%, rgba(13, 43, 53, 0.56) 100%);
+  background: linear-gradient(180deg, rgba(13, 43, 53, 0.72) 0%, rgba(13, 43, 53, 0.65) 50%, rgba(13, 43, 53, 0.75) 100%);
 }
 .services-hero--centered .services-hero-inner {
   align-items: center;
   text-align: center;
   max-width: 920px;
 }
-.services-hero--centered .services-hero-inner .eyebrow { justify-content: center; }
+.services-hero--centered .services-hero-inner .eyebrow {
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+.services-hero--centered .services-hero-inner h1 {
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.45);
+}
+.services-hero--centered .services-hero-inner p {
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+}
 .services-hero--centered .services-hero-actions { justify-content: center; }
+
+/* Team page hero — lighter overlay for better image clarity */
+.team-page-hero .services-hero-overlay {
+  background: linear-gradient(180deg, rgba(13,43,53,0.55) 0%, rgba(13,43,53,0.75) 100%);
+}
+.team-page-hero .services-hero-inner {
+  align-items: center;
+  text-align: center;
+}
+.team-page-hero .services-hero-inner .eyebrow {
+  justify-content: center;
+}
+.team-page-hero .services-hero-actions {
+  justify-content: center;
+}

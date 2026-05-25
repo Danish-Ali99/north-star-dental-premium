@@ -228,14 +228,8 @@
           if (m !== mega) m.classList.remove('is-open');
         });
         mega.classList.toggle('is-open', !wasOpen);
-      } else if (!mega.classList.contains('is-open')) {
-        // Desktop: first click reveals, second click follows link
-        e.preventDefault();
-        document.querySelectorAll('.has-mega.is-open').forEach((m) => {
-          if (m !== mega) m.classList.remove('is-open');
-        });
-        mega.classList.add('is-open');
       }
+      // Desktop: let the click navigate directly — hover handles the dropdown
     });
   });
 
