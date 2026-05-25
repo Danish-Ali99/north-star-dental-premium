@@ -4003,7 +4003,8 @@ section { padding: 110px 0; }
   .blog-intro,
   .blog-card--a,
   .blog-card--b,
-  .blog-card--c {
+  .blog-card--c,
+  .blog-viewmore {
     grid-column: 1;
     grid-row: auto;
     margin-top: 0;
@@ -6132,4 +6133,75 @@ section { padding: 110px 0; }
 }
 .team-page-hero .services-hero-actions {
   justify-content: center;
+}
+
+/* ============================================
+   MOBILE FIXES — footer brand + location toggle
+   ============================================ */
+
+/* Footer logo + text alignment on mobile */
+@media (max-width: 768px) {
+  .footer-brand .brand {
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .footer-brand .brand-logo {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+  .footer-brand .brand-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .footer-brand p {
+    margin-left: 0;
+    margin-top: 6px;
+  }
+}
+
+/* Blog view-more button — full width after cards on mobile */
+@media (max-width: 768px) {
+  .blog-viewmore {
+    text-align: left;
+    margin-top: 4px;
+  }
+  .blog-viewmore a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Location toggle — 3-column grid on mobile */
+@media (max-width: 768px) {
+  .location-home .section-head + .location-toggle,
+  .location-toggle {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    width: 100% !important;
+    border-radius: 14px !important;
+    padding: 5px !important;
+    gap: 4px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: visible !important;
+    justify-content: unset !important;
+  }
+  .location-tab {
+    flex: unset !important;
+    flex-shrink: unset !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.1em !important;
+    padding: 12px 6px !important;
+    border-radius: 10px !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
 }
