@@ -4364,15 +4364,58 @@ section { padding: 110px 0; }
    ============================================ */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
-              transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(28px);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Slide in from left for split-layout left panels */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide in from right for split-layout right panels */
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale-up for stat numbers, badges, cards */
+.fade-in-scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.fade-in-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Auto-stagger for grid children */
+.stagger-children > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-children > *:nth-child(2) { transition-delay: 100ms; }
+.stagger-children > *:nth-child(3) { transition-delay: 200ms; }
+.stagger-children > *:nth-child(4) { transition-delay: 300ms; }
+.stagger-children > *:nth-child(5) { transition-delay: 400ms; }
+.stagger-children > *:nth-child(6) { transition-delay: 500ms; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

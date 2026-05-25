@@ -129,9 +129,9 @@
       },
       { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
     );
-    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach((el) => observer.observe(el));
   } else {
-    document.querySelectorAll('.fade-in').forEach((el) => el.classList.add('visible'));
+    document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach((el) => el.classList.add('visible'));
   }
 
   // Animated number counters — any element with [data-count] counts from 0
