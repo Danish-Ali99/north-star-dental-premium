@@ -2641,8 +2641,24 @@ section { padding: 110px 0; }
 
 /* Instagram strip — mobile */
 @media (max-width: 768px) {
-  .ig-strip { padding: 56px 0; }
-  .ig-posts-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ig-strip { padding: 48px 0; }
+  .ig-posts-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    /* hide scrollbar */
+    scrollbar-width: none;
+  }
+  .ig-posts-grid::-webkit-scrollbar { display: none; }
+  .ig-card {
+    flex: 0 0 72vw;
+    min-width: 0;
+    scroll-snap-align: center;
+  }
 }
 
 /* ============================================
