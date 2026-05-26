@@ -1421,7 +1421,7 @@ section { padding: 110px 0; }
 
 .services-cta {
   text-align: center;
-  margin-top: 22px;
+  margin-top: 40px;
 }
 
 /* ============================================
@@ -1540,9 +1540,10 @@ section { padding: 110px 0; }
 .team-home-head { text-align: center; margin-bottom: 32px; }
 .team-home-head .section-title { margin-top: 14px; }
 .team-home-head .section-title em {
-  color: var(--copper);
+  color: inherit;
   font-style: normal;
-  font-weight: 600;
+  font-weight: inherit;
+  font-size: inherit;
 }
 
 .eyebrow-flanked {
@@ -2487,9 +2488,167 @@ section { padding: 110px 0; }
 }
 
 /* ============================================
+   INSTAGRAM STRIP
+   ============================================ */
+.ig-strip {
+  background: var(--deep-teal);
+  padding: 80px 0;
+}
+.ig-strip-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+  align-items: center;
+}
+.ig-strip-left .eyebrow {
+  color: var(--copper);
+  text-shadow: none;
+}
+.ig-strip-title {
+  color: #fff;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 14px 0 18px;
+}
+.ig-strip-title em {
+  color: var(--copper);
+  font-style: normal;
+}
+.ig-strip-sub {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.97rem;
+  line-height: 1.7;
+  max-width: 420px;
+  margin-bottom: 28px;
+}
+.ig-handle-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 3px;
+  transition: color var(--transition), border-color var(--transition);
+}
+.ig-handle-link:hover {
+  color: var(--copper);
+  border-color: var(--copper);
+}
+.ig-more-text {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+.ig-more-link {
+  display: inline;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  transition: color var(--transition);
+  cursor: pointer;
+}
+.ig-more-link:hover { color: var(--copper); }
+.ig-qr-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  min-width: 200px;
+}
+.ig-qr-placeholder {
+  width: 160px;
+  height: 160px;
+  border: 2px dashed rgba(13,43,53,0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--deep-teal);
+  background: var(--bone);
+}
+.ig-qr-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Instagram image cards */
+.ig-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.ig-card {
+  position: relative;
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  text-decoration: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.ig-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+.ig-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.ig-card:hover img {
+  transform: scale(1.05);
+}
+.ig-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13,43,53,0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.ig-card:hover .ig-card-overlay { opacity: 1; }
+.ig-card--face img {
+  object-fit: contain;
+  background: var(--deep-teal);
+}
+
+/* Instagram strip — mobile */
+@media (max-width: 768px) {
+  .ig-strip { padding: 56px 0; }
+  .ig-posts-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
+
+/* ============================================
    LOCATION (HOME)
    ============================================ */
-.location-home { background: var(--bone); }
+.location-home { background: var(--bone); padding: 72px 0; }
 
 /* Location toggle (two-clinic tabs) */
 .location-toggle {
