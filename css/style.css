@@ -4998,9 +4998,9 @@ section { padding: 110px 0; }
   /* HERO — full-bleed image as background with text overlaid */
   .hero {
     position: relative;
-    background-image: url('../images/hero-smile.jpg?v=2');
+    background-image: url('../images/hero-mobile.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     isolation: isolate;
     overflow: hidden;
   }
@@ -5024,7 +5024,7 @@ section { padding: 110px 0; }
     z-index: 2;
     padding: 70px 22px 56px;
     min-height: auto;
-    justify-content: flex-end;
+    justify-content: center;
   }
   .hero .eyebrow {
     font-size: 0.78rem;
@@ -5082,6 +5082,9 @@ section { padding: 110px 0; }
     letter-spacing: 0.02em;
     text-transform: none;
     transition: color var(--transition);
+    border: none;
+    padding: 0;
+    background: transparent;
   }
   .hero-actions .hero-call-link span { color: var(--cream); font-weight: 500; font-size: 1.05rem; }
   .hero-actions .hero-call-link:hover { color: var(--copper-soft); }
@@ -5847,51 +5850,63 @@ section { padding: 110px 0; }
   }
 
   /* Controls strip below the carousel */
-  .team-carousel-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    margin: 10px 0 0;
-    padding: 0 4px;
+  /* Wrapper holds carousel + overlaid arrows */
+  .team-trio-wrap {
+    position: relative;
   }
+  /* Overlay arrow buttons on left/right edges of the image */
   .team-carousel-btn {
-    width: 40px;
-    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    border: 1px solid rgba(13, 43, 53, 0.25);
-    background: var(--cream);
+    border: none;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     color: var(--deep-teal);
-    transition: background var(--transition), border-color var(--transition), color var(--transition);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+    z-index: 4;
+    transition: background var(--transition), color var(--transition), transform var(--transition);
   }
-  .team-carousel-btn:hover,
+  .team-carousel-btn--prev { left: 12px; }
+  .team-carousel-btn--next { right: 12px; }
   .team-carousel-btn:active {
     background: var(--copper);
-    border-color: var(--copper);
-    color: var(--cream);
+    color: #fff;
+    transform: translateY(-50%) scale(0.93);
   }
-  .team-carousel-btn svg { width: 14px; height: 14px; }
+  .team-carousel-btn svg { width: 16px; height: 16px; }
+  /* Pill progress indicators */
+  .team-carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin: 14px 0 0;
+  }
   .team-carousel-dots {
     display: flex;
-    gap: 8px;
+    gap: 6px;
+    align-items: center;
   }
   .team-carousel-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(13, 43, 53, 0.18);
+    width: 28px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(13, 43, 53, 0.15);
     border: none;
     cursor: pointer;
-    transition: background var(--transition), transform var(--transition);
+    transition: background var(--transition), width var(--transition);
     padding: 0;
   }
   .team-carousel-dot.is-active {
     background: var(--copper);
-    transform: scale(1.15);
+    width: 42px;
   }
 }
 

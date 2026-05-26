@@ -412,19 +412,15 @@
     const cards = Array.from(trio.children).filter((c) => c.classList.contains('team-card'));
     if (!cards.length) return;
 
-    // Build controls
+    // Wrap trio so we can overlay the arrows on the image
+    const wrap = document.createElement('div');
+    wrap.className = 'team-trio-wrap';
+    trio.parentNode.insertBefore(wrap, trio);
+    wrap.appendChild(trio);
+
+    // Pill progress indicators below
     const controls = document.createElement('div');
     controls.className = 'team-carousel-controls';
-    const prevBtn = document.createElement('button');
-    prevBtn.type = 'button';
-    prevBtn.className = 'team-carousel-btn';
-    prevBtn.setAttribute('aria-label', 'Previous doctor');
-    prevBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>';
-    const nextBtn = document.createElement('button');
-    nextBtn.type = 'button';
-    nextBtn.className = 'team-carousel-btn';
-    nextBtn.setAttribute('aria-label', 'Next doctor');
-    nextBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>';
     const dots = document.createElement('div');
     dots.className = 'team-carousel-dots';
     cards.forEach((_, i) => {
@@ -435,10 +431,8 @@
       d.dataset.idx = String(i);
       dots.appendChild(d);
     });
-    controls.appendChild(prevBtn);
     controls.appendChild(dots);
-    controls.appendChild(nextBtn);
-    trio.parentNode.insertBefore(controls, trio.nextSibling);
+    wrap.parentNode.insertBefore(controls, wrap.nextSibling);
 
     const scrollTo = (i) => {
       const clamped = Math.max(0, Math.min(cards.length - 1, i));
@@ -462,8 +456,6 @@
       });
     };
 
-    prevBtn.addEventListener('click', () => scrollTo(currentIdx() - 1));
-    nextBtn.addEventListener('click', () => scrollTo(currentIdx() + 1));
     dots.addEventListener('click', (e) => {
       const t = e.target.closest('.team-carousel-dot');
       if (!t) return;
