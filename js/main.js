@@ -490,56 +490,20 @@
   })();
 
   /* ============================================
-     DESKTOP TEAM MARQUEE — scroll + nav buttons
+     DESKTOP TEAM MARQUEE — CSS animation + hover pause
      ============================================ */
   (function () {
+    const track = document.querySelector('.team-marquee-track');
+    if (!track) return;
+
+    // Hover: pause CSS animation
     const wrap = document.querySelector('.team-marquee-wrap');
-    if (!wrap) return;
-
-    const CARD_W = 358; // 350px card + 8px margin
-    let isPaused = false;
-    let autoResumeTimer = null;
-    let pos = wrap.scrollLeft; // Start from current scroll position
-
-    // Auto-scroll via rAF
-    function tick() {
-      if (!isPaused) {
-        pos += 0.6;
-        // Seamless loop: once we pass Set A, jump back to 0
-        const half = wrap.scrollWidth / 2;
-        if (pos >= half) pos -= half;
-        wrap.scrollLeft = pos | 0; // integer cast — works reliably in Safari
-      } else {
-        // Sync pos with actual scrollLeft when paused (from button clicks)
-        pos = wrap.scrollLeft;
-      }
-      requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-
-    // Hover: pause auto-scroll
-    wrap.addEventListener('mouseenter', () => {
-      isPaused = true;
-      pos = wrap.scrollLeft;
-      if (autoResumeTimer) clearTimeout(autoResumeTimer);
-      autoResumeTimer = null;
-    });
-
-    // Leave: restart auto-scroll after 3s
-    wrap.addEventListener('mouseleave', () => {
-      if (autoResumeTimer) clearTimeout(autoResumeTimer);
-      autoResumeTimer = setTimeout(() => {
-        isPaused = false;
-        autoResumeTimer = null;
-      }, 3000);
-    });
-
-    // Right button: advance one card
-    const nextBtn = document.querySelector('.team-marq-btn--next-only');
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        const CARD_W = 358; // 350px card + 8px margin
-        wrap.scrollBy({ left: CARD_W, behavior: 'smooth' });
+    if (wrap) {
+      wrap.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
+      });
+      wrap.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
       });
     }
 

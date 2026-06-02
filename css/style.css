@@ -1668,19 +1668,16 @@ section { padding: 110px 0; }
    TEAM MARQUEE — desktop auto-scroll
    ============================================ */
 .team-marquee-wrap {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
   cursor: default;
   padding: 8px 0 4px;
   display: none; /* shown only on desktop via media query below */
+  width: 100%;
 }
-.team-marquee-wrap::-webkit-scrollbar { display: none; }
 .team-marquee-track {
   display: flex;
   width: max-content;
-  animation: teamMarq 26s linear infinite;
+  animation: teamMarq 28s linear infinite;
 }
 .team-marquee-track:hover { animation-play-state: paused; }
 @keyframes teamMarq {
