@@ -507,6 +507,33 @@
       });
     }
 
+    // Next button: jump forward one card
+    const nextBtn = document.querySelector('.team-marq-btn--next-only');
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const firstCard = track.querySelector('.team-marq-card');
+        const cardStep = firstCard ? firstCard.offsetWidth + 24 : 300; // card + gap
+        const oneSet  = track.scrollWidth / 2; // track is doubled (Set A + Set B)
+        const DURATION = 28; // must match CSS animation duration
+
+        // Read current translateX from computed style
+        const matrix  = new DOMMatrix(window.getComputedStyle(track).transform);
+        let curX = matrix.m41; // negative value
+
+        // Advance by one card, wrap within one set
+        let newX = curX - cardStep;
+        if (Math.abs(newX) >= oneSet) newX += oneSet;
+
+        // Kill animation, snap to new position, restart with adjusted delay
+        track.style.animation = 'none';
+        track.style.transform  = `translateX(${newX}px)`;
+        track.offsetHeight; // force reflow
+        const delay = -((Math.abs(newX) / oneSet) * DURATION);
+        track.style.animation = '';
+        track.style.animationDelay = delay + 's';
+      });
+    }
+
   })();
 
 })();
