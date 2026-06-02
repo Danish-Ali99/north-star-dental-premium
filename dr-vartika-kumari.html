@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" />
-  <link rel="stylesheet" href="css/style.css?v=412" />
+  <link rel="stylesheet" href="css/style.css?v=447" />
   <style>
     /* ══════════════════════════════════════
        DR. VARTIKA — MODERN RESUME STYLE
@@ -23,39 +23,82 @@
 
     /* HERO */
     .vk-hero {
-      background: #e8e8e8;
-      padding: 72px 80px 64px;
+      background: #ffffff;
+      padding: 56px 80px 56px 160px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: stretch;
+      gap: 64px;
     }
     .vk-hero-photo {
-      width: 420px;
-      height: 520px;
+      width: 380px;
+      height: 460px;
       object-fit: cover;
       object-position: center 18%;
       display: block;
       border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .vk-hero-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 460px;
     }
     .vk-hero-caption {
-      margin-top: 32px;
-      font-size: clamp(1.2rem, 2vw, 1.55rem);
-      font-weight: 600;
-      color: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 0 0 28px;
+    }
+    .vk-hero-name {
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-weight: 500;
+      color: var(--deep-teal);
+      line-height: 1.2;
+    }
+    .vk-hero-role {
+      font-size: clamp(1rem, 1.6vw, 1.3rem);
+      font-weight: 400;
+      color: var(--muted);
       line-height: 1.5;
-      max-width: 700px;
     }
     .vk-hero-bar {
-      margin-top: 28px;
       display: flex;
-      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
     }
+    .vk-hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 13px 22px;
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 200ms, color 200ms;
+    }
+    .vk-hero-pill--outline {
+      border: 1.5px solid var(--deep-teal);
+      color: var(--deep-teal);
+      background: transparent;
+    }
+    .vk-hero-pill--outline:hover { background: var(--deep-teal); color: #fff; }
+    .vk-hero-pill--whatsapp {
+      background: #25D366;
+      color: #fff;
+      border: 1.5px solid #25D366;
+    }
+    .vk-hero-pill--whatsapp:hover { background: #1ebe5a; color: #fff; }
     .vk-book-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #0d2b35;
+      background: var(--copper);
       color: #fff;
       padding: 15px 34px;
       border-radius: 100px;
@@ -65,14 +108,21 @@
       white-space: nowrap;
       transition: background 200ms;
     }
-    .vk-book-btn:hover { background: #1c4a58; color: #fff; }
+    .vk-book-btn:hover { background: var(--copper-deep); color: #fff; }
 
     /* SHARED SECTION */
     .vk-section {
       padding: 88px 80px;
     }
-    .vk-section--gray  { background: #e8e8e8; }
+    .vk-section--gray  { background: var(--cream); }
     .vk-section--white { background: #ffffff; }
+    .vk-section--teal  { background: var(--deep-teal); }
+    .vk-section--teal .vk-h1,
+    .vk-section--teal .vk-g3-title { color: var(--cream); }
+    .vk-section--teal .vk-sub,
+    .vk-section--teal .vk-g3-desc { color: rgba(243,233,226,0.65); }
+    .vk-section--teal .vk-g3-label { color: var(--copper-soft); }
+    .vk-section--teal .vk-rule { border-top-color: rgba(243,233,226,0.15); }
 
     .vk-head { margin-bottom: 12px; }
     .vk-head--side {
@@ -83,23 +133,23 @@
 
     .vk-h1 {
       font-family: var(--font-sans);
-      font-size: clamp(1.6rem, 2.4vw, 2.2rem);
-      font-weight: 800;
-      color: #1a1a1a;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 500;
+      color: var(--deep-teal);
       margin: 0 0 8px;
       line-height: 1.0;
       letter-spacing: -0.025em;
     }
     .vk-sub {
       font-size: 1rem;
-      color: #666;
+      color: var(--muted);
       font-weight: 400;
       margin: 0 0 24px;
       display: block;
     }
     .vk-rule {
       border: none;
-      border-top: 1px solid #c8c8c8;
+      border-top: 1px solid var(--line);
       margin: 0 0 56px;
     }
 
@@ -107,7 +157,7 @@
     .vk-bio {
       font-size: 1.2rem;
       line-height: 1.8;
-      color: #1a1a1a;
+      color: var(--ink);
       max-width: 900px;
       margin: 0 0 36px;
       font-weight: 400;
@@ -124,19 +174,20 @@
     .vk-g3-title {
       font-size: 1.05rem;
       font-weight: 700;
-      color: #1a1a1a;
+      color: var(--deep-teal);
       margin: 0 0 8px;
       line-height: 1.3;
     }
     .vk-g3-label {
       font-size: 0.8rem;
-      color: #777;
+      color: var(--copper);
       margin: 0 0 10px;
       display: block;
+      font-weight: 500;
     }
     .vk-g3-desc {
       font-size: 0.88rem;
-      color: #333;
+      color: var(--muted);
       line-height: 1.72;
       margin: 0;
     }
@@ -150,16 +201,16 @@
     }
     .vk-edu-title {
       font-family: var(--font-sans);
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      font-weight: 800;
-      color: #1a1a1a;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 500;
+      color: var(--deep-teal);
       margin: 0;
       line-height: 1;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
     }
     .vk-edu-subtitle {
       font-size: 1.1rem;
-      color: #666;
+      color: var(--muted);
       font-weight: 400;
       white-space: nowrap;
     }
@@ -169,32 +220,33 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0 56px;
+      padding-left: 120px;
     }
     .vk-edu-item {
       display: flex;
       align-items: center;
       gap: 28px;
       padding: 40px 0;
-      border-bottom: 1px solid #c8c8c8;
+      border-bottom: 1px solid var(--line);
     }
     .vk-edu-item:nth-last-child(-n+2) { border-bottom: none; }
     .vk-edu-icon {
       width: 44px;
       height: 44px;
       flex-shrink: 0;
-      color: #1a1a1a;
+      color: var(--copper);
     }
     .vk-edu-name {
       font-size: 1.05rem;
       font-weight: 500;
-      color: #1a1a1a;
+      color: var(--deep-teal);
       line-height: 1.6;
       display: block;
     }
 
     /* CONTACT STRIP */
     .vk-contact-strip {
-      background: #0d2b35;
+      background: var(--deep-teal);
       padding: 56px 80px;
       display: flex;
       align-items: center;
@@ -205,13 +257,13 @@
       font-family: var(--font-sans);
       font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 700;
-      color: #fff;
+      color: var(--cream);
       margin: 0 0 6px;
       letter-spacing: -0.01em;
     }
     .vk-contact-strip p {
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(243,233,226,0.6);
       margin: 0;
     }
     .vk-contact-btns {
@@ -232,16 +284,86 @@
       transition: background 200ms, color 200ms;
     }
     .vk-cta-btn--fill {
-      background: #c9886b;
+      background: var(--copper);
       color: #fff;
     }
-    .vk-cta-btn--fill:hover { background: #b8745a; color: #fff; }
+    .vk-cta-btn--fill:hover { background: var(--copper-deep); color: #fff; }
     .vk-cta-btn--outline {
       background: transparent;
-      color: rgba(255,255,255,0.8);
-      border: 1.5px solid rgba(255,255,255,0.25);
+      color: var(--cream);
+      border: 1.5px solid rgba(243,233,226,0.3);
     }
-    .vk-cta-btn--outline:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .vk-cta-btn--outline:hover { background: rgba(243,233,226,0.08); color: var(--cream); }
+
+    /* BLOGS */
+    .vk-blog-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 8px;
+    }
+    .vk-blog-head-left { display: flex; flex-direction: column; gap: 6px; }
+    .vk-blog-viewall {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--deep-teal);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.02em;
+      padding-bottom: 4px;
+    }
+    .vk-blog-viewall:hover { color: var(--copper); }
+    .vk-blog-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .vk-blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .vk-blog-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      transition: transform 200ms;
+    }
+    .vk-blog-card:hover { transform: translateY(-4px); }
+    .vk-blog-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+    .vk-blog-body {
+      padding: 20px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .vk-blog-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--deep-teal);
+      line-height: 1.4;
+      margin: 0;
+    }
+    .vk-blog-meta {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--copper);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .vk-blog-meta .sep { color: var(--muted); font-weight: 300; }
   </style>
 </head>
 <body>
@@ -315,12 +437,25 @@
   <!-- ══ HERO ══ -->
   <div class="vk-hero">
     <img src="images/dr-vartika.jpg" alt="Dr. Vartika Kumari" class="vk-hero-photo" />
-    <p class="vk-hero-caption">Meet Dr. Vartika Kumari – Expert Orthodontist &amp; Certified Invisalign Provider in Bangalore</p>
-    <div class="vk-hero-bar">
-      <a href="https://click4appointment.com/clinic-details/drvdentalaesthetics-3361" target="_blank" rel="noopener" class="vk-book-btn">
-        Book Appointment
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+    <div class="vk-hero-right">
+      <p class="vk-hero-caption">
+        <span class="vk-hero-name">Meet Dr. Vartika</span>
+        <span class="vk-hero-role">Expert Orthodontist &amp; Certified Invisalign Provider in Bangalore</span>
+      </p>
+      <div class="vk-hero-bar">
+        <a href="https://click4appointment.com/clinic-details/drvdentalaesthetics-3361" target="_blank" rel="noopener" class="vk-book-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Book Appointment
+        </a>
+        <a href="tel:+919035462760" class="vk-hero-pill vk-hero-pill--outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 5.18 2 2 0 015.07 3h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L9.09 10.9a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
+          +91 90354 62760
+        </a>
+        <a href="https://wa.me/919035462760?text=Hello%20Dr.%20Vartika" target="_blank" rel="noopener" class="vk-hero-pill vk-hero-pill--whatsapp">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
+          WhatsApp
+        </a>
+      </div>
     </div>
   </div>
 
@@ -357,9 +492,9 @@
     <hr class="vk-rule" />
     <div class="vk-grid3">
       <div>
-        <p class="vk-g3-title">Orthodontics &amp; Dentofacial Orthopaedics</p>
+        <p class="vk-g3-title">Orthodontics and Dentofacial Orthopaedics</p>
         <span class="vk-g3-label">Core Specialisation</span>
-        <p class="vk-g3-desc">Comprehensive diagnosis, prevention, and correction of dental and facial irregularities — aligned with the highest standards of modern orthodontic practice.</p>
+        <p class="vk-g3-desc">Treatment of malocclusions of teeth, invisible braces, metal and ceramic braces. Surgical orthodontics, cosmetic procedures, preventive and corrective orthodontics. Her treatment plan is tailored to the specific needs of the patient.</p>
       </div>
       <div>
         <p class="vk-g3-title">Invisalign &amp; Clear Aligners</p>
@@ -390,7 +525,7 @@
   </section>
 
   <!-- ══ EDUCATION ══ -->
-  <section class="vk-section vk-section--white" style="padding-top: 0;">
+  <section class="vk-section vk-section--gray">
     <div class="vk-edu-header">
       <h2 class="vk-edu-title">Education</h2>
       <span class="vk-edu-subtitle">Academic Background</span>
@@ -417,7 +552,7 @@
   </section>
 
   <!-- ══ ACCOMPLISHMENTS ══ -->
-  <section class="vk-section vk-section--gray">
+  <section class="vk-section vk-section--white" style="padding-top: 160px; padding-bottom: 160px;">
     <div class="vk-head">
       <h2 class="vk-h1">Accomplishments</h2>
       <span class="vk-sub">Recognitions &amp; Awards</span>
@@ -442,20 +577,77 @@
     </div>
   </section>
 
-  <!-- ══ CONTACT STRIP ══ -->
-  <div class="vk-contact-strip">
-    <div>
-      <h2>Ready to start your smile journey?</h2>
-      <p>Book a consultation with Dr. Vartika — she'll personally assess your case and walk you through every option.</p>
+  <!-- ══ BLOGS ══ -->
+  <section class="vk-section vk-section--gray">
+    <div class="vk-blog-head">
+      <div class="vk-blog-head-left">
+        <h2 class="vk-h1">Blogs by Doctor</h2>
+        <p class="vk-blog-subtitle">Health and wellness insights shared by Dr. Vartika Kumari</p>
+      </div>
     </div>
-    <div class="vk-contact-btns">
-      <a href="https://click4appointment.com/clinic-details/drvdentalaesthetics-3361" target="_blank" rel="noopener" class="vk-cta-btn vk-cta-btn--fill">Book Online</a>
-      <a href="tel:+919035462760" class="vk-cta-btn vk-cta-btn--outline">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.12.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0122 16.92z"/></svg>
-        +91 90354 62760
+    <div class="vk-blog-grid">
+      <a href="blog-bleeding-gums.html" class="vk-blog-card">
+        <img src="images/bleeding-gums.jpg" alt="Bleeding Gums" class="vk-blog-img" />
+        <div class="vk-blog-body">
+          <p class="vk-blog-title">Bleeding Gums: Something You Shouldn't Ignore</p>
+          <p class="vk-blog-meta">Dr. Vartika Kumari <span class="sep">|</span> 22 May 2026</p>
+        </div>
+      </a>
+      <a href="blog-braces.html" class="vk-blog-card">
+        <img src="images/braces.jpg" alt="Braces" class="vk-blog-img" />
+        <div class="vk-blog-body">
+          <p class="vk-blog-title">Braces: A Straighter, Healthier Smile</p>
+          <p class="vk-blog-meta">Dr. Vartika Kumari <span class="sep">|</span> 15 May 2026</p>
+        </div>
+      </a>
+      <a href="blog-root-canal-pain-relief.html" class="vk-blog-card">
+        <img src="images/root-canal.jpg" alt="Root Canal Treatment" class="vk-blog-img" />
+        <div class="vk-blog-body">
+          <p class="vk-blog-title">Root Canal Treatment: Your Path to Pain Relief</p>
+          <p class="vk-blog-meta">Dr. Vartika Kumari <span class="sep">|</span> 30 April 2026</p>
+        </div>
       </a>
     </div>
-  </div>
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="blog.html" class="vk-book-btn">View All Blogs →</a>
+    </div>
+  </section>
+
+  <!-- ══ OTHER DOCTORS ══ -->
+  <section class="vk-section vk-section--white">
+    <div class="vk-blog-head">
+      <div class="vk-blog-head-left">
+        <h2 class="vk-h1">Meet More Doctors</h2>
+        <p class="vk-blog-subtitle">The team behind every smile at North Star Dental</p>
+      </div>
+    </div>
+    <div class="vk-blog-grid">
+      <a href="team.html" class="vk-blog-card">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=85" alt="Dr. Milu Anna Josh" class="vk-blog-img" />
+        <div class="vk-blog-body">
+          <p class="vk-blog-title">Dr. Milu Anna Josh</p>
+          <p class="vk-blog-meta">Dentist <span class="sep">|</span> JP Nagar</p>
+        </div>
+      </a>
+      <a href="team.html" class="vk-blog-card">
+        <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=900&q=85" alt="Dr. Shalini" class="vk-blog-img" />
+        <div class="vk-blog-body">
+          <p class="vk-blog-title">Dr. Shalini</p>
+          <p class="vk-blog-meta">Dentist <span class="sep">|</span> JP Nagar</p>
+        </div>
+      </a>
+      <a href="team.html" class="vk-blog-card">
+        <img src="https://images.unsplash.com/photo-1612531386530-97286d97c2d2?auto=format&fit=crop&w=900&q=85" alt="Dr. Neha" class="vk-blog-img" />
+        <div class="vk-blog-body">
+          <p class="vk-blog-title">Dr. Neha</p>
+          <p class="vk-blog-meta">Dentist <span class="sep">|</span> Yelahanka</p>
+        </div>
+      </a>
+    </div>
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="team.html" class="vk-book-btn">View More Doctors →</a>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
