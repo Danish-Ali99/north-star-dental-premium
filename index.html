@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="css/style.css?v=401" />
+  <link rel="stylesheet" href="css/style.css?v=404" />
 </head>
 <body>
   <!-- Navigation -->
@@ -104,33 +104,24 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <span class="eyebrow">Cosmetic · Implants · Aligners</span>
-        <h1 class="hero-headline">
-          <span class="hero-word"><span>Modern</span></span>
-          <span class="hero-word"><span>dentistry,</span></span>
-          <span class="hero-word"><span>quietly</span></span>
-          <span class="hero-word"><span>done.</span></span>
-        </h1>
-        <p class="hero-subtitle">Cosmetic, restorative, and family care delivered with craft, comfort, and no surprises.</p>
-        <div class="hero-actions">
-          <a href="https://click4appointment.com/clinic-details/drvdentalaesthetics-3361" target="_blank" rel="noopener" class="btn btn-primary">Book And Smile</a>
-          <a href="tel:+919035462760" class="hero-call-link">Call <span>+91 90354 62760</span></a>
-        </div>
+  <section class="hero" style="display:flex; min-height:100vh; background:var(--cream); padding:0; overflow:hidden;">
+    <div class="hero-content" style="flex:0 0 50%; padding:140px 72px 80px; display:flex; flex-direction:column; justify-content:center;">
+      <span class="eyebrow">Cosmetic · Implants · Aligners</span>
+      <h1 class="hero-headline">
+        <span class="hero-word"><span>Modern</span></span>
+        <span class="hero-word"><span>dentistry,</span></span>
+        <span class="hero-word"><span>quietly</span></span>
+        <span class="hero-word"><span>done.</span></span>
+      </h1>
+      <p class="hero-subtitle">Cosmetic, restorative, and family care delivered with craft, comfort, and no surprises.</p>
+      <div class="hero-actions">
+        <a href="https://click4appointment.com/clinic-details/drvdentalaesthetics-3361" target="_blank" rel="noopener" class="btn btn-primary">Book And Smile</a>
+        <a href="tel:+919035462760" class="hero-call-link">Call <span>+91 90354 62760</span></a>
       </div>
-      <div class="hero-visual">
-        <video class="hero-video" autoplay muted loop playsinline>
-          <source src="images/hero-video.mp4" type="video/mp4">
-        </video>
-        <div class="hero-tag">
-          <span class="hero-tag-eyebrow">Our Promise</span>
-          <p class="hero-tag-text">&ldquo;Confidence you can feel in every smile.&rdquo;</p>
-          <div class="hero-tag-divider"></div>
-          <span class="hero-tag-footer">Guided By Care</span>
-        </div>
-      </div>
+    </div>
+    <div style="flex:1; overflow:hidden; position:relative;">
+      <img src="images/hero-main.jpg" alt="North Star Dental" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;" />
+      <div style="position:absolute;top:0;left:0;bottom:0;width:120px;background:linear-gradient(to right, var(--cream) 0%, transparent 100%); pointer-events:none;"></div>
     </div>
   </section>
 
@@ -342,7 +333,7 @@
         </article>
         <article class="team-card team-card--featured" style="cursor:pointer;" onclick="location.href='dr-vartika-kumari.html'">
           <div class="team-card-photo">
-            <img src="images/dr-vartika.jpg" alt="Dr. Vartika Kumari" loading="lazy" />
+            <img src="images/dr-vartika.jpg?v=4" alt="Dr. Vartika Kumari" loading="lazy" />
           </div>
           <div class="team-card-info">
             <h3 class="team-card-name">Dr. Vartika Kumari</h3>
@@ -351,7 +342,7 @@
         </article>
         <article class="team-card team-card--side team-card--right" onclick="location.href='dr-shalini-shinde.html'" style="cursor:pointer;">
           <div class="team-card-photo">
-            <img src="images/dr-shalini-removebg-preview.png" alt="Dr. Shalini Shinde" loading="lazy" />
+            <img src="images/dr-shalini-new.png" alt="Dr. Shalini Shinde" loading="lazy" />
           </div>
           <div class="team-card-info">
             <h3 class="team-card-name">Dr. Shalini Shinde</h3>
@@ -371,19 +362,19 @@
       <div class="team-marquee-track">
         <!-- Set A -->
         <div class="team-marq-card" style="cursor:pointer;" onclick="location.href='dr-vartika-kumari.html'">
-          <img src="images/dr-vartika.jpg" alt="Dr. Vartika Kumari" loading="lazy" />
+          <img src="images/dr-vartika.jpg?v=4" alt="Dr. Vartika Kumari" loading="lazy" />
           <div class="team-marq-info"><span class="team-marq-role">Lead Orthodontist · All Clinics</span><strong class="team-marq-name">Dr. Vartika Kumari</strong></div>
         </div>
         <div class="team-marq-card" style="cursor:pointer;" onclick="location.href='dr-milu-anna-jose.html'">
-          <img src="images/dr-milu-removebg.png" alt="Dr. Milu Anna Jose" loading="lazy" style="filter:none;" />
+          <img src="images/dr-milu-new.png" alt="Dr. Milu Anna Jose" loading="lazy" style="filter:none;" />
           <div class="team-marq-info"><span class="team-marq-role">Dentist · JP Nagar</span><strong class="team-marq-name">Dr. Milu Anna Jose</strong></div>
         </div>
         <div class="team-marq-card" style="cursor:pointer;" onclick="location.href='dr-shalini-shinde.html'">
-          <img src="images/dr-shalini-removebg-preview.png" alt="Dr. Shalini Shinde" loading="lazy" />
+          <img src="images/dr-shalini-new.png" alt="Dr. Shalini Shinde" loading="lazy" />
           <div class="team-marq-info"><span class="team-marq-role">Pediatric Dentist · JP Nagar</span><strong class="team-marq-name">Dr. Shalini Shinde</strong></div>
         </div>
         <div class="team-marq-card" style="cursor:pointer;" onclick="location.href='dr-preasa-pravasi.html'">
-          <img src="images/dr_neha-removebg-preview.png" alt="Dr. Preasa Pravasi" loading="lazy" />
+          <img src="images/dr-preasa-new.png" alt="Dr. Preasa Pravasi" loading="lazy" />
           <div class="team-marq-info"><span class="team-marq-role">Dentist · JP Nagar</span><strong class="team-marq-name">Dr. Preasa Pravasi</strong></div>
         </div>
         <div class="team-marq-card">
@@ -392,19 +383,19 @@
         </div>
         <!-- Set B (duplicate for seamless loop) -->
         <div class="team-marq-card" style="cursor:pointer;" onclick="location.href='dr-vartika-kumari.html'">
-          <img src="images/dr-vartika.jpg" alt="Dr. Vartika Kumari" loading="lazy" />
+          <img src="images/dr-vartika.jpg?v=4" alt="Dr. Vartika Kumari" loading="lazy" />
           <div class="team-marq-info"><span class="team-marq-role">Lead Orthodontist · All Clinics</span><strong class="team-marq-name">Dr. Vartika Kumari</strong></div>
         </div>
         <div class="team-marq-card" style="cursor:pointer;" onclick="location.href='dr-milu-anna-jose.html'">
-          <img src="images/dr-milu-removebg.png" alt="Dr. Milu Anna Jose" loading="lazy" style="filter:none;" />
+          <img src="images/dr-milu-new.png" alt="Dr. Milu Anna Jose" loading="lazy" style="filter:none;" />
           <div class="team-marq-info"><span class="team-marq-role">Dentist · JP Nagar</span><strong class="team-marq-name">Dr. Milu Anna Jose</strong></div>
         </div>
         <div class="team-marq-card" style="cursor:pointer;" onclick="location.href='dr-shalini-shinde.html'">
-          <img src="images/dr-shalini-removebg-preview.png" alt="Dr. Shalini Shinde" loading="lazy" />
+          <img src="images/dr-shalini-new.png" alt="Dr. Shalini Shinde" loading="lazy" />
           <div class="team-marq-info"><span class="team-marq-role">Pediatric Dentist · JP Nagar</span><strong class="team-marq-name">Dr. Shalini Shinde</strong></div>
         </div>
         <div class="team-marq-card" style="cursor:pointer;" onclick="location.href='dr-preasa-pravasi.html'">
-          <img src="images/dr_neha-removebg-preview.png" alt="Dr. Preasa Pravasi" loading="lazy" />
+          <img src="images/dr-preasa-new.png" alt="Dr. Preasa Pravasi" loading="lazy" />
           <div class="team-marq-info"><span class="team-marq-role">Dentist · JP Nagar</span><strong class="team-marq-name">Dr. Preasa Pravasi</strong></div>
         </div>
         <div class="team-marq-card">
