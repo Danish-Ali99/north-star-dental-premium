@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="only light" />
+  <meta name="supported-color-schemes" content="light" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon-v5.ico" sizes="any" />
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon-v5.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32-v5.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16-v5.png" />
+  <link rel="apple-touch-icon" href="images/favicon-v5.png" />
+  <title>Dr. Roshni Sulthana – Dentist · North Star Dental</title>
+  <meta name="description" content="Meet Dr. Roshni Sulthana, BDS, dedicated dental surgeon with 2 years of clinical experience at North Star Dental, Manyata Tech Park, Bangalore." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="css/style.css?v=455" />
+  <style>
+    /* ══════════════════════════════════════
+       DR. ROSHNI — MODERN RESUME STYLE
+    ══════════════════════════════════════ */
+
+    .vk-hero {
+      background: #ffffff;
+      padding: 56px 80px 56px 160px;
+      display: flex;
+      align-items: stretch;
+      gap: 64px;
+    }
+    .vk-hero-photo {
+      width: 380px;
+      height: 460px;
+      object-fit: cover;
+      object-position: center 18%;
+      display: block;
+      box-shadow: 0 24px 64px -8px rgba(13,43,53,0.35), 0 8px 24px -4px rgba(13,43,53,0.15);
+    }
+    .vk-hero-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 460px;
+    }
+    .vk-hero-caption {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 0 0 28px;
+    }
+    .vk-hero-name {
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-weight: 500;
+      color: var(--deep-teal);
+      line-height: 1.2;
+    }
+    .vk-hero-role {
+      font-size: clamp(1rem, 1.6vw, 1.3rem);
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .vk-hero-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .vk-hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 13px 22px;
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 200ms, color 200ms;
+    }
+    .vk-hero-pill--outline {
+      border: 1.5px solid var(--deep-teal);
+      color: var(--deep-teal);
+      background: transparent;
+    }
+    .vk-hero-pill--outline:hover { background: var(--deep-teal); color: #fff; }
+    .vk-hero-pill--whatsapp {
+      background: #25D366;
+      color: #fff;
+      border: 1.5px solid #25D366;
+    }
+    .vk-hero-pill--whatsapp:hover { background: #1ebe5a; color: #fff; }
+    .vk-book-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--copper);
+      color: #fff;
+      padding: 15px 34px;
+      border-radius: 100px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 200ms;
+    }
+    .vk-book-btn:hover { background: var(--copper-deep); color: #fff; }
+    .vk-pill-short { display: none; }
+
+    .vk-section { padding: 88px 80px; }
+    .vk-section--gray  { background: var(--cream); }
+    .vk-section--white { background: #ffffff; }
+
+    .vk-head { margin-bottom: 12px; }
+    .vk-h1 {
+      font-family: var(--font-sans);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 500;
+      color: var(--deep-teal);
+      margin: 0 0 8px;
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+    }
+    .vk-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin: 0 0 24px;
+      display: block;
+    }
+    .vk-rule {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 0 0 56px;
+    }
+
+    .vk-bio {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--ink);
+      max-width: 100%;
+      margin: 0 0 36px;
+      font-weight: 400;
+    }
+    .vk-bio:last-child { margin-bottom: 0; }
+
+    .vk-grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 48px;
+      row-gap: 64px;
+    }
+    .vk-grid2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 48px;
+      row-gap: 48px;
+    }
+    .vk-g3-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--deep-teal);
+      margin: 0 0 8px;
+      line-height: 1.3;
+    }
+    .vk-g3-label {
+      font-size: 0.8rem;
+      color: var(--copper);
+      margin: 0 0 10px;
+      display: block;
+      font-weight: 500;
+    }
+    .vk-g3-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.72;
+      margin: 0;
+    }
+
+    .vk-edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+    .vk-edu-title {
+      font-family: var(--font-sans);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 500;
+      color: var(--deep-teal);
+      margin: 0;
+      line-height: 1;
+      letter-spacing: -0.025em;
+    }
+    .vk-edu-subtitle {
+      font-size: 1.1rem;
+      color: var(--muted);
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    .vk-edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 56px;
+      padding-left: 120px;
+    }
+    .vk-edu-item {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .vk-edu-item:nth-last-child(-n+2) { border-bottom: none; }
+    .vk-edu-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      color: var(--copper);
+    }
+    .vk-edu-name {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--deep-teal);
+      line-height: 1.6;
+      display: block;
+    }
+
+    .vk-blog-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 8px;
+    }
+    .vk-blog-head-left { display: flex; flex-direction: column; gap: 6px; }
+    .vk-blog-subtitle { font-size: 0.95rem; color: var(--muted); margin: 0; }
+    .vk-blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .vk-blog-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      transition: transform 200ms;
+    }
+    .vk-blog-card:hover { transform: translateY(-4px); }
+    .vk-blog-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+    .vk-blog-body {
+      padding: 20px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .vk-blog-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--deep-teal);
+      line-height: 1.4;
+      margin: 0;
+    }
+    .vk-blog-meta {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--copper);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .vk-blog-meta .sep { color: var(--muted); font-weight: 300; }
+
+    @media (max-width: 768px) {
+      .vk-hero { flex-direction: column; padding: 32px 28px 40px; gap: 24px; }
+      .vk-hero-photo {
+      width: 380px;
+      height: 460px;
+      object-fit: cover;
+      object-position: center 18%;
+      display: block;
+      box-shadow: 0 24px 64px -8px rgba(13,43,53,0.35), 0 8px 24px -4px rgba(13,43,53,0.15);
+    }
+      .vk-hero-right { min-height: unset; align-items: flex-start; width: 100%; }
+      .vk-hero-name { font-size: 1.8rem; }
+      .vk-hero-role { font-size: 0.95rem; }
+      .vk-hero-bar { flex-wrap: nowrap; gap: 8px; margin-top: 16px; width: 100%; }
+      .vk-book-btn, .vk-hero-pill { padding: 11px 14px; font-size: 0.75rem; flex: 1; justify-content: center; white-space: nowrap; }
+      .vk-pill-full { display: none; }
+      .vk-pill-short { display: inline; }
+      .vk-section { padding: 48px 28px !important; }
+      .vk-h1 { font-size: 1.6rem; }
+      .vk-rule { margin: 0 0 32px; }
+      .vk-bio { font-size: 1rem; margin: 0 0 24px; }
+      .vk-grid3 { grid-template-columns: 1fr; row-gap: 36px; }
+      .vk-grid2 { grid-template-columns: 1fr; row-gap: 36px; }
+      .vk-edu-header { flex-direction: column; gap: 4px; }
+      .vk-edu-title { font-size: 1.6rem; }
+      .vk-edu-subtitle { font-size: 0.9rem; white-space: normal; }
+      .vk-edu-grid { grid-template-columns: 1fr; padding-left: 0; }
+      .vk-edu-item { padding: 20px 0; }
+      .vk-edu-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .vk-edu-item:last-child { border-bottom: none; }
+      .vk-blog-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 28px; }
+      .vk-blog-head { flex-direction: column; gap: 4px; align-items: flex-start; }
+    }
+    @media (min-width: 480px) and (max-width: 768px) {
+      .vk-blog-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* DOCTOR CARDS (Meet More) */
+    .vk-doc-card {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #eeeeee;
+      transition: box-shadow 400ms ease, transform 400ms ease;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .vk-doc-card:hover {
+      box-shadow: 0 16px 40px -12px rgba(13,43,53,0.22), 0 0 0 2px rgba(201,136,107,0.4);
+      transform: translateY(-4px);
+    }
+    .vk-doc-img {
+      width: 100%;
+      height: 370px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .vk-doc-card .vk-blog-body {
+      padding: 14px 20px 18px;
+      background: #ffffff;
+      flex: 1;
+    }
+    .vk-doc-card .vk-blog-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--deep-teal);
+      margin: 0 0 6px;
+      line-height: 1.3;
+    }
+    .vk-doc-card .vk-blog-meta {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--copper);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0;
+    }
+    </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-logo"><div class="logo-mark" role="img" aria-label="North Star Dental"></div></div>
+        <div class="brand-text">
+          <span class="brand-name">North Star Dental</span>
+          <span class="brand-tagline">Guided By Care</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About Us</a></li>
+        <li class="has-mega"><a href="services.html">Services <svg class="mega-chev" width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1L5.5 5.5L10 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-menu" role="menu">
+            <ul class="mega-cats">
+              <li class="mega-cat mega-cat--no-sub"><a href="services.html">General Dentistry</a></li>
+              <li class="mega-cat">
+                <a href="services.html#surgical-care">Surgical Care<span class="mega-cat-chev">&rsaquo;</span></a>
+                <ul class="mega-sub">
+                  <li><a href="service-root-canal.html">Root Canal Treatment</a></li>
+                  <li><a href="service-tooth-extraction.html">Tooth Extractions</a></li>
+                  <li><a href="service-dental-implants.html">Dental Implants</a></li>
+                  <li><a href="service-bone-grafts.html">Bone Grafts</a></li>
+                  <li><a href="service-full-mouth-rehabilitation.html">Full Mouth Rehabilitation</a></li>
+                </ul>
+              </li>
+              <li class="mega-cat">
+                <a href="services.html#orthodontic">Orthodontic Treatment<span class="mega-cat-chev">&rsaquo;</span></a>
+                <ul class="mega-sub">
+                  <li><a href="service-invisalign.html">Invisalign</a></li>
+                  <li><a href="service-clear-braces.html">Clear Braces</a></li>
+                  <li><a href="service-braces.html">Braces</a></li>
+                </ul>
+              </li>
+              <li class="mega-cat">
+                <a href="services.html#emergency">Emergency Dentistry<span class="mega-cat-chev">&rsaquo;</span></a>
+                <ul class="mega-sub">
+                  <li><a href="service-emergency-same-day.html">Same-Day Emergency</a></li>
+                  <li><a href="service-emergency-extraction.html">Emergency Extraction</a></li>
+                  <li><a href="service-emergency-root-canal.html">Emergency Root Canal</a></li>
+                  <li><a href="service-emergency-pain-relief.html">Emergency Pain Relief</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="team.html" class="active">Our Team</a></li>
+        <li><a href="index.html#location">Location</a></li>
+        <li class="has-mega has-mega-end"><a href="#">Resources <svg class="mega-chev" width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1L5.5 5.5L10 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-menu" role="menu">
+            <ul class="mega-cats">
+              <li class="mega-cat"><a href="faq.html">FAQ</a></li>
+              <li class="mega-cat"><a href="blog.html">Blog</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://click4appointment.com/clinic-details/drvdentalaesthetics-3361" target="_blank" rel="noopener" class="btn btn-primary">Book Visit</a>
+        <button class="menu-toggle btn" aria-label="Toggle menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <div class="vk-hero">
+    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=85" alt="Dr. Roshni Sulthana" class="vk-hero-photo" />
+    <div class="vk-hero-right">
+      <p class="vk-hero-caption">
+        <span class="vk-hero-name">Meet Dr. Roshni</span>
+        <span class="vk-hero-role">Dentist · BDS · Manyata Tech Park</span>
+      </p>
+      <div class="vk-hero-bar">
+        <a href="https://click4appointment.com/clinic-details/drvdentalaesthetics-3361" target="_blank" rel="noopener" class="vk-book-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Book Appointment
+        </a>
+        <a href="tel:+919353041409" class="vk-hero-pill vk-hero-pill--outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 5.18 2 2 0 015.07 3h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L9.09 10.9a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
+          <span class="vk-pill-full">+91 90354 62760</span><span class="vk-pill-short">Call</span>
+        </a>
+        <a href="https://wa.me/919353041409?text=Hello%20Dr.%20Roshni" target="_blank" rel="noopener" class="vk-hero-pill vk-hero-pill--whatsapp">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
+          <span class="vk-pill-full">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ABOUT ══ -->
+  <section class="vk-section vk-section--gray">
+    <div class="vk-head">
+      <h1 class="vk-h1">About Dr. Roshni</h1>
+      <span class="vk-sub">Dentist · BDS</span>
+    </div>
+    <hr class="vk-rule" />
+    <p class="vk-bio">
+      Dr. Roshni Sulthana is a dedicated and compassionate dental surgeon with 2 years of clinical experience in providing comprehensive dental care. She completed her Bachelor of Dental Surgery from Venkateswara Dental College and Hospital, Bangalore. Known for her warm and friendly approach, Dr. Roshni believes that a genuine smile and a reassuring presence can make all the difference. She strives to make every patient feel comfortable, heard, and at ease throughout their treatment journey.
+    </p>
+  </section>
+
+  <!-- ══ EXPERTISE ══ -->
+  <section class="vk-section vk-section--white">
+    <div class="vk-head">
+      <h2 class="vk-h1">Expertise</h2>
+      <span class="vk-sub">Areas of Practice</span>
+    </div>
+    <hr class="vk-rule" />
+    <div class="vk-grid3">
+      <div>
+        <p class="vk-g3-title">Scaling &amp; Preventive Care</p>
+        <span class="vk-g3-label">Core Practice</span>
+        <p class="vk-g3-desc">Thorough scaling and preventive dental care to maintain optimal oral health.</p>
+      </div>
+      <div>
+        <p class="vk-g3-title">Tooth-Coloured Fillings</p>
+        <span class="vk-g3-label">Restorative</span>
+        <p class="vk-g3-desc">Aesthetic composite fillings that blend naturally with your smile.</p>
+      </div>
+      <div>
+        <p class="vk-g3-title">Extractions incl. Wisdom Teeth</p>
+        <span class="vk-g3-label">Oral Surgery</span>
+        <p class="vk-g3-desc">Routine and upper wisdom tooth extractions performed with care and precision.</p>
+      </div>
+      <div>
+        <p class="vk-g3-title">Crown Cutting &amp; Cementation</p>
+        <span class="vk-g3-label">Prosthodontics</span>
+        <p class="vk-g3-desc">Precise crown preparation and cementation for durable, natural-looking restorations.</p>
+      </div>
+      <div>
+        <p class="vk-g3-title">Root Canal Treatments</p>
+        <span class="vk-g3-label">Endodontics</span>
+        <p class="vk-g3-desc">Effective root canal therapy to relieve pain and save natural teeth.</p>
+      </div>
+      <div>
+        <p class="vk-g3-title">Pediatric Dentistry</p>
+        <span class="vk-g3-label">Pedodontics</span>
+        <p class="vk-g3-desc">Child-friendly fillings, extractions, and pulpectomies in a warm, reassuring environment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EDUCATION ══ -->
+  <section class="vk-section vk-section--gray">
+    <div class="vk-edu-header">
+      <h2 class="vk-edu-title">Education &amp; Credentials</h2>
+      <span class="vk-edu-subtitle">Academic &amp; Professional Background</span>
+    </div>
+    <hr class="vk-rule" />
+    <div class="vk-edu-grid">
+      <div class="vk-edu-item">
+        <svg class="vk-edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <span class="vk-edu-name">Bachelor of Dental Surgery (BDS) — Venkateswara Dental College and Hospital, Bangalore</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BLOGS ══ -->
+  <section class="vk-section vk-section--white" style="padding-top: 56px; padding-bottom: 56px;">
+    <div class="vk-blog-head">
+      <div class="vk-blog-head-left">
+        <h2 class="vk-h1">Related Reading</h2>
+        <p class="vk-blog-subtitle">Health and wellness insights from the North Star Dental team</p>
+      </div>
+    </div>
+    <div class="vk-blog-grid">
+      <a href="blog-bleeding-gums.html" class="vk-blog-card">
+        <img src="images/bleeding-gums.jpg" alt="Bleeding Gums" class="vk-blog-img" />
+        <div class="vk-blog-body">
+          <p class="vk-blog-title">Bleeding Gums: Something You Shouldn't Ignore</p>
+          <p class="vk-blog-meta">North Star Dental <span class="sep">|</span> 22 May 2026</p>
+        </div>
+      </a>
+      <a href="blog-root-canal-pain-relief.html" class="vk-blog-card">
+        <img src="images/root-canal.jpg" alt="Root Canal Treatment" class="vk-blog-img" />
+        <div class="vk-blog-body">
+          <p class="vk-blog-title">Root Canal Treatment: Your Path to Pain Relief</p>
+          <p class="vk-blog-meta">North Star Dental <span class="sep">|</span> 30 April 2026</p>
+        </div>
+      </a>
+      <a href="blog-braces.html" class="vk-blog-card">
+        <img src="images/braces.jpg" alt="Braces" class="vk-blog-img" />
+        <div class="vk-blog-body">
+          <p class="vk-blog-title">Braces: A Straighter, Healthier Smile</p>
+          <p class="vk-blog-meta">North Star Dental <span class="sep">|</span> 15 May 2026</p>
+        </div>
+      </a>
+    </div>
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="blog.html" class="vk-book-btn">View All Blogs →</a>
+    </div>
+  </section>
+
+  <!-- ══ OTHER DOCTORS ══ -->
+  <section class="vk-section vk-section--gray">
+    <div class="vk-blog-head">
+      <div class="vk-blog-head-left">
+        <h2 class="vk-h1">Meet More Doctors</h2>
+        <p class="vk-blog-subtitle">The team behind every smile at North Star Dental</p>
+      </div>
+    </div>
+    <div class="vk-blog-grid" style="grid-template-columns: repeat(3, minmax(0, 360px)); gap: 32px; justify-content: center;">
+      <a href="dr-vartika-kumari.html" class="vk-doc-card">
+        <img src="images/dr-vartika.jpg?v=4" alt="Dr. Vartika Kumari" class="vk-doc-img" style="object-position:center top;" />
+        <div class="vk-blog-body">
+          <p class="vk-blog-title">Dr. Vartika Kumari</p>
+          <p class="vk-blog-meta">Lead Orthodontist <span class="sep">|</span> All Clinics</p>
+        </div>
+      </a>
+      <a href="dr-shalini-shinde.html" class="vk-doc-card">
+        <img src="images/dr-shalini-new.png" alt="Dr. Shalini Shinde" class="vk-doc-img" style="object-position:center top;" />
+        <div class="vk-blog-body">
+          <p class="vk-blog-title">Dr. Shalini Shinde</p>
+          <p class="vk-blog-meta">Pediatric Dentist <span class="sep">|</span> JP Nagar</p>
+        </div>
+      </a>
+      <a href="dr-milu-anna-jose.html" class="vk-doc-card">
+        <img src="images/dr-milu-new.png" alt="Dr. Milu Anna Jose" class="vk-doc-img" style="object-position:center top;" />
+        <div class="vk-blog-body">
+          <p class="vk-blog-title">Dr. Milu Anna Jose</p>
+          <p class="vk-blog-meta">Dentist <span class="sep">|</span> JP Nagar</p>
+        </div>
+      </a>
+    </div>
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="team.html" class="vk-book-btn">View More Doctors →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <div class="brand-logo"><div class="logo-mark" role="img" aria-label="North Star Dental"></div></div>
+            <div class="brand-text"><span class="brand-name">North Star Dental</span><span class="brand-tagline">Guided By Care</span></div>
+          </a>
+          <p>A studio-style dental clinic combining modern technique with old-fashioned attentiveness.</p>
+        </div>
+        <div class="footer-col"><h5>Explore</h5><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Our Team</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+        <div class="footer-col"><h5>Visit</h5><ul><li><a href="index.html#location">Location</a></li><li><a href="faq.html">FAQ</a></li><li><a href="https://click4appointment.com/clinic-details/drvdentalaesthetics-3361" target="_blank" rel="noopener">Book Online</a></li><li><a href="https://wa.me/919353041409" target="_blank" rel="noopener">WhatsApp Us</a></li></ul></div>
+        <div class="footer-col"><h5>Reach Us</h5><ul><li><a href="https://maps.app.goo.gl/4bqNGdXSn57rxErv8" target="_blank" rel="noopener">JP Nagar</a></li><li><a href="https://maps.app.goo.gl/jqHBdz1itjzvM9bX9" target="_blank" rel="noopener">Manyata Tech Park</a></li><li><a href="https://maps.app.goo.gl/h6JyKZBmuTAq8mQM7" target="_blank" rel="noopener">Yelahanka</a></li><li><a href="tel:+919353041409">+91 90354 62760</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> North Star Dental. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/northstardentalclinicbng" aria-label="Instagram" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919353041409?text=Hello%20North%20Star%20Dental%2C%20I%27d%20like%20to%20enquire%20about%20an%20appointment." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <span class="whatsapp-float-pulse"></span>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
+  </a>
+
+  <script src="js/main.js?v=60"></script>
+</body>
+</html>
