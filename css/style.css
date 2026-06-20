@@ -3510,16 +3510,18 @@ section { padding: 110px 0; }
 }
 
 .footer-social a {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid rgba(243, 233, 226, 0.15);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(243, 233, 226, 0.15);
+  font-size: 0.8rem;
+  font-weight: 500;
   color: rgba(243, 233, 226, 0.7);
+  text-decoration: none;
   transition: all var(--transition);
+  letter-spacing: 0.04em;
 }
 
 .footer-social a:hover {
