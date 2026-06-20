@@ -5976,9 +5976,31 @@ section { padding: 110px 0; }
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 0;
+    padding: 0 10% 0 0;
     margin: 0 -18px;
   }
+  .team-carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    width: 100%;
+    text-align: center;
+  }
+  .team-carousel-dot {
+    width: 24px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--line);
+    transition: background 300ms, width 300ms;
+    display: block;
+  }
+  .team-carousel-dot.is-active {
+    background: var(--copper);
+    width: 40px;
+  }
+  .team-carousel-dots { display: flex !important; }
   .team-trio.team-carousel::-webkit-scrollbar { display: none; }
   .team-trio.team-carousel .team-card,
   .team-trio.team-carousel .team-card--featured,
@@ -6552,6 +6574,8 @@ section { padding: 110px 0; }
     word-break: break-word !important;
   }
 }
+
+.team-carousel-dots { display: none; }
 
 /* Doctor pages — Meet More Doctors section mobile fix */
 @media (max-width: 768px) {

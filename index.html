@@ -321,7 +321,7 @@
         <h2 class="section-title">The people <em>behind</em> your smile.</h2>
       </div>
       <!-- Mobile: swipeable carousel -->
-      <div class="team-trio fade-in">
+      <div class="team-trio team-carousel fade-in">
         <article class="team-card team-card--side team-card--left" style="cursor:pointer;" onclick="location.href='dr-milu-anna-jose.html'">
           <div class="team-card-photo">
             <img src="images/ChatGPT Image Jun 17, 2026 at 08_04_15 PM.png" alt="Dr. Milu Anna Jose" loading="lazy" />
@@ -349,6 +349,12 @@
             <span class="team-card-role">MDS · Pediatric Dentist · JP Nagar</span>
           </div>
         </article>
+      </div>
+      <!-- Mobile carousel dots -->
+      <div class="team-carousel-dots" aria-hidden="true">
+        <span class="team-carousel-dot is-active"></span>
+        <span class="team-carousel-dot"></span>
+        <span class="team-carousel-dot"></span>
       </div>
       <!-- Mobile CTA -->
       <div class="team-home-cta team-home-cta--mobile fade-in">
@@ -888,12 +894,7 @@
       <div class="footer-bottom">
         <p>© <span data-year>2026</span> North Star Dental. All rights reserved.</p>
         <div class="footer-social">
-          <a href="https://www.instagram.com/northstardentalclinicbng?utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
-          </a>
-          <a href="#" aria-label="Google">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
-          </a>
+          <a href="https://www.instagram.com/northstardentalclinicbng?utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener" class="footer-insta-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><span>Instagram</span></a>
         </div>
       </div>
     </div>
@@ -906,5 +907,16 @@
   </a>
 
   <script src="js/main.js?v=62"></script>
+  <script>
+    (function() {
+      var carousel = document.querySelector('.team-trio.team-carousel');
+      var dots = document.querySelectorAll('.team-carousel-dot');
+      if (!carousel || !dots.length) return;
+      carousel.addEventListener('scroll', function() {
+        var index = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+        dots.forEach(function(d, i) { d.classList.toggle('is-active', i === index); });
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>
