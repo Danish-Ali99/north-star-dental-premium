@@ -6620,6 +6620,34 @@ section { padding: 110px 0; }
 
 @media (max-width: 768px) {
   .team-clinic-tab { padding: 14px 18px; font-size: 0.75rem; }
+
+  /* Location headings on mobile */
+  .team-location-head {
+    text-align: center !important;
+  }
+  .team-location-head .eyebrow {
+    font-size: 1.6rem !important;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-transform: none;
+    color: var(--deep-teal) !important;
+    display: block;
+    text-align: center !important;
+  }
+  .team-location-head .eyebrow::before { display: none !important; }
+  .team-location-head .eyebrow::after { content: ' 📍'; }
+  .team-location-head h2.section-title {
+    display: block !important;
+    font-size: 1.1rem !important;
+    font-weight: 400;
+    color: var(--muted) !important;
+    margin-top: 4px;
+    text-align: center !important;
+  }
+  .team-location-head h2.section-title em {
+    color: var(--muted) !important;
+    font-style: normal;
+  }
 }
 
 .team-carousel-dots { display: none; }
