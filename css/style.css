@@ -6655,48 +6655,49 @@ section { padding: 110px 0; }
 /* ── Chat widget ── */
 #nsd-chat-widget {
   position: fixed;
-  bottom: 88px;
-  right: 20px;
+  bottom: 96px;
+  right: 30px;
+  width: 62px;
+  height: 62px;
   z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 12px;
 }
 .nsd-chat-trigger {
-  width: 52px;
-  height: 52px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
-  background: var(--deep-teal);
+  background: #2563EB;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  box-shadow: 0 4px 20px rgba(13,43,53,0.35);
+  box-shadow: 0 4px 20px rgba(37,99,235,0.45);
   transition: transform 200ms, background 200ms;
   flex-shrink: 0;
 }
-.nsd-chat-trigger:hover { background: var(--copper); transform: scale(1.08); }
+.nsd-chat-trigger:hover { background: #1d4ed8; transform: scale(1.08); }
 .nsd-chat-icon--close { display: none; }
 .nsd-chat-trigger.is-open .nsd-chat-icon--open { display: none; }
 .nsd-chat-trigger.is-open .nsd-chat-icon--close { display: block; }
 .nsd-chat-panel {
+  position: fixed;
+  bottom: 96px;
+  right: 100px;
   width: 300px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 8px 40px rgba(13,43,53,0.18);
   overflow: hidden;
   opacity: 0;
-  transform: translateY(12px) scale(0.97);
   pointer-events: none;
   transition: opacity 220ms, transform 220ms;
   transform-origin: bottom right;
+  transform: translateX(8px) scale(0.97);
 }
 .nsd-chat-panel.is-open {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateX(0) scale(1);
   pointer-events: auto;
 }
 .nsd-chat-header {
@@ -6776,10 +6777,49 @@ section { padding: 110px 0; }
   color: var(--copper);
 }
 .nsd-chat-option svg { flex-shrink: 0; }
+.nsd-chat-input-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+.nsd-chat-textarea {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: var(--ink);
+  resize: none;
+  outline: none;
+  line-height: 24px;
+  padding: 6px 10px;
+  height: 80px;
+  background: repeating-linear-gradient(#fff, #fff 23px, #d0c8c0 23px, #d0c8c0 24px);
+}
+.nsd-chat-textarea:focus { border-color: #2563EB; }
+.nsd-chat-textarea::placeholder { color: #aaa; }
+.nsd-chat-send {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2563EB;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  transition: background 180ms;
+}
+.nsd-chat-send:hover { background: #1d4ed8; }
 
 @media (max-width: 768px) {
-  #nsd-chat-widget { bottom: 80px; right: 16px; }
-  .nsd-chat-panel { width: 272px; }
+  #nsd-chat-widget { bottom: 96px; right: 16px; }
+  .nsd-chat-panel { bottom: 96px; right: 90px; width: 260px; }
 }
 
 /* Doctor pages — Meet More Doctors section mobile fix */

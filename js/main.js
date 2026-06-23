@@ -540,6 +540,7 @@
   (function () {
     var widget = document.createElement('div');
     widget.id = 'nsd-chat-widget';
+    widget.style.cssText = 'position:fixed!important;bottom:104px!important;right:30px!important;width:62px!important;height:62px!important;z-index:99999!important;';
     widget.innerHTML = [
       '<button class="nsd-chat-trigger" id="nsdChatTrigger" aria-label="Chat with us">',
         '<svg class="nsd-chat-icon--open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>',
@@ -574,6 +575,8 @@
 
     var trigger = document.getElementById('nsdChatTrigger');
     var panel = document.getElementById('nsdChatPanel');
+    trigger.style.cssText = 'width:62px!important;height:62px!important;border-radius:50%!important;';
+    panel.style.cssText = 'position:fixed!important;bottom:104px!important;right:100px!important;width:300px!important;';
     var open = false;
 
     trigger.addEventListener('click', function () {
