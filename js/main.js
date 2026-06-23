@@ -536,4 +536,61 @@
 
   })();
 
+  // ── Chat widget ──
+  (function () {
+    var widget = document.createElement('div');
+    widget.id = 'nsd-chat-widget';
+    widget.innerHTML = [
+      '<button class="nsd-chat-trigger" id="nsdChatTrigger" aria-label="Chat with us">',
+        '<svg class="nsd-chat-icon--open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>',
+        '<svg class="nsd-chat-icon--close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
+      '</button>',
+      '<div class="nsd-chat-panel" id="nsdChatPanel" aria-hidden="true">',
+        '<div class="nsd-chat-header">',
+          '<div class="nsd-chat-avatar">',
+            '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>',
+          '</div>',
+          '<div>',
+            '<p class="nsd-chat-brand">North Star Dental</p>',
+            '<p class="nsd-chat-status"><span class="nsd-chat-dot"></span>We\'re here to help</p>',
+          '</div>',
+        '</div>',
+        '<div class="nsd-chat-body">',
+          '<div class="nsd-chat-bubble">Hi there 👋<br>How can we help you today?</div>',
+          '<div class="nsd-chat-options">',
+            '<a href="https://click4appointment.com/clinic-details/drvdentalaesthetics-3361" target="_blank" rel="noopener" class="nsd-chat-option">',
+              '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>',
+              'Book Appointment',
+            '</a>',
+            '<a href="location.html" class="nsd-chat-option">',
+              '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>',
+              'Find Our Clinics',
+            '</a>',
+          '</div>',
+        '</div>',
+      '</div>'
+    ].join('');
+    document.body.appendChild(widget);
+
+    var trigger = document.getElementById('nsdChatTrigger');
+    var panel = document.getElementById('nsdChatPanel');
+    var open = false;
+
+    trigger.addEventListener('click', function () {
+      open = !open;
+      panel.classList.toggle('is-open', open);
+      panel.setAttribute('aria-hidden', String(!open));
+      trigger.classList.toggle('is-open', open);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (open && !widget.contains(e.target)) {
+        open = false;
+        panel.classList.remove('is-open');
+        panel.setAttribute('aria-hidden', 'true');
+        trigger.classList.remove('is-open');
+      }
+    });
+  })();
+
 })();
