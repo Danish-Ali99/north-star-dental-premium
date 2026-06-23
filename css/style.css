@@ -6575,6 +6575,53 @@ section { padding: 110px 0; }
   }
 }
 
+/* ── Team page sticky clinic tab bar ── */
+.team-clinic-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background: var(--deep-teal);
+  border-bottom: 1px solid rgba(243,233,226,0.1);
+  box-shadow: 0 2px 12px rgba(13,43,53,0.18);
+}
+.team-clinic-nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.team-clinic-nav::-webkit-scrollbar { display: none; }
+.team-clinic-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 16px 28px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(243,233,226,0.55);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 200ms, border-color 200ms;
+}
+.team-clinic-tab svg { opacity: 0.5; transition: opacity 200ms; }
+.team-clinic-tab:hover {
+  color: rgba(243,233,226,0.9);
+}
+.team-clinic-tab:hover svg { opacity: 0.8; }
+.team-clinic-tab.is-active {
+  color: var(--copper-soft);
+  border-bottom-color: var(--copper);
+}
+.team-clinic-tab.is-active svg { opacity: 1; color: var(--copper-soft); }
+
+@media (max-width: 768px) {
+  .team-clinic-tab { padding: 14px 18px; font-size: 0.75rem; }
+}
+
 .team-carousel-dots { display: none; }
 
 /* Doctor pages — Meet More Doctors section mobile fix */

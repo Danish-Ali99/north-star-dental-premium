@@ -112,6 +112,26 @@
     </div>
   </section>
 
+  <!-- Sticky clinic tab bar -->
+  <div class="team-clinic-tabs" id="teamClinicTabs">
+    <div class="container">
+      <nav class="team-clinic-nav">
+        <a href="#jpnagar" class="team-clinic-tab is-active" data-target="jpnagar">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          JP Nagar
+        </a>
+        <a href="#yelahanka" class="team-clinic-tab" data-target="yelahanka">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Yelahanka
+        </a>
+        <a href="#manyata" class="team-clinic-tab" data-target="manyata">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Manyata Tech Park
+        </a>
+      </nav>
+    </div>
+  </div>
+
   <section style="background: var(--bone);" id="jpnagar">
     <div class="container">
       <div class="team-location-head fade-in">
@@ -259,5 +279,43 @@
   </a>
 
   <script src="js/main.js?v=47"></script>
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll('.team-clinic-tab');
+      var sections = ['jpnagar', 'yelahanka', 'manyata'].map(function(id) {
+        return document.getElementById(id);
+      });
+      var tabBar = document.getElementById('teamClinicTabs');
+
+      function setActive(id) {
+        tabs.forEach(function(t) {
+          t.classList.toggle('is-active', t.dataset.target === id);
+        });
+      }
+
+      // Smooth scroll on tab click
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.getElementById(tab.dataset.target);
+          if (!target) return;
+          var offset = tabBar ? tabBar.offsetHeight : 0;
+          var top = target.getBoundingClientRect().top + window.scrollY - offset - 8;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+          setActive(tab.dataset.target);
+        });
+      });
+
+      // Scroll-spy: highlight tab for visible section
+      window.addEventListener('scroll', function() {
+        var offset = tabBar ? tabBar.offsetHeight + 20 : 80;
+        var current = sections[0];
+        sections.forEach(function(s) {
+          if (s && s.getBoundingClientRect().top <= offset) current = s;
+        });
+        if (current) setActive(current.id);
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>
