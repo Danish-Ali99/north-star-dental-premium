@@ -5135,7 +5135,7 @@ section { padding: 110px 0; }
   /* HERO — full-bleed image as background with text overlaid */
   .hero {
     position: relative;
-    background-image: url('../images/hero-mobile.jpg');
+    background-image: url('../images/_.jpeg');
     background-size: cover;
     background-position: center top;
     isolation: isolate;
@@ -5159,9 +5159,12 @@ section { padding: 110px 0; }
   .hero-content {
     position: relative;
     z-index: 2;
-    padding: 70px 22px 56px;
+    padding: 230px 22px 40px !important;
     min-height: auto;
-    justify-content: center;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    text-align: center;
+    flex: 0 0 100% !important;
   }
   .hero .eyebrow {
     font-size: 0.78rem;
@@ -5182,6 +5185,9 @@ section { padding: 110px 0; }
     line-height: 1.6;
     margin-bottom: 28px;
     color: rgba(243, 233, 226, 0.82);
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Hero CTAs — primary button + ghost text link with arrow */
@@ -5211,17 +5217,21 @@ section { padding: 110px 0; }
   /* "Or Call ..." plain text link below the Book button.
      Selector matches the desktop one to beat its specificity. */
   .hero-actions .hero-call-link {
-    align-self: flex-start;
-    color: rgba(243, 233, 226, 0.85);
+    align-self: center;
+    color: rgba(243, 233, 226, 0.9);
     font-family: var(--font-sans);
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.02em;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
     text-transform: none;
-    transition: color var(--transition);
-    border: none;
-    padding: 0;
-    background: transparent;
+    transition: color var(--transition), border-color var(--transition);
+    border: 1.5px solid var(--deep-teal);
+    padding: 14px 20px;
+    border-radius: 6px;
+    background: var(--deep-teal);
+    color: var(--cream);
+    text-transform: uppercase;
+    white-space: nowrap;
   }
   .hero-actions .hero-call-link span { color: var(--cream); font-weight: 500; font-size: 1.05rem; }
   .hero-actions .hero-call-link:hover { color: var(--copper-soft); }
@@ -5237,7 +5247,7 @@ section { padding: 110px 0; }
     inset: 0 !important;
     flex: none !important;
     z-index: 0;
-    background-image: url('../images/hero-mobile.jpg');
+    background-image: url('../images/_.jpeg');
     background-size: cover;
     background-position: 50% 20%;
     background-repeat: no-repeat;
